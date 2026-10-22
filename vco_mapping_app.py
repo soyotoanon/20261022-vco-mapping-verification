@@ -135,11 +135,21 @@ class SpectrumAnalyzer:
         self.inst.write(f":BAND {RBW_HZ:.0f}")
 
     def read_peak(self):
-        self.inst.write(":CALC:MARK1:MAX")
+        """读整条轨迹后在软件里找峰值。
+
+        不用 :CALC:MARK1:MAX —— 这台 DSA815 的标记峰值搜索在某些
+        状态下会停在扫宽边缘读噪底（固件 bug，实测踩过坑）。
+        """
+        self.inst.write(":TRAC? TRACE1")
         time.sleep(0.15)
-        x = float(self.inst.query(":CALC:MARK1:X?").strip())
-        y = float(self.inst.query(":CALC:MARK1:Y?").strip())
-        return x, y
+        raw = self.inst.read_raw(65536).decode(errors="replace")
+        i = raw.find(" ", 0, 15)  # 剥掉 IEEE 块头 "#N<len>"
+        vals = [float(v) for v in raw[i:].replace(" ", ",").split(",") if v.strip()]
+        cent = float(self.inst.query(":FREQ:CENT?").strip())
+        span = float(self.inst.query(":FREQ:SPAN?").strip())
+        imax = max(range(len(vals)), key=lambda k: vals[k])
+        x = (cent - span / 2) + imax * span / (len(vals) - 1)
+        return x, vals[imax]
 
     def close(self):
         try:
