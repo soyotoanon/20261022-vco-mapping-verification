@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-10-22T16:33:28",
+  "mapping_setting": {
+    "b_peak_V": 0.207,
+    "k_V_per_V": 0.0094,
+    "note": "DDS 软件设置的理想映射 A=b+kV，按峰值解释；Vpp=2A"
+  },
+  "fit": {
+    "slope_vpp_per_v": 0.014404,
+    "intercept_vpp": 0.321446,
+    "r2": 0.997318,
+    "ideal_slope_vpp_per_v": 0.0188,
+    "ideal_intercept_vpp": 0.414,
+    "slope_err_pct": -23.38,
+    "intercept_err_pct": -22.36,
+    "n": 101
+  },
+  "dg": "RIGOL TECHNOLOGIES,DG5352 Pro,DG5Q273700076,00.01.00",
+  "dsa": "Rigol Technologies,DSA815,DSA8B271100101,00.01.19.00.02",
+  "mode": "cli"
+}
