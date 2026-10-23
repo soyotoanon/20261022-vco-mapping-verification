@@ -1,0 +1,104 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Oct 23 14:32:10 2026
+# Process ID: 42936
+# Current directory: D:/codex/2026-10-23/wo
+# Command line: vivado.exe -mode batch -source outputs/pid_performance/scripts/program_flash.tcl -log outputs/pid_performance/build/program_flash.log -journal work/program_flash.jou
+# Log file: D:/codex/2026-10-23/wo/outputs/pid_performance/build/program_flash.log
+# Journal file: D:/codex/2026-10-23/wo\work/program_flash.jou
+# Running On: DESKTOP-QDCLV1M, OS: Windows, CPU Frequency: 3793 MHz, CPU Physical cores: 16, Host memory: 16348 MB
+#-----------------------------------------------------------
+source outputs/pid_performance/scripts/program_flash.tcl
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set mcs [file join $root bitstream light_lock_top.mcs]
+# set bit [file join $root bitstream light_lock_top.bit]
+# if {![file exists $mcs] || ![file exists $bit]} {error "Build artifacts missing"}
+# open_hw_manager
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+
+
+******** Xilinx cs_server v2023.2.0
+  ****** Build date   : Oct 10 2023-12:01:56
+    **** Build number : 2023.2.1696910516
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+# set targets [get_hw_targets]
+# set selected {}
+# foreach t $targets {if {[string match *210512180081 $t]} {lappend selected $t}}
+# if {[llength $selected]!=1} {error "Expected exactly the verified board cable"}
+# current_hw_target [lindex $selected 0]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210512180081
+# set devs [get_hw_devices xc7a35t*]
+# if {[llength $devs]!=1} {error "Expected one xc7a35t"}
+# set dev [lindex $devs 0]
+# current_hw_device $dev
+# refresh_hw_device -update_hw_probes false $dev
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+# create_hw_cfgmem -hw_device $dev [lindex [get_cfgmem_parts mt25ql128-spi-x1_x2_x4] 0]
+# set cfg [get_property PROGRAM.HW_CFGMEM $dev]
+# set_property PROGRAM.FILES [list $mcs] $cfg
+# set_property PROGRAM.ADDRESS_RANGE use_file $cfg
+# set_property PROGRAM.ERASE 0 $cfg
+# set_property PROGRAM.BLANK_CHECK 0 $cfg
+# set_property PROGRAM.CFG_PROGRAM 0 $cfg
+# set_property PROGRAM.VERIFY 0 $cfg
+# create_hw_bitstream -hw_device $dev [get_property PROGRAM.HW_CFGMEM_BITFILE $dev]
+# program_hw_devices $dev
+INFO: [Labtools 27-3164] End of startup status: HIGH
+# refresh_hw_device $dev
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 SPI core(s).
+# file mkdir [file join $root backup]
+# set backup [file join $root backup flash_before_[clock format [clock seconds] -format %Y%m%d_%H%M%S].bin]
+# readback_hw_cfgmem -all -format bin -file $backup $cfg
+Mfg ID : 20   Memory Type : ba   Memory Capacity : 18   Device ID 1 : 0   Device ID 2 : 0
+Performing Readback Operation...
+INFO: [Xicom 50-213] Readback file: D:/codex/2026-10-23/wo/outputs/pid_performance/backup/flash_before_20261023_143222.bin
+Readback Operation successful.
+readback_hw_cfgmem: Time (s): cpu = 00:00:00 ; elapsed = 00:00:53 . Memory (MB): peak = 546.398 ; gain = 24.891
+# if {![file exists $backup] || [file size $backup] < 16777216} {error "Full Flash backup not verified"}
+# puts "FLASH_BACKUP=$backup"
+FLASH_BACKUP=D:/codex/2026-10-23/wo/outputs/pid_performance/backup/flash_before_20261023_143222.bin
+# set_property PROGRAM.ERASE 1 $cfg
+# set_property PROGRAM.BLANK_CHECK 1 $cfg
+# set_property PROGRAM.CFG_PROGRAM 1 $cfg
+# set_property PROGRAM.VERIFY 1 $cfg
+# program_hw_cfgmem $cfg
+Mfg ID : 20   Memory Type : ba   Memory Capacity : 18   Device ID 1 : 0   Device ID 2 : 0
+Performing Erase Operation...
+Erase Operation successful.
+Performing Blank Check Operation...
+Blank Check Operation successful. The part is blank.
+Performing Program and Verify Operations...
+Program/Verify Operation successful.
+INFO: [Labtoolstcl 44-377] Flash programming completed successfully
+program_hw_cfgmem: Time (s): cpu = 00:00:00 ; elapsed = 00:00:28 . Memory (MB): peak = 546.398 ; gain = 0.000
+# puts "FLASH_PROGRAM_VERIFY_PASS"
+FLASH_PROGRAM_VERIFY_PASS
+# boot_hw_device $dev
+INFO: [Labtoolstcl 44-664] Will wait up to 180 seconds for booting to complete.
+INFO: [Labtools 27-32] Done pin status: HIGH
+# after 3000
+# refresh_hw_device -update_hw_probes false $dev
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+# set done [get_property REGISTER.IR.BIT5_DONE $dev]
+# puts "FLASH_BOOT_DONE=$done"
+FLASH_BOOT_DONE=1
+# if {$done!=1} {error "Boot from configuration memory did not reach DONE"}
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210512180081
+# disconnect_hw_server
+# close_hw_manager
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 23 14:33:49 2026...

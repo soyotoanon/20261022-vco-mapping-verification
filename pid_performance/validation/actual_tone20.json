@@ -1,0 +1,24 @@
+{
+  "open": {
+    "amplitude": 2.0626341167870184,
+    "sigma": 0.02603538446322343,
+    "mean": 9201.894053928754,
+    "residual_rms": 1.6652085434409818,
+    "detected": true
+  },
+  "closed": {
+    "amplitude": 2.2077581691503942,
+    "sigma": 0.017391697207513677,
+    "mean": 9199.3402232291,
+    "residual_rms": 1.1131846458342398,
+    "detected": true
+  },
+  "frequency_Hz": 20.0001522898674,
+  "amplitude_DAC_codes": 64,
+  "ratio": {
+    "db": 0.5905860708347451,
+    "valid": true,
+    "reason": ""
+  },
+  "scope": "single-point hardware smoke test; not a bandwidth measurement"
+}

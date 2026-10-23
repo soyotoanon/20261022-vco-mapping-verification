@@ -1,0 +1,8 @@
+build/
+.Xil/
+__pycache__/
+*.pyc
+measurements/
+backup/
+host/vendor/
+*.jou

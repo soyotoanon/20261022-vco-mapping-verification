@@ -1,0 +1,27 @@
+# 验证记录 · 2026-10-23
+
+## 实际通过的检查
+
+- Vivado 2023.2 完整综合、布局布线及 bit/MCS 生成：顶层 light_lock_top，xc7a35tfgg484-2；WNS 1.563 ns、TNS 0、WHS 0.032 ns、THS 0。时序报告只证明已约束路径；板外 ADC/DAC 的实际模拟性能不是静态时序报告能证明的。
+- XSim 四项最终回归：tb_pi_revision、tb_sample_revision、tb_dac_timing_revision、tb_performance_probe 全部 PASS；各项日志和 simulation_results.json 已保留。
+- Python 6 项测试通过：Welch 密度归一化和 RMS、暗场归一化、非整周期正弦与漂移、积分端点、无效/无交点带宽、模拟设备完整测量与保存流程。模拟设备测试不是实际光学验收。
+- RAM 加载成功后 UART 返回固件 ID 0xA623 和全部预期启动参数。
+- 旧 Flash 完整读回 16,777,216 字节，存于本机 backup/flash_before_20261023_143222.bin；随后 Program/Verify Operation successful，FLASH_BOOT_DONE=1。详见 program_flash.log。实际器件读回 ID 为 20 BA 18。
+- 从 Flash 重新配置后，COM9 读回启动目标 9843、基准 6860、KP_SHIFT 8、KI_SHIFT 12、正作用、ARM 1；见 flash_boot_registers.json。尚未由人实际断电再上电测试，软件触发的 Flash 重启已验证。
+- 用户说明当前光强低于昨晚并授权以当前工作点测量。DAC 固定 6860 读当前 PD，临时目标设为 9199；随后读 ADC 9200、输出 6921、STATUS 2（仅历史 OTR 记录，无输出限幅/光丢失/冻结）。Flash 默认参数仍为昨晚那套。
+- 真实硬件在 5 MS/s、19.53125 kS/s、305.17578125 S/s 各采 8192 点，序号连续、状态 2（done，无测量故障），数据保存在 hardware_capture_decim*.npz。
+- 批量 UART 缓存读回与 20 Hz 正弦注入经过实机验证。幅度 64 DAC 码，开环 PD 振幅约 2.0626 ADC 码、闭环约 2.2078 ADC 码，比值约 +0.59 dB，两段各耗时约 18.2 秒；结束后关闭注入并恢复反馈。原始数据及拟合结果见 actual_tone20*。这表明此工作点的 20 Hz 扰动没有被抑制，不是带宽测量。
+- 原生 Tk UI 已启动并检查截图，见上一级 ui_preview.png；该截图是无数据界面预览，没有伪造测量曲线。
+
+## 尚未完成的物理测量
+
+完整暗场/开闭环 RIN、积分 RMS 与扫频带宽尚未测完。暗场需要人工遮住并恢复 PD 入光；界面有对应提示。真实断电重启、模拟抗混叠响应、独立环外光强稳定性也尚未验证。不能将上述代码、通信和单点验证当作论文性能结论。
+
+## 两个已处理的失败
+
+1. 原板上固件在最初串口读取中无有效回复；加载新固件后通信恢复，身份和参数均读回确认。
+2. Flash 第一次尝试因旧型号别名不被 Vivado 2023.2 接受而退出，未擦除；查询本机器件表确认 mt25ql128-spi-x1_x2_x4 后重试，完整备份、烧录、校验和 Flash 重启通过。
+
+## 后续光强输入 UI 的约定
+
+用户希望输入物理光强，通过既有 PD/ADC 标定反算目标 ADC 码。SETPOINT 是反馈需要维持的测量目标；DAC BIAS 是执行器的起始基准，PI 输出是在它上面加减修正。DAC–光强标定可帮助选基准，但不能把 DAC 码直接写进 ADC 目标寄存器。该物理单位输入功能留待本次任务之后，不混入当前测量界面。
