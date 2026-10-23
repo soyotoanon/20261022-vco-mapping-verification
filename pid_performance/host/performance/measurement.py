@@ -240,3 +240,74 @@ class Measurement:
             self.folder=parent;self.notify=notify
             self.dev.inject(0,0);self.dev.hold(False)
         return data
+
+
+    def extend_grid(self,source_grid,low,high,amp_low,amp_high,freq_points=13,amp_points=5):
+        """Reuse completed cells with identical settings; retain raw provenance."""
+        source=Path(source_grid).resolve();seed=json.loads(source.read_text(encoding='utf-8'))
+        if seed['status']=='running':raise ValueError('原扫描仍在运行，请先等待它结束')
+        old_session=json.loads((source.parent.parent/'session.json').read_text(encoding='utf-8'))
+        keys=['0x0','0x11','0x18','0x19','0x1a','0x1b','0x1c','0x1d','0x1e','0x1f','0x20','0x21','0x2d','0x2e','0x3f']
+        if any(k not in old_session['registers'] or k not in self.dev.snapshot or old_session['registers'][k]!=self.dev.snapshot[k] for k in keys):
+            raise ValueError('PID/采样配置改变，不能自动合并旧测量')
+        if old_session['raw_sample_rate_Hz']!=self.dev.raw_fs or seed.get('voltage_calibration')!=CALIBRATION:
+            raise ValueError('采样率或电压标定改变，不能复用')
+        if not (0<low<high<=self.dev.raw_fs/20 and 2<=freq_points<=64 and 2<=amp_points<=16 and 1<=amp_low<amp_high<=16383):
+            raise ValueError('加密网格范围或点数无效')
+        frequencies=np.geomspace(low,high,freq_points)
+        amps=np.unique(np.rint(np.geomspace(amp_low,amp_high,amp_points)).astype(int))
+        if len(amps)!=amp_points:raise ValueError('幅度取整后重复，请减少幅度点数')
+        parent=self.folder;notify=self.notify
+        folder=parent/('grid_'+str(time.time_ns()));folder.mkdir()
+        cells={}
+        for r in seed['rows']:
+            fi=np.flatnonzero(np.isclose(frequencies,r['requested_Hz'],rtol=1e-9,atol=1e-12))
+            ai=np.flatnonzero(amps==r['amplitude_DAC_codes'])
+            if len(fi)==1 and len(ai)==1:
+                row=dict(r,frequency_index=int(fi[0]),amplitude_index=int(ai[0]),reused=True)
+                row.setdefault('source_grid',str(source))
+                row.setdefault('source_raw_directory',str(source.parent/f"amp_{r['amplitude_DAC_codes']}"))
+                cells[int(ai[0]),int(fi[0])]=row
+        reused=len(cells)
+        data=dict(frequencies_Hz=frequencies.tolist(),amplitudes_DAC_codes=amps.tolist(),
+            amplitudes_Vpp=[codes_to_vpp(a) for a in amps],voltage_calibration=CALIBRATION,
+            rows=[],bandwidths_Hz=[None]*len(amps),status='running',run_directory=folder.name,
+            reused_points=reused,source_grid=str(source),dark_mean_ADC_codes=None,
+            note='Prior raw data retained at source paths. Reused cells are flagged; same optical setup assumed.')
+        def flush():
+            data['rows']=[cells[k] for k in sorted(cells)]
+            for i in range(len(amps)):
+                db=[cells[i,j]['db'] if (i,j) in cells and cells[i,j]['valid'] else np.nan for j in range(len(frequencies))]
+                data['bandwidths_Hz'][i]=crossing(frequencies,db)
+            save_json(folder/'grid.json',data)
+            if cells:
+                keys=sorted(set().union(*(r.keys() for r in data['rows'])))
+                with (folder/'grid.csv').open('w',newline='',encoding='utf-8-sig') as f:
+                    writer=csv.DictWriter(f,fieldnames=keys);writer.writeheader();writer.writerows(data['rows'])
+            notify('grid',json.loads(json.dumps(data)))
+        flush();ai=fi=0
+        try:
+            for ai,amp in enumerate(amps):
+                for fi,freq in enumerate(frequencies):
+                    if (ai,fi) in cells:continue
+                    self.dev.require_closed_loop()
+                    self.folder=folder/f'amp_{int(amp)}'/f'frequency_{fi:03d}'
+                    self.folder.mkdir(parents=True)
+                    def relay(kind,payload):
+                        if kind=='sweep':return
+                        if kind=='status':payload=f'加密扫描 {len(cells)+1}/{len(amps)*len(frequencies)} · 已复用 {reused} 点 · {codes_to_vpp(amp):.5g} Vpp · '+payload
+                        notify(kind,payload)
+                    self.notify=relay
+                    rows,_=self.sweep(float(freq),float(freq),int(amp),1)
+                    cells[ai,fi]=dict(rows[0],amplitude_index=ai,frequency_index=fi,reused=False,
+                        source_grid=str(folder/'grid.json'),source_raw_directory=str(self.folder))
+                    flush()
+            data['status']='complete';flush()
+        except Exception as e:
+            data['status']='cancelled' if isinstance(e,InterruptedError) else 'failed'
+            data['error']=str(e);data['interrupted_cell']=dict(amplitude_index=ai,frequency_index=fi)
+            flush();raise
+        finally:
+            self.folder=parent;self.notify=notify
+            self.dev.inject(0,0);self.dev.hold(False)
+        return data

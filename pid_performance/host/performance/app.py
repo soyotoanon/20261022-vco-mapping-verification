@@ -192,6 +192,7 @@ class App:
         self.colorbar=draw_map(self.fig,self.b,data,self.map_metric.get()=='残余基频 / %')
         n=len(data['rows']);total=len(data['frequencies_Hz'])*len(data['amplitudes_DAC_codes'])
         self.bw_text=f'二维图：{n}/{total} 点；各幅度带宽见白色菱形'
+        if data.get('reused_points'):self.bw_text+=f"；复用 {data['reused_points']} 点"
         self.result.set(self.rms_text+'     |     '+self.bw_text);self.canvas.draw_idle()
 
     def hover_grid(self,event):
@@ -206,6 +207,7 @@ class App:
         def fmt(value):return '未测/不可用' if value is None else f'{value:.4g}'
         text=prefix+f" · 抑制比 {fmt(r.get('db'))} dB · 输入 {fmt(r.get('open_modulation_percent'))}% · 残余基频峰值 {fmt(r.get('closed_residual_percent'))}%"
         if not r['valid']:text+=' · '+r['reason']
+        if r.get('reused'):text+=' · 复用原测量'
         bw=d['bandwidths_Hz'][i]
         text+=f' · 本行带宽 {fmt(bw)} Hz'
         self.cell_text.set(text)

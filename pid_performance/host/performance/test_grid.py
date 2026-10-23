@@ -48,4 +48,22 @@ class GridTests(unittest.TestCase):
             self.assertEqual(len(d['rows']),3);self.assertEqual(d['bandwidths_Hz'],[None]*3)
             self.assertTrue(all(r['closed_residual_percent'] is None for r in d['rows']))
 
+    def test_extension_reuses_cells_without_recapturing_them(self):
+        dev=SimulatedDevice();dev.snapshot={hex(i):0 for i in range(64)}
+        with tempfile.TemporaryDirectory() as tmp:
+            first=Measurement(dev,Path(tmp)/'old',Immediate(),lambda *a:None,lambda *a:True)
+            first.grid(1,100,16,64,2,2)
+            source=next((Path(tmp)/'old').glob('grid_*/grid.json'))
+            before=dev.seq
+            second=Measurement(dev,Path(tmp)/'new',Immediate(),lambda *a:None,lambda *a:True)
+            data=second.extend_grid(source,1,100,16,64,3,3)
+            self.assertEqual(data['reused_points'],4)
+            self.assertEqual(len(data['rows']),9)
+            self.assertEqual(dev.seq-before,10) # only five new cells, two captures each
+            self.assertEqual(sum(r['reused'] for r in data['rows']),4)
+            self.assertTrue(all(Path(r['source_raw_directory']).exists() for r in data['rows']))
+            dev.snapshot['0x18']=123
+            with self.assertRaisesRegex(ValueError,'配置改变'):
+                second.extend_grid(source,1,100,16,64,3,3)
+
 if __name__=='__main__':unittest.main()
