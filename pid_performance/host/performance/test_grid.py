@@ -14,6 +14,8 @@ class GridTests(unittest.TestCase):
             m.dark_mean=8192
             d=m.grid(20,1000,32,64,4,2)
             self.assertEqual(d['status'],'complete');self.assertEqual(len(d['rows']),8)
+            self.assertEqual(d['amplitudes_Vpp'],[.0418112,.0836224])
+            self.assertAlmostEqual(d['rows'][0]['amplitude_Vpp'],.0418112)
             self.assertTrue(all(b is not None for b in d['bandwidths_Hz']))
             db,pct=matrices(d);self.assertEqual(db.shape,(2,4))
             self.assertTrue(np.isfinite(pct).all())

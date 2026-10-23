@@ -1,5 +1,6 @@
 """Discrete measured-cell plot. Missing values never interpolated into colors."""
 import numpy as np
+from voltage import codes_to_vpp
 from matplotlib.colors import Normalize,LogNorm
 
 
@@ -45,10 +46,10 @@ def draw_map(fig,ax,data,percent=False):
         c=data['interrupted_cell'];ax.text(c['frequency_index'],c['amplitude_index'],'×',ha='center',va='center')
     stride=max(1,int(np.ceil(nf/16)));ticks=list(range(0,nf,stride))
     ax.set_xticks(ticks,[f'{f[i]:.3g}' for i in ticks],fontsize=8)
-    ax.set_yticks(range(na),[str(a) for a in data['amplitudes_DAC_codes']],fontsize=8)
+    ax.set_yticks(range(na),[f'{codes_to_vpp(a):.4g}' for a in data['amplitudes_DAC_codes']],fontsize=8)
     ax.set_xticks(np.arange(-.5,nf,1),minor=True);ax.set_yticks(np.arange(-.5,na,1),minor=True)
     ax.grid(which='minor',color='white',linewidth=.5);ax.tick_params(which='minor',length=0)
-    ax.set_xlabel('频率 / Hz（离散对数频点）');ax.set_ylabel('扰动峰值 / DAC码')
+    ax.set_xlabel('频率 / Hz（离散对数频点）');ax.set_ylabel('控制端扰动 / Vpp（标定换算）')
     label='闭环残余基频峰值 / %' if percent else '闭环/开环振幅 / dB'
     ax.set_title('④ 频率 × 幅度 · 黑线：−3 dB等值线；◇：该行首个可靠上穿点',loc='left',fontsize=10)
     if percent and not np.isfinite(values).any():

@@ -1,5 +1,6 @@
 import csv,json,time
 from dataclasses import asdict
+from voltage import codes_to_vpp,CALIBRATION
 from pathlib import Path
 import numpy as np
 from analysis import spectrum,relative_density,band_rms,tone,rejection,crossing,cic_response
@@ -31,7 +32,7 @@ class Measurement:
         self.stage='';self.dark_preview=[];self.dark_mean=None
         self.folder.mkdir(parents=True,exist_ok=True)
         save_json(self.folder/'session.json',dict(registers=dev.snapshot,raw_sample_rate_Hz=dev.raw_fs,
-            detector='in-loop feedback ADC',created=time.strftime('%Y-%m-%dT%H:%M:%S%z'),
+            voltage_calibration=CALIBRATION,detector='in-loop feedback ADC',created=time.strftime('%Y-%m-%dT%H:%M:%S%z'),
             noise_floor='dark PD + ADC; excludes illuminated shot noise',
             spectral_method='one-sided Welch, Hann, 2048 samples, 50% overlap, per-segment DC removal',
             decimator='CIC3; passband correction; retained frequencies <= output_fs/10',
@@ -159,7 +160,7 @@ class Measurement:
             value=rejection(ta,tb)
             # Drift relative to optical DC uses dark estimate when available;
             # otherwise report code means for review instead of guessing offset.
-            row=dict(frequency_Hz=freq,requested_Hz=float(requested),amplitude_DAC_codes=amp,
+            row=dict(frequency_Hz=freq,requested_Hz=float(requested),amplitude_DAC_codes=amp,amplitude_Vpp=codes_to_vpp(amp),
                 open_amplitude_ADC_codes=ta['amplitude'],closed_amplitude_ADC_codes=tb['amplitude'],
                 open_mean_ADC_codes=ta['mean'],closed_mean_ADC_codes=tb['mean'],
                 open_sigma=ta['sigma'],closed_sigma=tb['sigma'],**value)
@@ -191,13 +192,14 @@ class Measurement:
         if not (0<low<=high<=self.dev.raw_fs/20) or (freq_points==1)!=(low==high):
             raise ValueError('单频扫幅请将频率上下限设为相同值、频率点数设为 1')
         if not (1<=amp_low<=amp_high<=16383) or (amp_points==1)!=(amp_low==amp_high):
-            raise ValueError('幅度范围为 1–16383；单幅时上下限相同、幅度点数为 1')
+            raise ValueError('扰动电压范围无效；单幅时上下限相同、幅度点数为 1')
         amps=np.unique(np.rint(np.geomspace(amp_low,amp_high,amp_points)).astype(int))
-        if len(amps)!=amp_points:raise ValueError('幅度范围太窄，取整后频点重复，请减少幅度点数')
+        if len(amps)!=amp_points:raise ValueError('幅度范围小于电压分辨率，取整后重复，请减少幅度点数')
         frequencies=np.geomspace(low,high,freq_points)
         parent=self.folder;notify=self.notify
         folder=parent/('grid_'+str(time.time_ns()));folder.mkdir()
         data=dict(frequencies_Hz=frequencies.tolist(),amplitudes_DAC_codes=amps.tolist(),
+                  amplitudes_Vpp=[codes_to_vpp(a) for a in amps],voltage_calibration=CALIBRATION,
                   rows=[],bandwidths_Hz=[None]*len(amps),status='running',run_directory=folder.name,
                   dark_mean_ADC_codes=self.dark_mean,
                   definition='20 log10(closed/open fundamental amplitude); percent = peak tone / dark-subtracted DC',
@@ -223,7 +225,7 @@ class Measurement:
                                               for i,r in enumerate(payload['rows'])]
                         data['bandwidths_Hz'][ai]=payload['bandwidth_Hz'];flush()
                     elif kind=='status':
-                        notify(kind,f'二维扫描 {len(completed)+row_count+1}/{len(amps)*freq_points} · {int(amp)} DAC码 · '+payload)
+                        notify(kind,f'二维扫描 {len(completed)+row_count+1}/{len(amps)*freq_points} · {codes_to_vpp(amp):.5g} Vpp · '+payload)
                     else:notify(kind,payload)
                 self.notify=relay
                 self.sweep(low,high,int(amp),freq_points)

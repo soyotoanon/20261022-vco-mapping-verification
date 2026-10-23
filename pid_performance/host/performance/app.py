@@ -16,6 +16,7 @@ sys.path.insert(0,str(BASE.parent/'vendor'))
 from device import Device
 from measurement import Measurement
 from heatmap import draw_map
+from voltage import vpp_to_codes,codes_to_vpp
 
 matplotlib.rcParams['font.sans-serif']=['Microsoft YaHei','SimHei','DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus']=False
@@ -55,15 +56,15 @@ class App:
         ttk.Label(top,text='光强反馈 · 性能测量',font=('Microsoft YaHei',19,'bold')).pack(anchor='w')
         ttk.Label(top,text='PD → ADC   ·   环内测量   ·   原始数据自动保存',foreground='#526174').pack(anchor='w',pady=(4,12))
         row=ttk.Frame(top);row.pack(fill='x')
-        self.port=tk.StringVar(value='COM9');self.low=tk.StringVar(value='0.5');self.high=tk.StringVar(value='100000');self.amp=tk.StringVar(value='128')
-        for label,var,width in [('串口',self.port,7),('频段 / Hz',self.low,9),('至',self.high,9),('扫频扰动峰值 / DAC码',self.amp,6)]:
+        self.port=tk.StringVar(value='COM9');self.low=tk.StringVar(value='0.5');self.high=tk.StringVar(value='100000');self.amp=tk.StringVar(value='0.084')
+        for label,var,width in [('串口',self.port,7),('频段 / Hz',self.low,9),('至',self.high,9),('扫频扰动 / Vpp',self.amp,6)]:
             ttk.Label(row,text=label).pack(side='left',padx=(0,5))
             ttk.Entry(row,textvariable=var,width=width).pack(side='left',padx=(0,12))
         self.connect=ttk.Button(row,text='连接',command=self.connect_device);self.connect.pack(side='left')
         gridrow=ttk.Frame(top);gridrow.pack(fill='x',pady=(8,0))
-        self.amp_low=tk.StringVar(value='16');self.amp_high=tk.StringVar(value='256')
+        self.amp_low=tk.StringVar(value='0.02');self.amp_high=tk.StringVar(value='0.32')
         self.freq_points=tk.StringVar(value='12');self.amp_points=tk.StringVar(value='5')
-        for label,var in [('扫幅 / DAC码',self.amp_low),('至',self.amp_high),('频率点数',self.freq_points),('幅度点数',self.amp_points)]:
+        for label,var in [('扫幅 / Vpp',self.amp_low),('至',self.amp_high),('频率点数',self.freq_points),('幅度点数',self.amp_points)]:
             ttk.Label(gridrow,text=label).pack(side='left',padx=(0,5))
             ttk.Entry(gridrow,textvariable=var,width=6).pack(side='left',padx=(0,10))
         self.map_metric=tk.StringVar(value='抑制比 / dB')
@@ -87,7 +88,7 @@ class App:
         self.canvas.get_tk_widget().pack(fill='both',expand=True,padx=14)
         self.canvas.widget.bind('<Motion>',self.hover_grid)
         self.reset_axes()
-        ttk.Label(root,text='噪声底＝遮光后的 PD＋ADC 噪声；不包含有光散粒噪声。环内结果不能替代独立 PD 的实际稳光验证。',
+        ttk.Label(root,text='Vpp 为 DAC→VCO 控制端按既有标定换算的设定峰峰值。环内结果不能替代独立 PD 的实际稳光验证。',
                   padding=(20,10),foreground='#607080').pack(fill='x')
         self.rms_text='RMS：—';self.bw_text='3 dB 噪声抑制带宽：—'
         root.protocol('WM_DELETE_WINDOW',self.close);root.after(100,self.poll)
@@ -163,7 +164,7 @@ class App:
         except Exception as e:messagebox.showerror('RMS',str(e))
 
     def sweep(self):
-        try:low,high=self.settings();amp=int(self.amp.get());points=int(self.freq_points.get())
+        try:low,high=self.settings();amp=vpp_to_codes(self.amp.get());points=int(self.freq_points.get())
         except Exception as e:messagebox.showerror('扫频设置',str(e));return
         def work():
             self.measure.sweep(low,high,amp,points)
@@ -173,7 +174,7 @@ class App:
     def grid(self):
         try:
             low,high=self.settings(True)
-            amin,amax=int(self.amp_low.get()),int(self.amp_high.get())
+            amin,amax=vpp_to_codes(self.amp_low.get()),vpp_to_codes(self.amp_high.get())
             nf,na=int(self.freq_points.get()),int(self.amp_points.get())
         except Exception as e:messagebox.showerror('二维扫描设置',str(e));return
         def work():
@@ -199,7 +200,7 @@ class App:
         d=self.map_data;nf=len(d['frequencies_Hz']);na=len(d['amplitudes_DAC_codes'])
         if not (-.5<x<nf-.5 and -.5<y<na-.5):return
         j,i=int(round(x)),int(round(y))
-        prefix=f"{d['frequencies_Hz'][j]:.4g} Hz · {d['amplitudes_DAC_codes'][i]} DAC码"
+        prefix=f"{d['frequencies_Hz'][j]:.4g} Hz · {codes_to_vpp(d['amplitudes_DAC_codes'][i]):.5g} Vpp"
         r=next((r for r in d['rows'] if r['amplitude_index']==i and r['frequency_index']==j),None)
         if r is None:self.cell_text.set(prefix+' · 未完成测量');return
         def fmt(value):return '未测/不可用' if value is None else f'{value:.4g}'
