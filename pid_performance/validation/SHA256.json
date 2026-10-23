@@ -31,9 +31,11 @@
   "bitstream\\light_lock_top.mcs": "7db31f0a7c071eaf240f4ba74a366ba1103812ef57c6948e6f6caa88faf121c9",
   "bitstream\\light_lock_top.prm": "42bd92fa20c2700bac0b71eb4cc6274e818e0cf08fb15f8f3619bf115c07baf8",
   "host\\performance\\analysis.py": "3418c09bc74143d0506b87d8245529d2381c2f5b160ef117519d138d0e7a9151",
-  "host\\performance\\app.py": "6c2948a83f0f26f24b0cd88547f1084e279d2009751176c9e44eb0c6840fc97d",
+  "host\\performance\\app.py": "fae1f62ebc3b2539632583f721288fd6c1507d9e3203bd226b5ed88d4108c65d",
   "host\\performance\\device.py": "eea025b8fab0a858fd9b156ee65f66436341d0ea7af0fd2da2a9dca7a0982644",
-  "host\\performance\\measurement.py": "18068f6904c7a106cabf1c5ace077d9349c8308797d92349e1de7f4ebdc13b84",
+  "host\\performance\\heatmap.py": "30da43e99a2656a62e98e5a95607c0761a5d05a17d423b7002d37f6cb32c2bfc",
+  "host\\performance\\measurement.py": "7cb02ce785cc06295543a9fc13db4a211a583c761094de331e7805569a34a951",
   "host\\performance\\test_analysis.py": "36b2db6e0176a203720fa2783ab4cf64d65742094f548f6ae16184e1bfbc41a4",
+  "host\\performance\\test_grid.py": "437ae14550b1b36823ba84dd5f50b496f9d95ef7e801fa926148a8d29fb38392",
   "host\\performance\\test_measurement.py": "bdfaa4be48e4fd89a6bfc63caf5b876d5d04f6df2269883d933690e5b3d51f12"
 }

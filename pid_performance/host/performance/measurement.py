@@ -2,7 +2,7 @@ import csv,json,time
 from dataclasses import asdict
 from pathlib import Path
 import numpy as np
-from analysis import spectrum,relative_density,band_rms,tone,rejection,crossing
+from analysis import spectrum,relative_density,band_rms,tone,rejection,crossing,cic_response
 
 
 def save_json(path,obj):
@@ -28,7 +28,7 @@ class Measurement:
     def __init__(self,dev,folder,cancel,notify,prompt):
         self.dev=dev;self.folder=Path(folder);self.cancel=cancel
         self.notify=notify;self.prompt=prompt;self.counter=0
-        self.stage='';self.dark_preview=[]
+        self.stage='';self.dark_preview=[];self.dark_mean=None
         self.folder.mkdir(parents=True,exist_ok=True)
         save_json(self.folder/'session.json',dict(registers=dev.snapshot,raw_sample_rate_Hz=dev.raw_fs,
             detector='in-loop feedback ADC',created=time.strftime('%Y-%m-%dT%H:%M:%S%z'),
@@ -61,7 +61,7 @@ class Measurement:
     def noise(self,low,high):
         self.dev.require_closed_loop();self.dev.inject(0,0)
         logs=rates(self.dev.raw_fs,low,high)
-        dark={};pairs=[];self.dark_preview=[]
+        dark={};pairs=[];self.dark_preview=[];self.dark_mean=None
         self.dev.hold(True)
         if not self.prompt('测量噪声底','反馈已保持当前输出。请完全遮住 PD 入光，保持接线和 PD 增益不变，再点确定。\n请持续遮光约 2 分钟，直到弹出“恢复光照”；期间会逐段显示暗场曲线。'):
             raise InterruptedError('已取消噪声底测量')
@@ -103,6 +103,7 @@ class Measurement:
         result['requested_band']=[low,high]
         save_json(self.folder/'spectra_metadata.json',dict(requested_band_Hz=[low,high],
             bands=[{k:v for k,v in p.items() if k not in ['f','open','closed','floor']} for p in pairs]))
+        self.dark_mean=float(np.median([v.mean for v in dark.values()]))
         return result
 
     @staticmethod
@@ -129,7 +130,7 @@ class Measurement:
 
     def sweep(self,low,high,amp,points=10):
         self.dev.require_closed_loop()
-        if not 0<low<high<=self.dev.raw_fs/20:raise ValueError('扫频范围超出原始采样率的 1/20')
+        if not (0<low<=high<=self.dev.raw_fs/20 and 1<=points<=64 and (low<high or points==1)):raise ValueError('扫频范围超出原始采样率的 1/20')
         if not 1<=amp<=16383:raise ValueError('扰动幅度应为正整数 DAC 码')
         rows=[]
         self.stage=''
@@ -152,6 +153,9 @@ class Measurement:
             if self.cancel.wait(max(.5,10/freq)):raise InterruptedError()
             b,mb=self.record('tone_closed',log)
             ta=tone(a,ma['fs'],freq);tb=tone(b,mb['fs'],freq)
+            for fitted,meta in [(ta,ma),(tb,mb)]:
+                gain=float(cic_response(freq,meta['raw_fs'],meta['decimation']))
+                fitted['amplitude']/=gain;fitted['sigma']/=gain
             value=rejection(ta,tb)
             # Drift relative to optical DC uses dark estimate when available;
             # otherwise report code means for review instead of guessing offset.
@@ -159,6 +163,13 @@ class Measurement:
                 open_amplitude_ADC_codes=ta['amplitude'],closed_amplitude_ADC_codes=tb['amplitude'],
                 open_mean_ADC_codes=ta['mean'],closed_mean_ADC_codes=tb['mean'],
                 open_sigma=ta['sigma'],closed_sigma=tb['sigma'],**value)
+            row['open_modulation_percent']=None
+            row['closed_residual_percent']=None
+            if self.dark_mean is not None:
+                dc_open=ta['mean']-self.dark_mean;dc_closed=tb['mean']-self.dark_mean
+                if min(dc_open,dc_closed)>1:
+                    row['open_modulation_percent']=100*ta['amplitude']/dc_open
+                    row['closed_residual_percent']=100*tb['amplitude']/dc_closed
             rows.append(row)
             with (self.folder/'rejection.csv').open('w',newline='',encoding='utf-8-sig') as f:
                 writer=csv.DictWriter(f,fieldnames=list(row));writer.writeheader();writer.writerows(rows)
@@ -171,3 +182,59 @@ class Measurement:
             status='crossing measured; coarse logarithmic interpolation' if bw else 'no reliable crossing in measured range',
             points=points))
         return rows,bw
+
+
+    def grid(self,low,high,amp_low,amp_high,freq_points=12,amp_points=5):
+        """Measured cells only. Separate run folder; flush after every point."""
+        if not (1<=freq_points<=64 and 1<=amp_points<=16):
+            raise ValueError('频率点数 1–64；幅度点数 1–16')
+        if not (0<low<=high<=self.dev.raw_fs/20) or (freq_points==1)!=(low==high):
+            raise ValueError('单频扫幅请将频率上下限设为相同值、频率点数设为 1')
+        if not (1<=amp_low<=amp_high<=16383) or (amp_points==1)!=(amp_low==amp_high):
+            raise ValueError('幅度范围为 1–16383；单幅时上下限相同、幅度点数为 1')
+        amps=np.unique(np.rint(np.geomspace(amp_low,amp_high,amp_points)).astype(int))
+        if len(amps)!=amp_points:raise ValueError('幅度范围太窄，取整后频点重复，请减少幅度点数')
+        frequencies=np.geomspace(low,high,freq_points)
+        parent=self.folder;notify=self.notify
+        folder=parent/('grid_'+str(time.time_ns()));folder.mkdir()
+        data=dict(frequencies_Hz=frequencies.tolist(),amplitudes_DAC_codes=amps.tolist(),
+                  rows=[],bandwidths_Hz=[None]*len(amps),status='running',run_directory=folder.name,
+                  dark_mean_ADC_codes=self.dark_mean,
+                  definition='20 log10(closed/open fundamental amplitude); percent = peak tone / dark-subtracted DC',
+                  note='In-loop sequential measurements; no assumption of a unique monotone -3 dB boundary')
+        def flush():
+            save_json(folder/'grid.json',data)
+            if data['rows']:
+                keys=sorted(set().union(*(r.keys() for r in data['rows'])))
+                with (folder/'grid.csv').open('w',newline='',encoding='utf-8-sig') as f:
+                    writer=csv.DictWriter(f,fieldnames=keys);writer.writeheader();writer.writerows(data['rows'])
+            notify('grid',json.loads(json.dumps(data)))
+        flush()
+        completed=[];ai=0;row_count=0
+        try:
+            for ai,amp in enumerate(amps):
+                row_count=0
+                self.folder=folder/f'amp_{int(amp)}';self.folder.mkdir()
+                def relay(kind,payload):
+                    nonlocal row_count
+                    if kind=='sweep':
+                        row_count=len(payload['rows'])
+                        data['rows']=completed+[dict(r,amplitude_index=ai,frequency_index=i)
+                                              for i,r in enumerate(payload['rows'])]
+                        data['bandwidths_Hz'][ai]=payload['bandwidth_Hz'];flush()
+                    elif kind=='status':
+                        notify(kind,f'二维扫描 {len(completed)+row_count+1}/{len(amps)*freq_points} · {int(amp)} DAC码 · '+payload)
+                    else:notify(kind,payload)
+                self.notify=relay
+                self.sweep(low,high,int(amp),freq_points)
+                completed=list(data['rows'])
+            data['status']='complete';flush()
+        except Exception as e:
+            data['status']='cancelled' if isinstance(e,InterruptedError) else 'failed'
+            data['error']=str(e)
+            data['interrupted_cell']=dict(amplitude_index=ai,frequency_index=row_count)
+            flush();raise
+        finally:
+            self.folder=parent;self.notify=notify
+            self.dev.inject(0,0);self.dev.hold(False)
+        return data

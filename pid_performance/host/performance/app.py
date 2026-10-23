@@ -15,6 +15,7 @@ BASE=Path(__file__).resolve().parent
 sys.path.insert(0,str(BASE.parent/'vendor'))
 from device import Device
 from measurement import Measurement
+from heatmap import draw_map
 
 matplotlib.rcParams['font.sans-serif']=['Microsoft YaHei','SimHei','DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus']=False
@@ -46,6 +47,7 @@ class App:
         self.root=root;root.title('光强反馈 · 性能测量');root.geometry('1120x820');root.minsize(960,720)
         self.events=queue.Queue();self.cancel=threading.Event();self.busy=False
         self.dev=None;self.measure=None;self.spectra=None;self.folder=None;self.closing=False
+        self.map_data=None;self.colorbar=None;self.map_visible=False
         style=ttk.Style();style.theme_use('clam')
         style.configure('TButton',padding=(10,7));style.configure('TFrame',background='#f5f7fa')
         style.configure('TLabel',background='#f5f7fa');root.configure(background='#f5f7fa')
@@ -58,9 +60,18 @@ class App:
             ttk.Label(row,text=label).pack(side='left',padx=(0,5))
             ttk.Entry(row,textvariable=var,width=width).pack(side='left',padx=(0,12))
         self.connect=ttk.Button(row,text='连接',command=self.connect_device);self.connect.pack(side='left')
+        gridrow=ttk.Frame(top);gridrow.pack(fill='x',pady=(8,0))
+        self.amp_low=tk.StringVar(value='16');self.amp_high=tk.StringVar(value='256')
+        self.freq_points=tk.StringVar(value='12');self.amp_points=tk.StringVar(value='5')
+        for label,var in [('扫幅 / DAC码',self.amp_low),('至',self.amp_high),('频率点数',self.freq_points),('幅度点数',self.amp_points)]:
+            ttk.Label(gridrow,text=label).pack(side='left',padx=(0,5))
+            ttk.Entry(gridrow,textvariable=var,width=6).pack(side='left',padx=(0,10))
+        self.map_metric=tk.StringVar(value='抑制比 / dB')
+        selector=ttk.Combobox(gridrow,textvariable=self.map_metric,values=['抑制比 / dB','残余基频 / %'],state='readonly',width=15)
+        selector.pack(side='left');selector.bind('<<ComboboxSelected>>',lambda e:self.draw_grid(self.map_data) if self.map_data else None)
         actions=ttk.Frame(top);actions.pack(fill='x',pady=(13,0))
         self.buttons=[]
-        for label,cmd in [('① 测噪声谱',self.noise),('② 计算 RMS',self.rms),('③ 测抑制带宽',self.sweep)]:
+        for label,cmd in [('① 测噪声谱',self.noise),('② 计算 RMS',self.rms),('③ 单幅扫频',self.sweep),('④ 频率×幅度',self.grid)]:
             b=ttk.Button(actions,text=label,command=cmd,state='disabled');b.pack(side='left',padx=(0,8));self.buttons.append(b)
         self.stop=ttk.Button(actions,text='停止',command=self.cancel.set,state='disabled');self.stop.pack(side='left')
         ttk.Button(actions,text='保存图 / 查看数据',command=self.save).pack(side='right')
@@ -68,10 +79,13 @@ class App:
         ttk.Label(top,textvariable=self.status,wraplength=1050,foreground='#345a80').pack(anchor='w',pady=(12,0))
         self.result=tk.StringVar(value='RMS：—     |     3 dB 噪声抑制带宽：—')
         ttk.Label(top,textvariable=self.result,font=('Microsoft YaHei',12,'bold')).pack(anchor='w',pady=(9,0))
+        self.cell_text=tk.StringVar(value='二维图：灰色未测，× 无效；鼠标移到格子查看数值。默认 12×5＝60 点，通常需数十分钟。')
+        ttk.Label(top,textvariable=self.cell_text,wraplength=1080,foreground='#526174').pack(anchor='w',pady=(5,0))
         self.fig=Figure(figsize=(10.5,5.2),dpi=100,layout='constrained',facecolor='#f5f7fa')
         self.a,self.b=self.fig.subplots(2,1)
         self.canvas=PlotCanvas(self.fig,master=root);self.canvas.get_tk_widget().configure(height=450)
         self.canvas.get_tk_widget().pack(fill='both',expand=True,padx=14)
+        self.canvas.widget.bind('<Motion>',self.hover_grid)
         self.reset_axes()
         ttk.Label(root,text='噪声底＝遮光后的 PD＋ADC 噪声；不包含有光散粒噪声。环内结果不能替代独立 PD 的实际稳光验证。',
                   padding=(20,10),foreground='#607080').pack(fill='x')
@@ -117,9 +131,9 @@ class App:
             b.configure(state='normal' if available and not self.busy else 'disabled')
         self.stop.configure(state='normal' if self.busy else 'disabled')
 
-    def settings(self):
+    def settings(self,allow_equal=False):
         low,high=float(self.low.get()),float(self.high.get())
-        if not 0<low<high:raise ValueError('频率下限必须小于上限且为正')
+        if not (0<low<=high if allow_equal else 0<low<high):raise ValueError('频率范围无效；单频扫幅允许上下限相同')
         return low,high
 
     def connect_device(self):
@@ -149,12 +163,51 @@ class App:
         except Exception as e:messagebox.showerror('RMS',str(e))
 
     def sweep(self):
-        try:low,high=self.settings();amp=int(self.amp.get())
+        try:low,high=self.settings();amp=int(self.amp.get());points=int(self.freq_points.get())
         except Exception as e:messagebox.showerror('扫频设置',str(e));return
         def work():
-            self.measure.sweep(low,high,amp)
-            self.notify('status','10 个对数间隔频点测量完成，原始数据和抑制曲线已保存。')
+            self.measure.sweep(low,high,amp,points)
+            self.notify('status',f'{points} 个对数间隔频点测量完成，原始数据和抑制曲线已保存。')
         self.worker(work)
+
+    def grid(self):
+        try:
+            low,high=self.settings(True)
+            amin,amax=int(self.amp_low.get()),int(self.amp_high.get())
+            nf,na=int(self.freq_points.get()),int(self.amp_points.get())
+        except Exception as e:messagebox.showerror('二维扫描设置',str(e));return
+        def work():
+            self.measure.grid(low,high,amin,amax,nf,na)
+            self.notify('status',f'二维扫描完成：{nf}×{na} 个点；数据逐点保存于 grid_ 子目录。')
+        self.worker(work)
+
+    def clear_colorbar(self):
+        if self.colorbar is not None:
+            self.colorbar.remove();self.colorbar=None
+
+    def draw_grid(self,data):
+        if data is None:return
+        self.map_data=data;self.map_visible=True;self.clear_colorbar()
+        self.colorbar=draw_map(self.fig,self.b,data,self.map_metric.get()=='残余基频 / %')
+        n=len(data['rows']);total=len(data['frequencies_Hz'])*len(data['amplitudes_DAC_codes'])
+        self.bw_text=f'二维图：{n}/{total} 点；各幅度带宽见白色菱形'
+        self.result.set(self.rms_text+'     |     '+self.bw_text);self.canvas.draw_idle()
+
+    def hover_grid(self,event):
+        if not self.map_visible or self.map_data is None:return
+        x,y=self.b.transData.inverted().transform((event.x,self.canvas.widget.winfo_height()-event.y))
+        d=self.map_data;nf=len(d['frequencies_Hz']);na=len(d['amplitudes_DAC_codes'])
+        if not (-.5<x<nf-.5 and -.5<y<na-.5):return
+        j,i=int(round(x)),int(round(y))
+        prefix=f"{d['frequencies_Hz'][j]:.4g} Hz · {d['amplitudes_DAC_codes'][i]} DAC码"
+        r=next((r for r in d['rows'] if r['amplitude_index']==i and r['frequency_index']==j),None)
+        if r is None:self.cell_text.set(prefix+' · 未完成测量');return
+        def fmt(value):return '未测/不可用' if value is None else f'{value:.4g}'
+        text=prefix+f" · 抑制比 {fmt(r.get('db'))} dB · 输入 {fmt(r.get('open_modulation_percent'))}% · 残余基频峰值 {fmt(r.get('closed_residual_percent'))}%"
+        if not r['valid']:text+=' · '+r['reason']
+        bw=d['bandwidths_Hz'][i]
+        text+=f' · 本行带宽 {fmt(bw)} Hz'
+        self.cell_text.set(text)
 
     def draw_spectrum(self,data):
         self.a.clear();self.a.set_xscale('log');self.a.grid(alpha=.2)
@@ -173,6 +226,7 @@ class App:
         self.canvas.draw_idle()
 
     def draw_sweep(self,data):
+        self.clear_colorbar();self.map_visible=False
         rows=data['rows'];f=[r['frequency_Hz'] for r in rows];db=[r['db'] if r['valid'] else np.nan for r in rows]
         self.b.clear();self.b.set_xscale('log');self.b.grid(alpha=.2)
         self.b.axhline(-3,color='#7c8798',ls='--',label='−3 dB');self.b.axhline(0,color='#bbc3cf',lw=.8)
@@ -191,6 +245,7 @@ class App:
                 elif kind=='spectrum':self.draw_spectrum(data)
                 elif kind=='dark_spectrum':self.draw_dark(data)
                 elif kind=='sweep':self.draw_sweep(data)
+                elif kind=='grid':self.draw_grid(data)
                 elif kind=='done':
                     self.busy=False;self.update_buttons()
                     if self.closing:self.close();return
@@ -206,8 +261,11 @@ class App:
 
     def save(self):
         if not self.folder:self.status.set('尚无测量数据。');return
-        self.fig.savefig(self.folder/'results.png',dpi=180)
-        self.fig.savefig(self.folder/'results.pdf')
+        name='results'
+        if self.map_visible and self.map_data:
+            name=self.map_data.get('run_directory','grid')+('_residual_percent' if self.map_metric.get()=='残余基频 / %' else '_rejection_dB')
+        self.fig.savefig(self.folder/(name+'.png'),dpi=180)
+        self.fig.savefig(self.folder/(name+'.pdf'))
         os.startfile(self.folder)
 
     def close(self):
