@@ -54,7 +54,7 @@ class App:
         ttk.Label(top,text='PD → ADC   ·   环内测量   ·   原始数据自动保存',foreground='#526174').pack(anchor='w',pady=(4,12))
         row=ttk.Frame(top);row.pack(fill='x')
         self.port=tk.StringVar(value='COM9');self.low=tk.StringVar(value='0.5');self.high=tk.StringVar(value='100000');self.amp=tk.StringVar(value='128')
-        for label,var,width in [('串口',self.port,7),('频段 / Hz',self.low,9),('至',self.high,9),('扰动 / DAC码',self.amp,6)]:
+        for label,var,width in [('串口',self.port,7),('频段 / Hz',self.low,9),('至',self.high,9),('扫频扰动峰值 / DAC码',self.amp,6)]:
             ttk.Label(row,text=label).pack(side='left',padx=(0,5))
             ttk.Entry(row,textvariable=var,width=width).pack(side='left',padx=(0,12))
         self.connect=ttk.Button(row,text='连接',command=self.connect_device);self.connect.pack(side='left')
@@ -163,6 +163,15 @@ class App:
         self.a.set_ylabel('RIN / dBc/Hz');self.a.set_xlabel('频率 / Hz');self.a.legend(loc='best',fontsize=9)
         self.a.set_title('① 相对强度噪声谱 · 环内',loc='left',fontsize=11);self.canvas.draw_idle()
 
+    def draw_dark(self,bands):
+        self.a.clear();self.a.set_xscale('log');self.a.grid(alpha=.2)
+        for band in bands:
+            self.a.plot(band['f'],band['density'],color='#c28a3c',lw=1)
+        self.a.set_yscale('log');self.a.set_xlabel('频率 / Hz')
+        self.a.set_ylabel('暗场功率谱 / ADC码²/Hz')
+        self.a.set_title(f'① 暗场预览 · 已读回 {len(bands)} 段 · 尚未换算 RIN',loc='left',fontsize=11)
+        self.canvas.draw_idle()
+
     def draw_sweep(self,data):
         rows=data['rows'];f=[r['frequency_Hz'] for r in rows];db=[r['db'] if r['valid'] else np.nan for r in rows]
         self.b.clear();self.b.set_xscale('log');self.b.grid(alpha=.2)
@@ -180,13 +189,17 @@ class App:
                 if kind=='status':self.status.set(data)
                 elif kind=='error':self.status.set('未完成：'+data)
                 elif kind=='spectrum':self.draw_spectrum(data)
+                elif kind=='dark_spectrum':self.draw_dark(data)
                 elif kind=='sweep':self.draw_sweep(data)
                 elif kind=='done':
                     self.busy=False;self.update_buttons()
                     if self.closing:self.close();return
                 elif kind=='prompt':
                     title,text,event,answer=data
+                    self.status.set(text)
+                    self.root.lift();self.root.attributes('-topmost',True)
                     answer.append(False if self.cancel.is_set() else messagebox.askokcancel(title,text,parent=self.root))
+                    self.root.attributes('-topmost',False)
                     event.set()
         except queue.Empty:pass
         self.root.after(100,self.poll)

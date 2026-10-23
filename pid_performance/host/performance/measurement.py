@@ -28,6 +28,7 @@ class Measurement:
     def __init__(self,dev,folder,cancel,notify,prompt):
         self.dev=dev;self.folder=Path(folder);self.cancel=cancel
         self.notify=notify;self.prompt=prompt;self.counter=0
+        self.stage='';self.dark_preview=[]
         self.folder.mkdir(parents=True,exist_ok=True)
         save_json(self.folder/'session.json',dict(registers=dev.snapshot,raw_sample_rate_Hz=dev.raw_fs,
             detector='in-loop feedback ADC',created=time.strftime('%Y-%m-%dT%H:%M:%S%z'),
@@ -37,12 +38,20 @@ class Measurement:
             limitation='Analog anti-alias response and independent out-of-loop optical noise not verified'))
 
     def record(self,label,log):
-        self.notify('status',label+'：定时采集/读取缓存')
-        y,meta=self.dev.capture(log,self.cancel,lambda s:self.notify('status',label+'：'+s))
+        prefix=self.stage or label
+        self.notify('status',prefix+'：定时采集/读取缓存')
+        y,meta=self.dev.capture(log,self.cancel,lambda s:self.notify('status',prefix+'：'+s))
         self.counter+=1
         name=f'{self.counter:03d}_{label}'
         np.savez_compressed(self.folder/(name+'.npz'),adc_codes=y,**meta)
         save_json(self.folder/(name+'.json'),dict(label=label,**meta))
+        if label=='dark':
+            sd=spectrum(y,meta['fs'],meta['raw_fs'],meta['decimation'])
+            self.dark_preview.append(dict(f=sd.f,density=sd.density,mean=sd.mean,log=log))
+            self.notify('dark_spectrum',list(self.dark_preview))
+            blocks=np.array_split(y,8)
+            if np.ptp([b.mean() for b in blocks])>max(10,10*np.median([b.std() for b in blocks])):
+                raise RuntimeError('暗场记录中出现明显变化：请保持 PD 完全遮光直到“恢复光照”提示。该记录已保存，但不用于 RIN。')
         # Always save the original record, including invalid ones.
         if np.any(y<=1) or np.any(y>=16382):raise RuntimeError('ADC 数据接近量程边缘，已保存原始记录，停止测量')
         if label!='dark' and meta['status']&12:
@@ -52,22 +61,28 @@ class Measurement:
     def noise(self,low,high):
         self.dev.require_closed_loop();self.dev.inject(0,0)
         logs=rates(self.dev.raw_fs,low,high)
-        dark={};pairs=[]
+        dark={};pairs=[];self.dark_preview=[]
         self.dev.hold(True)
-        if not self.prompt('测量噪声底','反馈已保持当前输出。请只遮住 PD 入光，保持接线和 PD 增益不变，然后继续。'):
+        if not self.prompt('测量噪声底','反馈已保持当前输出。请完全遮住 PD 入光，保持接线和 PD 增益不变，再点确定。\n请持续遮光约 2 分钟，直到弹出“恢复光照”；期间会逐段显示暗场曲线。'):
             raise InterruptedError('已取消噪声底测量')
-        for log in logs:
+        for i,log in enumerate(logs):
+            self.stage=f'暗场 {i+1}/{len(logs)} · 请保持遮光'
             y,m=self.record('dark',log)
             dark[log]=spectrum(y,m['fs'],m['raw_fs'],m['decimation'])
+            if np.ptp([s.mean for s in dark.values()])>10:
+                raise RuntimeError('各段暗场平均值相差超过 10 ADC 码，请检查是否中途透光；本次不生成 RIN。')
+        self.notify('status','暗场已完成：请恢复 PD 入光，并在“恢复光照”提示框中点确定。')
         if not self.prompt('恢复光照','噪声底已保存。请恢复 PD 入光，保持原光路与增益，然后继续。'):
             raise InterruptedError('等待恢复光照；未生成开闭环对比')
         self.dev.clear_light_loss();self.dev.hold(False)
         if self.cancel.wait(1):raise InterruptedError()
         self.dev.require_closed_loop()
-        for log in logs:
+        for i,log in enumerate(logs):
+            self.stage=f'开环 {i+1}/{len(logs)} · 请保持入光'
             self.dev.hold(True)
             if self.cancel.wait(.5):raise InterruptedError()
             a,ma=self.record('open',log)
+            self.stage=f'闭环 {i+1}/{len(logs)} · 请保持入光'
             self.dev.hold(False)
             if self.cancel.wait(1):raise InterruptedError()
             b,mb=self.record('closed',log)
@@ -117,6 +132,7 @@ class Measurement:
         if not 0<low<high<=self.dev.raw_fs/20:raise ValueError('扫频范围超出原始采样率的 1/20')
         if not 1<=amp<=16383:raise ValueError('扰动幅度应为正整数 DAC 码')
         rows=[]
+        self.stage=''
         for requested in np.geomspace(low,high,points):
             self.dev.inject(0,0)
             if self.cancel.wait(.5):raise InterruptedError()

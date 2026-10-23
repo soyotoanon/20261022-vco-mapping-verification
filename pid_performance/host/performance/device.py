@@ -85,11 +85,16 @@ class Device:
         if self.read(0x35)!=decim_log:raise RuntimeError('采集抽取设置未生效')
         before=self.read(0x3d);self.write(0x34,1)
         fs=self.raw_fs/2**decim_log
+        started=time.monotonic();last_progress=-1
         deadline=time.monotonic()+8198/fs+5
         while True:
             if cancel.is_set():self.write(0x34,2);raise InterruptedError('测量已停止')
             state=self.read(0x36)
             if state&2:break
+            elapsed=int(time.monotonic()-started)
+            if elapsed!=last_progress:
+                last_progress=elapsed
+                progress(f'采集中：已过 {elapsed} 秒，预计还需 {max(0,8198/fs-elapsed):.0f} 秒')
             if time.monotonic()>deadline:raise TimeoutError('FPGA 定时缓存采集未完成')
             cancel.wait(.05)
         seq=self.read(0x3d)

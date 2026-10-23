@@ -43,5 +43,23 @@ class FlowTest(unittest.TestCase):
             self.assertTrue((Path(folder)/'RMS.json').exists())
             self.assertGreaterEqual(len(list(Path(folder).glob('*.npz'))),29)
             self.assertEqual(events.count('sweep'),10)
+            self.assertEqual(events.count('dark_spectrum'),5)
+            self.assertLess(events.index('dark_spectrum'),events.index('spectrum'))
+
+    def test_dark_light_transition_is_shown_saved_and_rejected(self):
+        class TransitionDevice(SimulatedDevice):
+            def capture(self,log,cancel,progress):
+                y,m=super().capture(log,cancel,progress)
+                y[len(y)//2:]+=1000
+                return y,m
+        dev=TransitionDevice();events=[]
+        def prompt(title,text):dev.dark=True;return True
+        with tempfile.TemporaryDirectory() as folder:
+            run=Measurement(dev,folder,Immediate(),lambda k,d:events.append(k),prompt)
+            with self.assertRaisesRegex(RuntimeError,'暗场记录中出现明显变化'):
+                run.noise(.5,100000)
+            self.assertIn('dark_spectrum',events)
+            self.assertEqual(len(list(Path(folder).glob('*dark.npz'))),1)
+            self.assertFalse((Path(folder)/'RIN.csv').exists())
 
 if __name__=='__main__':unittest.main()
