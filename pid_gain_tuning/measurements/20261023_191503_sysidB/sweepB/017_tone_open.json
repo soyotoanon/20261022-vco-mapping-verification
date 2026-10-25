@@ -1,0 +1,9 @@
+{
+  "label": "tone_open",
+  "fs": 12207.03125,
+  "raw_fs": 12500000.0,
+  "decimation": 1024,
+  "sequence": 428,
+  "status": 2,
+  "encoding": "unsigned ADC codes with 2 fractional bits"
+}

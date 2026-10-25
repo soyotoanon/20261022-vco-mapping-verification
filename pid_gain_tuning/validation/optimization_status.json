@@ -1,0 +1,116 @@
+{
+  "status": "failed",
+  "target_bandwidth_Hz": 10000,
+  "stages": [
+    {
+      "ki_shift": 1,
+      "Kp": 4,
+      "kp_register": 33792,
+      "ADC_std": 2.646143386663593,
+      "row": {
+        "frequency_Hz": 10000.000474974513,
+        "requested_Hz": 10000.0,
+        "amplitude_DAC_codes": 64,
+        "amplitude_Vpp": 0.0836224,
+        "open_amplitude_ADC_codes": 2.2103539979185425,
+        "closed_amplitude_ADC_codes": 1.5933927312506972,
+        "open_mean_ADC_codes": 9197.865950552454,
+        "closed_mean_ADC_codes": 9198.874307224778,
+        "open_sigma": 0.012684213343738966,
+        "closed_sigma": 0.009689112932749756,
+        "db": -2.842780035218863,
+        "valid": true,
+        "reason": "",
+        "open_modulation_percent": null,
+        "closed_residual_percent": null
+      }
+    },
+    {
+      "ki_shift": 1,
+      "Kp": 8,
+      "kp_register": 34816,
+      "ADC_std": 2.6368543999711087,
+      "row": {
+        "frequency_Hz": 10000.000474974513,
+        "requested_Hz": 10000.0,
+        "amplitude_DAC_codes": 64,
+        "amplitude_Vpp": 0.0836224,
+        "open_amplitude_ADC_codes": 2.2102577324707537,
+        "closed_amplitude_ADC_codes": 1.4771867896001225,
+        "open_mean_ADC_codes": 9200.698194050314,
+        "closed_mean_ADC_codes": 9198.874462572283,
+        "open_sigma": 0.012806406587368684,
+        "closed_sigma": 0.010665463678374487,
+        "db": -3.500150069520176,
+        "valid": true,
+        "reason": "",
+        "open_modulation_percent": null,
+        "closed_residual_percent": null
+      }
+    },
+    {
+      "ki_shift": 1,
+      "Kp": 16,
+      "kp_register": 36864,
+      "ADC_std": 2.665424927048741,
+      "row": {
+        "frequency_Hz": 10000.000474974513,
+        "requested_Hz": 10000.0,
+        "amplitude_DAC_codes": 64,
+        "amplitude_Vpp": 0.0836224,
+        "open_amplitude_ADC_codes": 2.2401641484658583,
+        "closed_amplitude_ADC_codes": 1.2771948360736172,
+        "open_mean_ADC_codes": 9198.3323517411,
+        "closed_mean_ADC_codes": 9198.874490367074,
+        "open_sigma": 0.0121502586564714,
+        "closed_sigma": 0.009511844472413369,
+        "db": -4.8804537714447385,
+        "valid": true,
+        "reason": "",
+        "open_modulation_percent": null,
+        "closed_residual_percent": null
+      }
+    },
+    {
+      "ki_shift": 1,
+      "Kp": 24,
+      "kp_register": 38912,
+      "ADC_std": 2.70544549809201,
+      "row": {
+        "frequency_Hz": 10000.000474974513,
+        "requested_Hz": 10000.0,
+        "amplitude_DAC_codes": 64,
+        "amplitude_Vpp": 0.0836224,
+        "open_amplitude_ADC_codes": 2.2169877281401065,
+        "closed_amplitude_ADC_codes": 1.1219455764807025,
+        "open_mean_ADC_codes": 9197.763992030552,
+        "closed_mean_ADC_codes": 9198.87391227512,
+        "open_sigma": 0.013714533161316732,
+        "closed_sigma": 0.009608616551311438,
+        "db": -5.9158299706925845,
+        "valid": true,
+        "reason": "",
+        "open_modulation_percent": null,
+        "closed_residual_percent": null
+      }
+    }
+  ],
+  "message": "tone_closed：读取缓存 94%",
+  "directory": "D:\\codex\\2026-10-23\\wo\\outputs\\pid_gain_tuning\\measurements\\20261023_163151",
+  "original_gains": {
+    "0x1a": 8,
+    "0x1b": 12
+  },
+  "baseline_ADC_std": 2.6269178650485636,
+  "restored_original": true,
+  "final_registers": {
+    "0x0": 1,
+    "0x1": 2,
+    "0x1a": 8,
+    "0x1b": 12,
+    "0x30": 0,
+    "0x31": 0,
+    "0x2e": 1
+  },
+  "error": "验证扫描出现超过6dB放大，恢复原参数"
+}

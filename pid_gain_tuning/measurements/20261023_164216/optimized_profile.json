@@ -1,0 +1,18 @@
+{
+  "target_ADC_code": 9199,
+  "Kp": 12,
+  "Ki_per_sample": 0.5,
+  "sample_rate_Hz": 5000000.0,
+  "registers": {
+    "0x0": 1,
+    "0x1": 2,
+    "0x1a": 35840,
+    "0x1b": 1,
+    "0x30": 0,
+    "0x31": 0,
+    "0x2e": 1
+  },
+  "bandwidth_Hz": 13347.83570982399,
+  "amplitude_Vpp": 0.0836224,
+  "flash_updated": false
+}

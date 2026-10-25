@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\host\performance\app.py", line 116, in run
+    try:func()
+        ^^^^^^
+  File "D:\codex\2026-10-23\wo\work\optimize_gain_firmware.py", line 83, in optimize
+    if rows[0]["valid"] and rows[0]["db"]>6:raise RuntimeError("验证扫描出现超过6dB放大，恢复原参数")
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: 验证扫描出现超过6dB放大，恢复原参数
+

@@ -1,0 +1,33 @@
+{
+  "id": "C5",
+  "Kp": 16,
+  "Ki_per_sample": 0.399993896484375,
+  "sample_rate_Hz": 5000000.0,
+  "firmware_id": "A624",
+  "tested_registers": {
+    "0x11": 4,
+    "0x18": 9199,
+    "0x19": 6860,
+    "0x1a": 36864,
+    "0x1b": 45875,
+    "0x1c": 0,
+    "0x1d": 128,
+    "0x1e": 1400,
+    "0x1f": 15000,
+    "0x20": 1,
+    "0x2d": 0
+  },
+  "amplitude_Vpp": 0.0836224,
+  "bandwidth_Hz": 13111.58909260761,
+  "rejection_10kHz_dB": -4.049625542790831,
+  "largest_measured_dB": 4.661007828844507,
+  "largest_measured_at_Hz": 74999.99948777258,
+  "sweep_points_completed": 14,
+  "run_status": "fully_measured",
+  "stop_reason": null,
+  "raw_directory": "D:\\codex\\2026-10-23\\wo\\outputs\\pid_gain_tuning\\measurements\\20261023_165315\\C5",
+  "sweep_file": "D:\\codex\\2026-10-23\\wo\\outputs\\pid_gain_tuning\\measurements\\20261023_165315\\C5\\sweep.json",
+  "run_status_file": "D:\\codex\\2026-10-23\\wo\\outputs\\pid_gain_tuning\\validation\\fast_screen_status.json",
+  "disposition": "retained_candidate_not_final_acceptance",
+  "note": "High-frequency-first screening; bandwidth reported only after complete verification. Optimization starting point C4, not original low-bandwidth gains."
+}

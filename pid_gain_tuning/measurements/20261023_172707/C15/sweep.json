@@ -1,0 +1,39 @@
+{
+  "rows": [
+    {
+      "frequency_Hz": 10000.000474974513,
+      "requested_Hz": 10000.0,
+      "amplitude_DAC_codes": 64,
+      "amplitude_Vpp": 0.0836224,
+      "open_amplitude_ADC_codes": 1.5725994473194762,
+      "closed_amplitude_ADC_codes": 1.1756177217484622,
+      "open_mean_ADC_codes": 9199.897862995216,
+      "closed_mean_ADC_codes": 9198.875335301911,
+      "open_sigma": 0.010403924607115747,
+      "closed_sigma": 0.007775632246590268,
+      "db": -2.5270398903058924,
+      "valid": true,
+      "reason": "",
+      "open_modulation_percent": null,
+      "closed_residual_percent": null
+    },
+    {
+      "frequency_Hz": 50000.00004656613,
+      "requested_Hz": 50000.0,
+      "amplitude_DAC_codes": 64,
+      "amplitude_Vpp": 0.0836224,
+      "open_amplitude_ADC_codes": 1.4822412720154718,
+      "closed_amplitude_ADC_codes": 2.170332646331745,
+      "open_mean_ADC_codes": 9197.910381891332,
+      "closed_mean_ADC_codes": 9198.875061648547,
+      "open_sigma": 0.01401390473839155,
+      "closed_sigma": 0.014223903583784342,
+      "db": 3.3121480283340015,
+      "valid": true,
+      "reason": "",
+      "open_modulation_percent": null,
+      "closed_residual_percent": null
+    }
+  ],
+  "bandwidth_Hz": null
+}

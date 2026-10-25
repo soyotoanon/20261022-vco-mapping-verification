@@ -1,0 +1,2 @@
+﻿frequency_Hz,requested_Hz,amplitude_DAC_codes,amplitude_Vpp,open_amplitude_ADC_codes,closed_amplitude_ADC_codes,open_mean_ADC_codes,closed_mean_ADC_codes,open_sigma,closed_sigma,db,valid,reason,open_modulation_percent,closed_residual_percent
+10000.000474974513,10000.0,64,0.0836224,2.2102577324707537,1.4771867896001225,9200.698194050314,9198.874462572283,0.012806406587368684,0.010665463678374487,-3.500150069520176,True,,,

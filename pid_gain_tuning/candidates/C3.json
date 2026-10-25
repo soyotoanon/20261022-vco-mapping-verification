@@ -1,0 +1,33 @@
+{
+  "id": "C3",
+  "Kp": 24,
+  "Ki_per_sample": 0.5,
+  "sample_rate_Hz": 5000000,
+  "firmware_id": "A624",
+  "tested_registers": {
+    "0x11": 4,
+    "0x18": 9199,
+    "0x19": 6860,
+    "0x1a": 38912,
+    "0x1b": 1,
+    "0x1c": 0,
+    "0x1d": 128,
+    "0x1e": 1400,
+    "0x1f": 15000,
+    "0x20": 1,
+    "0x2d": 0
+  },
+  "amplitude_Vpp": 0.0836224,
+  "bandwidth_Hz": 22551.78415917513,
+  "rejection_10kHz_dB": -6.0899743281455345,
+  "largest_measured_dB": 8.467938218111765,
+  "largest_measured_at_Hz": 74999.99948777258,
+  "sweep_points_completed": 13,
+  "run_status": "failed",
+  "stop_reason": "验证扫描出现超过6dB放大，恢复原参数",
+  "raw_directory": "D:\\codex\\2026-10-23\\wo\\outputs\\pid_gain_tuning\\measurements\\20261023_163151",
+  "sweep_file": "D:\\codex\\2026-10-23\\wo\\outputs\\pid_gain_tuning\\measurements\\20261023_163151\\optimized_sweep.json",
+  "run_status_file": "D:\\codex\\2026-10-23\\wo\\outputs\\pid_gain_tuning\\validation\\optimization_status.json",
+  "disposition": "retained_candidate_not_final_acceptance",
+  "note": "Retain as optimization starting point. A protective rollback does not invalidate the saved measurements or discard these gains. Maximum is among measured points only."
+}

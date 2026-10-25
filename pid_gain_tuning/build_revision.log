@@ -1,0 +1,1486 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Oct 23 16:28:11 2026
+# Process ID: 53492
+# Current directory: D:/codex/2026-10-23/wo
+# Command line: vivado.exe -mode batch -notrace -source D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\scripts\build.tcl -log D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\build_revision.log -journal D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\build_revision.jou
+# Log file: D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/build_revision.log
+# Journal file: D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\build_revision.jou
+# Running On: DESKTOP-QDCLV1M, OS: Windows, CPU Frequency: 3793 MHz, CPU Physical cores: 16, Host memory: 16348 MB
+#-----------------------------------------------------------
+CRITICAL WARNING: [Common 17-741] No write access right to the local Tcl store at 'C'. XilinxTclStore is reverted to the installation area. If you want to use local Tcl Store, please change the access right and relaunch Vivado.
+source {D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\scripts\build.tcl} -notrace
+read_verilog: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 470.348 ; gain = 184.820
+Command: synth_design -top light_lock_top -part xc7a35tfgg484-2 -include_dirs D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tfgg484-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 52392
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1303.293 ; gain = 438.020
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'light_lock_top' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/light_lock_top.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ctrl_tick' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/ctrl_tick.v:13]
+	Parameter CNT_W bound to: 25 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ctrl_tick' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/ctrl_tick.v:13]
+INFO: [Synth 8-6157] synthesizing module 'adc_dac_core' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/adc_dac_core.v:14]
+	Parameter HALF_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'adc_drv' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/adc_drv.v:17]
+	Parameter HALF_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adc_drv' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/adc_drv.v:17]
+INFO: [Synth 8-6157] synthesizing module 'dac_drv' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/dac_drv.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'dac_drv' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/dac_drv.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'adc_dac_core' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/adc_dac_core.v:14]
+INFO: [Synth 8-6157] synthesizing module 'power_display_piecewise' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/power_display_piecewise.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'power_display_piecewise' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/power_display_piecewise.v:3]
+INFO: [Synth 8-6157] synthesizing module 'step_gen' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/step_gen.v:43]
+INFO: [Synth 8-226] default block is never used [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/sin_lut.vh:23]
+INFO: [Synth 8-6157] synthesizing module 'recip_pow2' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/recip_pow2.v:33]
+	Parameter K bound to: 24 - type: integer 
+	Parameter QW bound to: 25 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'recip_pow2' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/recip_pow2.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'step_gen' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/step_gen.v:43]
+INFO: [Synth 8-6157] synthesizing module 'performance_probe' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/performance_probe.v:5]
+INFO: [Synth 8-226] default block is never used [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/performance_probe.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'performance_probe' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/performance_probe.v:5]
+INFO: [Synth 8-6157] synthesizing module 'pi_ctrl' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/pi_ctrl.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'pi_ctrl' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/pi_ctrl.v:6]
+INFO: [Synth 8-6157] synthesizing module 'monitor' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/monitor.v:15]
+	Parameter LOSS_LOG2 bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'monitor' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/monitor.v:15]
+INFO: [Synth 8-6157] synthesizing module 'adc_stats' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/adc_stats.v:34]
+	Parameter LOG2_W bound to: 5 - type: integer 
+	Parameter SUM_W bound to: 46 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adc_stats' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/adc_stats.v:34]
+INFO: [Synth 8-6157] synthesizing module 'dac_sig_gen' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/dac_sig_gen.v:18]
+INFO: [Synth 8-226] default block is never used [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/sin_lut.vh:23]
+INFO: [Synth 8-6157] synthesizing module 'recip_pow2__parameterized0' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/recip_pow2.v:33]
+	Parameter K bound to: 20 - type: integer 
+	Parameter QW bound to: 21 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'recip_pow2__parameterized0' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/recip_pow2.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'dac_sig_gen' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/dac_sig_gen.v:18]
+INFO: [Synth 8-6157] synthesizing module 'sweep_gen' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/sweep_gen.v:29]
+	Parameter HOLD_W bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sweep_gen' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/sweep_gen.v:29]
+INFO: [Synth 8-6157] synthesizing module 'uart_proto' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/uart_proto.v:23]
+	Parameter DIV_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/uart_rx.v:9]
+	Parameter DIV_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/uart_rx.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'uart_proto' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/uart_proto.v:23]
+INFO: [Synth 8-6157] synthesizing module 'log_arbiter' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/log_arbiter.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'log_arbiter' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/log_arbiter.v:14]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/uart_tx.v:8]
+	Parameter DIV_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/uart_tx.v:8]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/reg_file.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/reg_file.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'light_lock_top' (0#1) [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/rtl/light_lock_top.v:14]
+WARNING: [Synth 8-7129] Port light_th[15] in module monitor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port light_th[14] in module monitor is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1453.117 ; gain = 587.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1453.117 ; gain = 587.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1453.117 ; gain = 587.844
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1453.117 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/constraints/davinci_adc_pi_loop.xdc]
+Finished Parsing XDC File [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/constraints/davinci_adc_pi_loop.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/constraints/davinci_adc_pi_loop.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/light_lock_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/light_lock_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1556.824 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1556.824 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.824 ; gain = 691.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tfgg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.824 ; gain = 691.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.824 ; gain = 691.551
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'phase_reg' in module 'dac_drv'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                               00
+                 iSTATE0 |                             0010 |                               01
+                 iSTATE1 |                             0100 |                               10
+                 iSTATE2 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'phase_reg' using encoding 'one-hot' in module 'dac_drv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                               00 |                              000
+                 S_START |                               01 |                              001
+                  S_DATA |                               10 |                              010
+                  S_STOP |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                               00 |                              000
+                 S_START |                               01 |                              001
+                  S_DATA |                               10 |                              010
+                  S_STOP |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_tx'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1556.824 ; gain = 691.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   92 Bit       Adders := 1     
+	   2 Input   64 Bit       Adders := 2     
+	   3 Input   64 Bit       Adders := 2     
+	   4 Input   64 Bit       Adders := 1     
+	   5 Input   64 Bit       Adders := 1     
+	   2 Input   46 Bit       Adders := 3     
+	   3 Input   34 Bit       Adders := 1     
+	   2 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 10    
+	   3 Input   32 Bit       Adders := 2     
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input   26 Bit       Adders := 1     
+	   2 Input   25 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 3     
+	   3 Input   24 Bit       Adders := 2     
+	   2 Input   20 Bit       Adders := 1     
+	   3 Input   18 Bit       Adders := 2     
+	   2 Input   18 Bit       Adders := 1     
+	   3 Input   17 Bit       Adders := 2     
+	   2 Input   17 Bit       Adders := 3     
+	   2 Input   16 Bit       Adders := 12    
+	   3 Input   15 Bit       Adders := 1     
+	   2 Input   14 Bit       Adders := 3     
+	   3 Input   14 Bit       Adders := 5     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 7     
+	   2 Input    3 Bit       Adders := 5     
++---XORs : 
+	   2 Input     14 Bit         XORs := 1     
++---Registers : 
+	               92 Bit    Registers := 1     
+	               64 Bit    Registers := 6     
+	               46 Bit    Registers := 4     
+	               44 Bit    Registers := 1     
+	               34 Bit    Registers := 1     
+	               32 Bit    Registers := 10    
+	               31 Bit    Registers := 1     
+	               25 Bit    Registers := 2     
+	               24 Bit    Registers := 5     
+	               21 Bit    Registers := 1     
+	               20 Bit    Registers := 2     
+	               17 Bit    Registers := 3     
+	               16 Bit    Registers := 80    
+	               15 Bit    Registers := 1     
+	               14 Bit    Registers := 13    
+	               13 Bit    Registers := 1     
+	                8 Bit    Registers := 10    
+	                6 Bit    Registers := 4     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 44    
++---Multipliers : 
+	              32x32  Multipliers := 1     
+	              15x32  Multipliers := 2     
++---RAMs : 
+	             128K Bit	(8192 X 16 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   92 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 3     
+	   2 Input   46 Bit        Muxes := 4     
+	   2 Input   44 Bit        Muxes := 1     
+	   2 Input   37 Bit        Muxes := 1     
+	   2 Input   34 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 45    
+	   8 Input   32 Bit        Muxes := 1     
+	   2 Input   26 Bit        Muxes := 1     
+	   2 Input   25 Bit        Muxes := 3     
+	   2 Input   24 Bit        Muxes := 9     
+	   2 Input   21 Bit        Muxes := 2     
+	   2 Input   20 Bit        Muxes := 5     
+	   2 Input   17 Bit        Muxes := 5     
+	   2 Input   16 Bit        Muxes := 23    
+	   4 Input   16 Bit        Muxes := 3     
+	   5 Input   16 Bit        Muxes := 3     
+	   2 Input   15 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 34    
+	   7 Input   14 Bit        Muxes := 1     
+	   4 Input   14 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 6     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 10    
+	   2 Input    5 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 8     
+	   2 Input    3 Bit        Muxes := 4     
+	   4 Input    3 Bit        Muxes := 2     
+	   6 Input    3 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 3     
+	   4 Input    2 Bit        Muxes := 4     
+	   6 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 117   
+	   4 Input    1 Bit        Muxes := 16    
+	   3 Input    1 Bit        Muxes := 13    
+	   7 Input    1 Bit        Muxes := 63    
+	   5 Input    1 Bit        Muxes := 2     
+	   6 Input    1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP product0, operation Mode is: A*B.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP product0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP product0, operation Mode is: A*B.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP product0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP sine_prod, operation Mode is: A*B.
+DSP Report: operator sine_prod is absorbed into DSP sine_prod.
+DSP Report: Generating DSP tri_prod, operation Mode is: (D+(A:0x3ffff800))*B.
+DSP Report: operator tri_prod is absorbed into DSP tri_prod.
+DSP Report: operator tri_full is absorbed into DSP tri_prod.
+DSP Report: Generating DSP product0, operation Mode is: A*B2.
+DSP Report: register product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP i_product, operation Mode is: A*B.
+DSP Report: operator i_product is absorbed into DSP i_product.
+DSP Report: operator i_product is absorbed into DSP i_product.
+DSP Report: Generating DSP i_product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator i_product is absorbed into DSP i_product.
+DSP Report: operator i_product is absorbed into DSP i_product.
+DSP Report: Generating DSP p_product, operation Mode is: A*B.
+DSP Report: operator p_product is absorbed into DSP p_product.
+DSP Report: operator p_product is absorbed into DSP p_product.
+DSP Report: Generating DSP p_product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p_product is absorbed into DSP p_product.
+DSP Report: operator p_product is absorbed into DSP p_product.
+DSP Report: Generating DSP sq_ext, operation Mode is: A*B.
+DSP Report: operator sq_ext is absorbed into DSP sq_ext.
+DSP Report: Generating DSP var_dif, operation Mode is: C-A*B.
+DSP Report: operator var_dif is absorbed into DSP var_dif.
+DSP Report: operator mean_sq is absorbed into DSP var_dif.
+DSP Report: Generating DSP sine_mul, operation Mode is: A*B.
+DSP Report: operator sine_mul is absorbed into DSP sine_mul.
+DSP Report: Generating DSP sig_out2, operation Mode is: A*B.
+DSP Report: operator sig_out2 is absorbed into DSP sig_out2.
+DSP Report: Generating DSP tri_mul32, operation Mode is: A*B.
+DSP Report: operator tri_mul32 is absorbed into DSP tri_mul32.
+WARNING: [Synth 8-7129] Port light_th[15] in module monitor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port light_th[14] in module monitor is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (product_reg[47]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[46]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[45]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[44]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[43]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[42]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[41]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[40]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[39]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[38]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[37]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[36]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[35]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[34]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[33]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[32]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[31]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[30]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[29]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[28]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[27]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[26]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[25]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[24]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[23]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[22]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[21]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[20]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[19]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[18]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[17]) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[47]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[46]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[45]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[44]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[43]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[42]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[41]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[40]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[39]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[38]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[37]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[36]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[35]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[34]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[33]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[32]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[31]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[30]__0) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[47]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[46]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[45]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[44]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[43]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[42]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[41]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[40]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[39]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[38]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[37]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[36]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[35]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[34]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[33]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[32]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[31]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[30]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[29]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[28]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[27]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[26]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[25]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[24]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[23]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[22]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[21]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[20]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[19]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[18]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[17]__1) is unused and will be removed from module power_display_piecewise.
+WARNING: [Synth 8-3332] Sequential element (product_reg[47]__2) is unused and will be removed from module power_display_piecewise.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1556.824 ; gain = 691.551
+---------------------------------------------------------------------------------
+ Sort Area is  i_product_c : 0 0 : 2759 5418 : Used 1 time 0
+ Sort Area is  i_product_c : 0 1 : 2659 5418 : Used 1 time 0
+ Sort Area is  p_product_f : 0 0 : 2759 5418 : Used 1 time 0
+ Sort Area is  p_product_f : 0 1 : 2659 5418 : Used 1 time 0
+ Sort Area is  product0_0 : 0 0 : 2701 4864 : Used 1 time 0
+ Sort Area is  product0_0 : 0 1 : 2163 4864 : Used 1 time 0
+ Sort Area is  product0_3 : 0 0 : 2158 4014 : Used 1 time 0
+ Sort Area is  product0_3 : 0 1 : 1856 4014 : Used 1 time 0
+ Sort Area is  sine_prod_8 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is  var_dif_12 : 0 0 : 1893 1893 : Used 1 time 0
+ Sort Area is  product0_a : 0 0 : 1818 1818 : Used 1 time 0
+ Sort Area is  sine_mul_16 : 0 0 : 1803 1803 : Used 1 time 0
+ Sort Area is  tri_prod_6 : 0 0 : 1700 1700 : Used 1 time 0
+ Sort Area is  sig_out2_15 : 0 0 : 1466 1466 : Used 1 time 0
+ Sort Area is  sq_ext_10 : 0 0 : 1466 1466 : Used 1 time 0
+ Sort Area is  tri_mul32_14 : 0 0 : 1466 1466 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------------------+--------------------+---------------+----------------+
+|Module Name             | RTL Object         | Depth x Width | Implemented As | 
++------------------------+--------------------+---------------+----------------+
+|step_gen                | qsin               | 64x15         | LUT            | 
+|dac_sig_gen             | qsin0              | 64x15         | LUT            | 
+|power_display_piecewise | delta1             | 32x29         | LUT            | 
+|power_display_piecewise | slope_q20_return0  | 32x28         | LUT            | 
+|power_display_piecewise | node_units_return0 | 32x20         | LUT            | 
+|step_gen                | qsin               | 64x15         | LUT            | 
+|performance_probe       | sel                | 256x16        | Block RAM      | 
+|dac_sig_gen             | qsin0              | 64x15         | LUT            | 
++------------------------+--------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++--------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name   | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|u_performance | memory_reg | 8 K x 16(READ_FIRST)   | W |   | 8 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
++--------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name             | DSP Mapping          | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|power_display_piecewise | A*B                  | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|power_display_piecewise | (PCIN>>17)+A*B       | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|power_display_piecewise | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|power_display_piecewise | (PCIN>>17)+A*B       | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|step_gen                | A*B                  | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|step_gen                | (D+(A:0x3ffff800))*B | 12     | 16     | -      | 14     | 30     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|performance_probe       | A*B2                 | 16     | 15     | -      | -      | 31     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pi_ctrl                 | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pi_ctrl                 | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pi_ctrl                 | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pi_ctrl                 | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|adc_stats               | A*B                  | 14     | 14     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|adc_stats               | C-A*B                | 15     | 15     | 32     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|dac_sig_gen             | A*B                  | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dac_sig_gen             | A*B                  | 14     | 14     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dac_sig_gen             | A*B                  | 14     | 14     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1556.824 ; gain = 691.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1616.086 ; gain = 750.812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++--------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name   | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|u_performance | memory_reg | 8 K x 16(READ_FIRST)   | W |   | 8 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
++--------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance u_performance/memory_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_performance/memory_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_performance/memory_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_performance/memory_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_performance/sel (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1671.211 ; gain = 805.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 1685.242 ; gain = 819.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1685.242 ; gain = 819.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1685.242 ; gain = 819.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1685.242 ; gain = 819.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1685.242 ; gain = 819.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1685.242 ; gain = 819.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name             | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|step_gen                | A*B             | 30     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|step_gen                | D+A*B           | 30     | 15     | -      | 12     | 30     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|performance_probe       | (A*B')'         | 30     | 14     | -      | -      | 31     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|pi_ctrl                 | A*B             | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pi_ctrl                 | PCIN>>17+A*B    | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pi_ctrl                 | A*B             | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pi_ctrl                 | PCIN>>17+A*B    | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|power_display_piecewise | A*B             | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|power_display_piecewise | (PCIN>>17+A*B)' | 30     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|power_display_piecewise | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|power_display_piecewise | (PCIN>>17+A*B)' | 0      | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dac_sig_gen             | A*B             | 30     | 14     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dac_sig_gen             | A*B             | 14     | 14     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dac_sig_gen             | A*B             | 14     | 14     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|adc_stats               | A*B             | 14     | 14     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|adc_stats               | C-(A*B)         | 15     | 15     | 32     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |   669|
+|3     |DSP48E1  |    16|
+|8     |LUT1     |   342|
+|9     |LUT2     |   943|
+|10    |LUT3     |  1174|
+|11    |LUT4     |  1189|
+|12    |LUT5     |   872|
+|13    |LUT6     |  1693|
+|14    |MUXF7    |    76|
+|15    |MUXF8    |     8|
+|16    |RAMB18E1 |     1|
+|17    |RAMB36E1 |     4|
+|18    |FDCE     |  1922|
+|19    |FDPE     |   109|
+|20    |FDRE     |   604|
+|21    |FDSE     |     1|
+|22    |IBUF     |    18|
+|23    |OBUF     |    53|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1685.242 ; gain = 819.969
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 84 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:00:53 . Memory (MB): peak = 1685.242 ; gain = 716.262
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1685.242 ; gain = 819.969
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1697.324 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 774 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/constraints/davinci_adc_pi_loop.xdc]
+Finished Parsing XDC File [D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/constraints/davinci_adc_pi_loop.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1701.027 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: da766c78
+INFO: [Common 17-83] Releasing license: Synthesis
+69 Infos, 86 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 1701.027 ; gain = 1230.680
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1701.027 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1701.027 ; gain = 0.000
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1701.027 ; gain = 0.000
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1701.027 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1701.027 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1701.027 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1701.027 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/build/post_synth.dcp' has been generated.
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.975 . Memory (MB): peak = 1701.027 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 2c4e6bbf2
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1723.168 ; gain = 22.141
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 2c4e6bbf2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 2c4e6bbf2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 1 Initialization | Checksum: 2c4e6bbf2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 2c4e6bbf2
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.192 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 2c4e6bbf2
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.211 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 2c4e6bbf2
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.212 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1566] Pulled 38 inverters resulting in an inversion of 94 pins
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 256f16b12
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.352 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Retarget | Checksum: 256f16b12
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 38 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 2b468173c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.413 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Constant propagation | Checksum: 2b468173c
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 23c3dda2c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.520 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Sweep | Checksum: 23c3dda2c
+INFO: [Opt 31-389] Phase Sweep created 28 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 23c3dda2c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.590 . Memory (MB): peak = 2063.367 ; gain = 0.000
+BUFG optimization | Checksum: 23c3dda2c
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 23c3dda2c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.597 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Shift Register Optimization | Checksum: 23c3dda2c
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 284e79bbc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.623 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Post Processing Netlist | Checksum: 284e79bbc
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 2097b3acc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.797 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 2097b3acc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.813 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 9 Finalization | Checksum: 2097b3acc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.814 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |              38  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |              28  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 2097b3acc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.815 . Memory (MB): peak = 2063.367 ; gain = 0.000
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 5 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 4 newly gated: 0 Total Ports: 10
+Ending PowerOpt Patch Enables Task | Checksum: 1b377e47c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 1b377e47c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1b377e47c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1eced3e85
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2063.367 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+95 Infos, 86 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2063.367 ; gain = 362.340
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 42 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 14ac24dd2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: b1aedc72
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.702 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 131e008ad
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 131e008ad
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 131e008ad
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: fa702a28
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: e7cf244f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: e7cf244f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 14137efeb
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 10 LUTNM shape to break, 207 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 4, two critical 6, total 10, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 105 nets or LUTs. Breaked 10 LUTs, combined 95 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |           10  |             95  |                   105  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |           10  |             95  |                   105  |           0  |           9  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 1b8dfdd6d
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 2.4 Global Placement Core | Checksum: 8f88056e
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 8f88056e
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: e6c54da7
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: fe1c766e
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 19e154f78
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1a61fd876
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 1d09cbb39
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1cc149962
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 1f10353cf
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 17369bcd8
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 218064b8c
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 218064b8c
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1afe08103
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.334 | TNS=-0.334 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1d0935fca
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.227 . Memory (MB): peak = 2063.367 ; gain = 0.000
+INFO: [Place 46-33] Processed net u_regs/sys_rst_n, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 1, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 1d0935fca
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.462 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1afe08103
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.512. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 116d95a04
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 116d95a04
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 116d95a04
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 116d95a04
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 116d95a04
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 11099ead7
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Ending Placer Task | Checksum: 1059665a8
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 2063.367 ; gain = 0.000
+133 Infos, 86 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 2063.367 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.747 . Memory (MB): peak = 2063.367 ; gain = 0.000
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+137 Infos, 86 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: b576f4df ConstDB: 0 ShapeSum: 501f70c9 RouteDB: 0
+Post Restoration Checksum: NetGraph: 6eb19c03 | NumContArr: 723202de | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 26635941b
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 26635941b
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 2063.367 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 26635941b
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 2063.367 ; gain = 0.000
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 1bb0f71df
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 2067.492 ; gain = 4.125
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.732  | TNS=0.000  | WHS=-0.202 | THS=-56.804|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 7740
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 7740
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 1a5c23ced
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 1a5c23ced
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 26bcdb248
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 2076.207 ; gain = 12.840
+Phase 3 Initial Routing | Checksum: 26bcdb248
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1198
+ Number of Nodes with overlaps = 194
+ Number of Nodes with overlaps = 48
+ Number of Nodes with overlaps = 24
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.185 | TNS=-0.185 | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 2a730f40f
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:18 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 333
+ Number of Nodes with overlaps = 41
+ Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.096  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 2e00ff1ed
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+Phase 4 Rip-up And Reroute | Checksum: 2e00ff1ed
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 2e00ff1ed
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 2e00ff1ed
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+Phase 5 Delay and Skew Optimization | Checksum: 2e00ff1ed
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 2d5a434c0
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.161  | TNS=0.000  | WHS=0.087  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 2d5a434c0
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+Phase 6 Post Hold Fix | Checksum: 2d5a434c0
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 2.85753 %
+  Global Horizontal Routing Utilization  = 3.39979 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 2d5a434c0
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 2d5a434c0
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 367e78efb
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:21 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.161  | TNS=0.000  | WHS=0.087  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 367e78efb
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:21 . Memory (MB): peak = 2076.207 ; gain = 12.840
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 1422d2b90
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:21 . Memory (MB): peak = 2076.207 ; gain = 12.840
+Ending Routing Task | Checksum: 1422d2b90
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:21 . Memory (MB): peak = 2076.207 ; gain = 12.840
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+150 Infos, 86 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:22 . Memory (MB): peak = 2076.207 ; gain = 12.840
+Command: report_drc -file D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/build/drc.rpt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2023.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/build/drc.rpt.
+report_drc completed successfully
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 2079.695 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.371 . Memory (MB): peak = 2079.695 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2079.695 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 2079.695 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2079.695 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2079.695 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.485 . Memory (MB): peak = 2079.695 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/build/routed.dcp' has been generated.
+FINAL_WNS=0.162
+FINAL_WHS=0.087
+Command: write_bitstream -force D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1840 rule limit reached: 20 violations have been found.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_dist/sine_prod input u_dist/sine_prod/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_dist/sine_prod input u_dist/sine_prod/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_dist/tri_prod input u_dist/tri_prod/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_performance/product0 input u_performance/product0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_pi/i_product input u_pi/i_product/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_pi/i_product input u_pi/i_product/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_pi/i_product__0 input u_pi/i_product__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_pi/i_product__0 input u_pi/i_product__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_pi/p_product input u_pi/p_product/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_pi/p_product input u_pi/p_product/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_pi/p_product__0 input u_pi/p_product__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_pi/p_product__0 input u_pi/p_product__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_power_display/product0 input u_power_display/product0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_power_display/product0 input u_power_display/product0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_power_display/product0__0 input u_power_display/product0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_power_display/product0__0 input u_power_display/product0__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_power_display/product0__1 input u_power_display/product0__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_power_display/product0__1 input u_power_display/product0__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_power_display/product0__2 input u_power_display/product0__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_sig/sig_out2 input u_sig/sig_out2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_sig/sig_out2 input u_sig/sig_out2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_sig/sine_mul input u_sig/sine_mul/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_sig/sine_mul input u_sig/sine_mul/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_sig/tri_mul32 input u_sig/tri_mul32/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_sig/tri_mul32 input u_sig/tri_mul32/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_stats/sq_ext input u_stats/sq_ext/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_stats/sq_ext input u_stats/sq_ext/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_stats/var_dif input u_stats/var_dif/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_stats/var_dif input u_stats/var_dif/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP u_stats/var_dif input u_stats/var_dif/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_dist/sine_prod output u_dist/sine_prod/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_dist/tri_prod output u_dist/tri_prod/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_pi/i_product output u_pi/i_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_pi/i_product__0 output u_pi/i_product__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_pi/p_product output u_pi/p_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_pi/p_product__0 output u_pi/p_product__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_power_display/product0 output u_power_display/product0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_power_display/product0__1 output u_power_display/product0__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_sig/sig_out2 output u_sig/sig_out2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_sig/sine_mul output u_sig/sine_mul/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_sig/tri_mul32 output u_sig/tri_mul32/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_stats/sq_ext output u_stats/sq_ext/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP u_stats/var_dif output u_stats/var_dif/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_dist/sine_prod multiplier stage u_dist/sine_prod/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_dist/tri_prod multiplier stage u_dist/tri_prod/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_performance/product0 multiplier stage u_performance/product0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_pi/i_product multiplier stage u_pi/i_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_pi/i_product__0 multiplier stage u_pi/i_product__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_pi/p_product multiplier stage u_pi/p_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_pi/p_product__0 multiplier stage u_pi/p_product__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_power_display/product0 multiplier stage u_power_display/product0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_power_display/product0__0 multiplier stage u_power_display/product0__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_power_display/product0__1 multiplier stage u_power_display/product0__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_power_display/product0__2 multiplier stage u_power_display/product0__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_sig/sig_out2 multiplier stage u_sig/sig_out2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_sig/sine_mul multiplier stage u_sig/sine_mul/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_sig/tri_mul32 multiplier stage u_sig/tri_mul32/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_stats/sq_ext multiplier stage u_stats/sq_ext/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP u_stats/var_dif multiplier stage u_stats/var_dif/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[0]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[10]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[11]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[12]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[13]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[14]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[15]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[16]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[1]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[2]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[3]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[4]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[5]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[6]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[7]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[8]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0 output is connected to registers with an asynchronous reset (u_power_display/product_reg[9]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[0]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[10]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[11]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[12]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[13]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[14]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[15]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[16]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[1]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[2]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[3]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[4]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[5]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[6]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[7]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[8]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP u_power_display/product0__1 output is connected to registers with an asynchronous reset (u_power_display/product_reg[9]__1). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_addr_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_addr_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_addr_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_addr_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_addr_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_addr_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_wdata_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_wdata_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/ENARDEN (net: u_performance/memory_reg_0_ENARDEN_cooolgate_en_sig_1) which is driven by a register (u_proto/reg_we_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/WEA[0] (net: u_performance/p_8_in) which is driven by a register (u_proto/reg_addr_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/WEA[0] (net: u_performance/p_8_in) which is driven by a register (u_proto/reg_addr_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/WEA[0] (net: u_performance/p_8_in) which is driven by a register (u_proto/reg_addr_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/WEA[0] (net: u_performance/p_8_in) which is driven by a register (u_proto/reg_addr_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/WEA[0] (net: u_performance/p_8_in) which is driven by a register (u_proto/reg_addr_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/WEA[0] (net: u_performance/p_8_in) which is driven by a register (u_proto/reg_addr_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/WEA[0] (net: u_performance/p_8_in) which is driven by a register (u_proto/reg_wdata_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_0 has an input control pin u_performance/memory_reg_0/WEA[0] (net: u_performance/p_8_in) which is driven by a register (u_proto/reg_we_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_1 has an input control pin u_performance/memory_reg_1/ENARDEN (net: u_performance/memory_reg_1_ENARDEN_cooolgate_en_sig_2) which is driven by a register (u_proto/reg_addr_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_1 has an input control pin u_performance/memory_reg_1/ENARDEN (net: u_performance/memory_reg_1_ENARDEN_cooolgate_en_sig_2) which is driven by a register (u_proto/reg_addr_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 u_performance/memory_reg_1 has an input control pin u_performance/memory_reg_1/ENARDEN (net: u_performance/memory_reg_1_ENARDEN_cooolgate_en_sig_2) which is driven by a register (u_proto/reg_wdata_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_core/u_adc/sample2_valid_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_core/u_adc/sample_valid_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_proto/reg_wdata_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_regs/mem_reg[0][0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_regs/mem_reg[0][1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_regs/mem_reg[0][2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_regs/mem_reg[0][3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_regs/mem_reg[45][0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[10] (net: u_performance/ADDRARDADDR[6]) which is driven by a register (u_regs/mem_reg[46][0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_core/u_adc/sample2_valid_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_core/u_adc/sample_valid_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_proto/reg_wdata_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_regs/mem_reg[0][0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_regs/mem_reg[0][1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_regs/mem_reg[0][2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_regs/mem_reg[0][3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_regs/mem_reg[45][0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[11] (net: u_performance/ADDRARDADDR[7]) which is driven by a register (u_regs/mem_reg[46][0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[9] (net: u_performance/ADDRARDADDR[5]) which is driven by a register (u_proto/reg_wdata_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 u_performance/sel has an input control pin u_performance/sel/ADDRARDADDR[9] (net: u_performance/ADDRARDADDR[5]) which is driven by a register (u_regs/mem_reg[0][1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 135 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 9308576 bits.
+Writing bitstream D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+168 Infos, 221 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2416.133 ; gain = 336.438
+Command: write_cfgmem -force -format mcs -size 16 -interface SPIx4 -loadbit {up 0x0 D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.bit} -file D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.mcs
+Creating config memory files...
+Creating bitstream load up from address 0x00000000
+Loading bitfile D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.bit
+Writing file D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.mcs
+Writing log file D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.prm
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x000FB153    Oct 23 16:30:23 2026    D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.bit
+168 Infos, 221 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_cfgmem completed successfully
+BUILD_PASS
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 23 16:30:25 2026...

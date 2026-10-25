@@ -1,0 +1,70 @@
+{
+  "frequencies_Hz": [
+    10000.0
+  ],
+  "amplitudes_DAC_codes": [
+    15,
+    64
+  ],
+  "amplitudes_Vpp": [
+    0.019599,
+    0.0836224
+  ],
+  "voltage_calibration": {
+    "volts_per_code": 0.0006533,
+    "zero_code": 8198,
+    "date": "2026-10-22",
+    "source": "soyotoanon/20261022-vco-mapping-verification README: two-point DMM DC calibration",
+    "node": "DAC output / VCO analog control input",
+    "meaning": "nominal set Vpp from DC calibration, not an AC voltage measurement; includes integer-code rounding"
+  },
+  "rows": [
+    {
+      "frequency_Hz": 10000.000474974513,
+      "requested_Hz": 10000.0,
+      "amplitude_DAC_codes": 15,
+      "amplitude_Vpp": 0.019599,
+      "open_amplitude_ADC_codes": 0.5434361683975631,
+      "closed_amplitude_ADC_codes": 0.3210854043904525,
+      "open_mean_ADC_codes": 9202.661483474361,
+      "closed_mean_ADC_codes": 9198.873544843507,
+      "open_sigma": 0.011935962213517065,
+      "closed_sigma": 0.009472287633878182,
+      "db": -4.570559505316153,
+      "valid": true,
+      "reason": "",
+      "open_modulation_percent": null,
+      "closed_residual_percent": null,
+      "amplitude_index": 0,
+      "frequency_index": 0
+    },
+    {
+      "frequency_Hz": 10000.000474974513,
+      "requested_Hz": 10000.0,
+      "amplitude_DAC_codes": 64,
+      "amplitude_Vpp": 0.0836224,
+      "open_amplitude_ADC_codes": 2.2194505091841035,
+      "closed_amplitude_ADC_codes": 1.3776348146388457,
+      "open_mean_ADC_codes": 9199.721162153004,
+      "closed_mean_ADC_codes": 9198.873840909802,
+      "open_sigma": 0.013515094955771655,
+      "closed_sigma": 0.009666549809384731,
+      "db": -4.142227116726761,
+      "valid": true,
+      "reason": "",
+      "open_modulation_percent": null,
+      "closed_residual_percent": null,
+      "amplitude_index": 1,
+      "frequency_index": 0
+    }
+  ],
+  "bandwidths_Hz": [
+    null,
+    null
+  ],
+  "status": "complete",
+  "run_directory": "grid_1792745386947637800",
+  "dark_mean_ADC_codes": null,
+  "definition": "20 log10(closed/open fundamental amplitude); percent = peak tone / dark-subtracted DC",
+  "note": "In-loop sequential measurements; no assumption of a unique monotone -3 dB boundary"
+}

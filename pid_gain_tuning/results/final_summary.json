@@ -1,0 +1,38 @@
+{
+  "archived_on": "2026-10-25",
+  "measured_on": "2026-10-23",
+  "candidate": "C21/V3",
+  "Kp": 12,
+  "Ki_per_sample": 0.75,
+  "update_rate_Hz": 5000000.0,
+  "adc_setpoint": 9199,
+  "dac_bias": 6860,
+  "firmware_id": "A624",
+  "bandwidth_Hz": 13511.678099529378,
+  "rejection_10kHz_dB": -5.365298312586631,
+  "largest_measured_dB": 5.619079441007743,
+  "largest_measured_at_Hz": 48148.661153391,
+  "full_sweep_points": 20,
+  "screening_points": 7,
+  "nominal_disturbance_Vpp": 0.0836224,
+  "rin_rms": {
+    "open": 0.002437481872628275,
+    "closed": 0.0012302135614919436,
+    "floor": 0.000605007703659271,
+    "low_Hz": 0.5,
+    "high_Hz": 100000.0,
+    "definition": "sqrt(integral of one-sided relative power spectral density)",
+    "rms_reduction_percent": 49.529324697482345
+  },
+  "sweep_file": "measurements/20261023_181931_fullV/V3/sweep_full.json",
+  "noise_directory": "measurements/20261023_192619",
+  "flash_modified": false,
+  "live_hardware_checked_on_archive": false,
+  "limitations": [
+    "in-loop detector",
+    "interpolated bandwidth",
+    "peak among measured points only",
+    "RMS includes dark measurement floor",
+    "plant phase and delay inferred under model assumptions, not directly measured"
+  ]
+}

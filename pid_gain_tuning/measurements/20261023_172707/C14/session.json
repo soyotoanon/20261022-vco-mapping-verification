@@ -1,0 +1,37 @@
+{
+  "registers": {
+    "0x0": 1,
+    "0x1": 2,
+    "0x11": 4,
+    "0x18": 9199,
+    "0x19": 6860,
+    "0x1a": 35840,
+    "0x1b": 47514,
+    "0x1c": 0,
+    "0x1d": 128,
+    "0x1e": 1400,
+    "0x1f": 15000,
+    "0x20": 1,
+    "0x21": 16,
+    "0x2d": 0,
+    "0x2e": 1,
+    "0x2f": 53782,
+    "0x38": 20528,
+    "0x3f": 42532
+  },
+  "raw_sample_rate_Hz": 5000000.0,
+  "voltage_calibration": {
+    "volts_per_code": 0.0006533,
+    "zero_code": 8198,
+    "date": "2026-10-22",
+    "source": "soyotoanon/20261022-vco-mapping-verification README: two-point DMM DC calibration",
+    "node": "DAC output / VCO analog control input",
+    "meaning": "nominal set Vpp from DC calibration, not an AC voltage measurement; includes integer-code rounding"
+  },
+  "detector": "in-loop feedback ADC",
+  "created": "2026-10-23T17:27:08+0800",
+  "noise_floor": "dark PD + ADC; excludes illuminated shot noise",
+  "spectral_method": "one-sided Welch, Hann, 2048 samples, 50% overlap, per-segment DC removal",
+  "decimator": "CIC3; passband correction; retained frequencies <= output_fs/10",
+  "limitation": "Analog anti-alias response and independent out-of-loop optical noise not verified"
+}

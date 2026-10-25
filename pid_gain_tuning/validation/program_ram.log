@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Oct 23 16:25:21 2026
+# Process ID: 51124
+# Current directory: D:/codex/2026-10-23/wo
+# Command line: vivado.exe -mode batch -notrace -source D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\scripts\program_ram.tcl -log D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\validation\program_ram.log -journal D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\validation\program_ram.jou
+# Log file: D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/validation/program_ram.log
+# Journal file: D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\validation\program_ram.jou
+# Running On: DESKTOP-QDCLV1M, OS: Windows, CPU Frequency: 3793 MHz, CPU Physical cores: 16, Host memory: 16348 MB
+#-----------------------------------------------------------
+source {D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\scripts\program_ram.tcl} -notrace
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+
+
+******** Xilinx cs_server v2023.2.0
+  ****** Build date   : Oct 10 2023-12:01:56
+    **** Build number : 2023.2.1696910516
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210512180081
+INFO: [Labtools 27-3164] End of startup status: HIGH
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+RAM_DONE=1
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210512180081
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 23 16:25:33 2026...

@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x000FB153    Oct 23 16:30:23 2026    D:/codex/2026-10-23/wo/outputs/pid_gain_tuning/bitstream/light_lock_top.bit

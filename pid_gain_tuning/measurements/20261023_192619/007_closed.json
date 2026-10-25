@@ -1,0 +1,9 @@
+{
+  "label": "closed",
+  "fs": 305.17578125,
+  "raw_fs": 5000000.0,
+  "decimation": 16384,
+  "sequence": 439,
+  "status": 2,
+  "encoding": "unsigned ADC codes with 2 fractional bits"
+}

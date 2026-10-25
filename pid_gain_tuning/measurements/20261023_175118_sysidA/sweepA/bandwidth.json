@@ -1,0 +1,6 @@
+{
+  "bandwidth_Hz": 8330.136116165633,
+  "definition": "first upward crossing of 20 log10(closed/open amplitude) = -3 dB",
+  "status": "crossing measured; coarse logarithmic interpolation",
+  "points": 30
+}

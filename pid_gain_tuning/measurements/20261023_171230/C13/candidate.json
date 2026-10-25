@@ -1,0 +1,51 @@
+{
+  "id": "C13",
+  "Kp": 18,
+  "Ki_per_sample": 0.20001220703125,
+  "registers": {
+    "0x1a": 37376,
+    "0x1b": 39322
+  },
+  "sample_rate_Hz": 5000000.0,
+  "raw_directory": "D:\\codex\\2026-10-23\\wo\\outputs\\pid_gain_tuning\\measurements\\20261023_171230\\C13",
+  "rows": [
+    {
+      "frequency_Hz": 10000.000474974513,
+      "requested_Hz": 10000.0,
+      "amplitude_DAC_codes": 64,
+      "amplitude_Vpp": 0.0836224,
+      "open_amplitude_ADC_codes": 1.3817351356926315,
+      "closed_amplitude_ADC_codes": 1.0858079837312804,
+      "open_mean_ADC_codes": 9199.011365872813,
+      "closed_mean_ADC_codes": 9198.874553996582,
+      "open_sigma": 0.008941543370413243,
+      "closed_sigma": 0.006764813332361779,
+      "db": -2.093435413031672,
+      "valid": true,
+      "reason": "",
+      "open_modulation_percent": null,
+      "closed_residual_percent": null
+    },
+    {
+      "frequency_Hz": 50000.00004656613,
+      "requested_Hz": 50000.0,
+      "amplitude_DAC_codes": 64,
+      "amplitude_Vpp": 0.0836224,
+      "open_amplitude_ADC_codes": 1.3203698628540912,
+      "closed_amplitude_ADC_codes": 1.739737907216116,
+      "open_mean_ADC_codes": 9199.423131996597,
+      "closed_mean_ADC_codes": 9198.875911974572,
+      "open_sigma": 0.013282464680851815,
+      "closed_sigma": 0.013487452048757754,
+      "db": 2.3957644666569773,
+      "valid": true,
+      "reason": "",
+      "open_modulation_percent": null,
+      "closed_residual_percent": null
+    }
+  ],
+  "status": "below_10kHz_target",
+  "repeats": [],
+  "rejection_10kHz_dB": -2.093435413031672,
+  "reason": "10kHz未达到-3dB；仅加测50kHz判断降低积分的方向"
+}

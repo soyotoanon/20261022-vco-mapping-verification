@@ -1,0 +1,8 @@
+{
+  "open": 0.002437481872628275,
+  "closed": 0.0012302135614919436,
+  "floor": 0.000605007703659271,
+  "low_Hz": 0.5,
+  "high_Hz": 100000.0,
+  "definition": "sqrt(integral of one-sided relative power spectral density)"
+}

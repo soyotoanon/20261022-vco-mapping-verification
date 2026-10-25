@@ -1,0 +1,22 @@
+{
+  "candidate": "C21",
+  "registers": {
+    "0x0": 1,
+    "0x1": 2,
+    "0x11": 4,
+    "0x18": 9199,
+    "0x19": 6860,
+    "0x1a": 35840,
+    "0x1b": 57344,
+    "0x30": 0,
+    "0x31": 0,
+    "0x2e": 1,
+    "0x3f": 42532
+  },
+  "source": "model-guided optimization (Kimi session 2026-10-23 evening); V3/C21 measured BW 13.51 kHz, 10 kHz -5.37 dB, peak +5.62 dB @ 48 kHz",
+  "current_bandwidth_Hz": 13510,
+  "historical_bandwidth_Hz": 13347.83570982399,
+  "current_10kHz_dB": -5.37,
+  "plant_gain_note": "Plant gain B drifts 0.0226..0.0376 over hours; C4 recheck failure was gain drift, now explained by the identified model",
+  "flash_modified": false
+}

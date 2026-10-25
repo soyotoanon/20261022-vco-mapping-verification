@@ -1,0 +1,6 @@
+{
+  "bandwidth_Hz": null,
+  "definition": "first upward crossing of 20 log10(closed/open amplitude) = -3 dB",
+  "status": "no reliable crossing in measured range",
+  "points": 1
+}

@@ -1,0 +1,29 @@
+{
+  "selected": "C4",
+  "registers": {
+    "0x1a": 35840,
+    "0x1b": 1
+  },
+  "summary": {
+    "C4ref_10k": [
+      null,
+      null,
+      null
+    ],
+    "V1": [
+      "peak_too_high",
+      null,
+      4.655920157761651
+    ],
+    "V2": [
+      "peak_too_high",
+      null,
+      6.369606946947216
+    ],
+    "V3": [
+      "peak_too_high",
+      null,
+      4.861837357019336
+    ]
+  }
+}

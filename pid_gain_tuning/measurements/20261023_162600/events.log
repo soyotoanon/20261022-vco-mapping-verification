@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\codex\2026-10-23\wo\outputs\pid_gain_tuning\host\performance\app.py", line 116, in run
+    try:func()
+        ^^^^^^
+  File "D:\codex\2026-10-23\wo\work\optimize_gain_firmware.py", line 58, in optimize
+    if dev.read(0x1a)!=0x8000+round(p_gain*256):raise RuntimeError("比例增益读回失败")
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: 比例增益读回失败
+

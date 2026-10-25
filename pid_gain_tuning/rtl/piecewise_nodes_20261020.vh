@@ -1,0 +1,112 @@
+// 2026-10-20: 30 segments, 6 concentrated below approximately 1 mW.
+localparam [31:0] CODE_LOW_Q16=32'd169861630, CODE_HIGH_Q16=32'd529622586;
+function [31:0] knot_q16;
+ input integer i;
+ begin case(i)
+ 0: knot_q16=32'd169861630;
+ 1: knot_q16=32'd184535283;
+ 2: knot_q16=32'd199208935;
+ 3: knot_q16=32'd213882587;
+ 4: knot_q16=32'd228556240;
+ 5: knot_q16=32'd243229892;
+ 6: knot_q16=32'd257903544;
+ 7: knot_q16=32'd272577197;
+ 8: knot_q16=32'd287250849;
+ 9: knot_q16=32'd301924502;
+ 10: knot_q16=32'd316598154;
+ 11: knot_q16=32'd331271806;
+ 12: knot_q16=32'd345945459;
+ 13: knot_q16=32'd360619111;
+ 14: knot_q16=32'd375292763;
+ 15: knot_q16=32'd389966416;
+ 16: knot_q16=32'd404640068;
+ 17: knot_q16=32'd419313720;
+ 18: knot_q16=32'd433987373;
+ 19: knot_q16=32'd448661025;
+ 20: knot_q16=32'd463334677;
+ 21: knot_q16=32'd478008330;
+ 22: knot_q16=32'd492681982;
+ 23: knot_q16=32'd507355635;
+ 24: knot_q16=32'd522029287;
+ 25: knot_q16=32'd523294837;
+ 26: knot_q16=32'd524560387;
+ 27: knot_q16=32'd525825936;
+ 28: knot_q16=32'd527091486;
+ 29: knot_q16=32'd528357036;
+ 30: knot_q16=32'd529622586;
+ default: knot_q16=0;
+ endcase end
+endfunction
+function signed [31:0] node_units;
+ input integer i;
+ begin case(i)
+ 0: node_units=32'sd454915;
+ 1: node_units=32'sd436586;
+ 2: node_units=32'sd418251;
+ 3: node_units=32'sd399667;
+ 4: node_units=32'sd381139;
+ 5: node_units=32'sd364280;
+ 6: node_units=32'sd344248;
+ 7: node_units=32'sd328174;
+ 8: node_units=32'sd305541;
+ 9: node_units=32'sd292788;
+ 10: node_units=32'sd271623;
+ 11: node_units=32'sd253464;
+ 12: node_units=32'sd235151;
+ 13: node_units=32'sd217072;
+ 14: node_units=32'sd198845;
+ 15: node_units=32'sd179905;
+ 16: node_units=32'sd161522;
+ 17: node_units=32'sd142961;
+ 18: node_units=32'sd124876;
+ 19: node_units=32'sd105938;
+ 20: node_units=32'sd86606;
+ 21: node_units=32'sd67541;
+ 22: node_units=32'sd49004;
+ 23: node_units=32'sd29673;
+ 24: node_units=32'sd10298;
+ 25: node_units=32'sd8615;
+ 26: node_units=32'sd6757;
+ 27: node_units=32'sd5024;
+ 28: node_units=32'sd3259;
+ 29: node_units=32'sd1547;
+ 30: node_units=-32'sd172;
+ default: node_units=0;
+ endcase end
+endfunction
+function signed [31:0] slope_q20;
+ input integer i;
+ begin case(i)
+ 0: slope_q20=-32'sd85839025;
+ 1: slope_q20=-32'sd85865839;
+ 2: slope_q20=-32'sd87034506;
+ 3: slope_q20=-32'sd86767684;
+ 4: slope_q20=-32'sd78952974;
+ 5: slope_q20=-32'sd93817819;
+ 6: slope_q20=-32'sd75276380;
+ 7: slope_q20=-32'sd105993117;
+ 8: slope_q20=-32'sd59725263;
+ 9: slope_q20=-32'sd99122002;
+ 10: slope_q20=-32'sd85038831;
+ 11: slope_q20=-32'sd85764370;
+ 12: slope_q20=-32'sd84666004;
+ 13: slope_q20=-32'sd85363247;
+ 14: slope_q20=-32'sd88698913;
+ 15: slope_q20=-32'sd86089113;
+ 16: slope_q20=-32'sd86926598;
+ 17: slope_q20=-32'sd84695394;
+ 18: slope_q20=-32'sd88687706;
+ 19: slope_q20=-32'sd90536099;
+ 20: slope_q20=-32'sd89284074;
+ 21: slope_q20=-32'sd86814913;
+ 22: slope_q20=-32'sd90528279;
+ 23: slope_q20=-32'sd90739720;
+ 24: slope_q20=-32'sd91351812;
+ 25: slope_q20=-32'sd100910662;
+ 26: slope_q20=-32'sd94087930;
+ 27: slope_q20=-32'sd95858990;
+ 28: slope_q20=-32'sd92938587;
+ 29: slope_q20=-32'sd93356119;
+ default: slope_q20=0;
+ endcase end
+endfunction
