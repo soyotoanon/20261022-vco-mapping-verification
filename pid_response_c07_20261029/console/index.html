@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="556 nm MOT 光功率控制台：在线目标设定、功率监测、PI 控制与标定管理。">
+  <meta name="theme-color" content="#203e36">
+  <title>MOT PID · 光功率控制台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23176b57'/%3E%3Cpath d='M8 33h12l7-18 10 35 7-17h12' fill='none' stroke='white' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="core.js" defer></script><script src="calibration.js" defer></script><script src="app.js" defer></script>
+</head>
+<body class="lab-console">
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+ <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12h4l3-8 6 16 3-8h4"/></symbol>
+ <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+ <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h4m6 0h6M4 17h10m6 0h0M10 3v8m6 2v8"/><circle cx="11" cy="7" r="3"/><circle cx="17" cy="17" r="3"/></symbol>
+ <symbol id="i-plug" viewBox="0 0 24 24"><path d="m8 3 0 5m8-5v5M6 8h12v3a6 6 0 0 1-12 0Zm6 9v4"/></symbol>
+ <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5M8 12h8m-8 4h6"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+ <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></symbol>
+ <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
+ <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+ <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+ <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14"/></symbol>
+ <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></symbol>
+ <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+ <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/></symbol>
+ <symbol id="i-laser" viewBox="0 0 24 24"><path d="M3 9h8v6H3Zm8 3h11m-6-5 3-3m-3 13 3 3"/></symbol>
+</defs></svg>
+<aside class="sidebar">
+ <a class="brand" href="#overview" aria-label="MOT Control 首页"><span class="brandmark"><svg><use href="#i-laser"/></svg></span><span>MOT<span class="brand-light"> / CONTROL</span><small>光学实验控制系统</small></span></a>
+
+ <div class="nav-label">工作空间</div>
+ <nav aria-label="主导航">
+<button class="nav-item active" id="nav-overview"><svg><use href="#i-grid"/></svg>功率总览<span class="nav-active-dot"></span></button>
+<button class="nav-item" id="nav-devices"><svg><use href="#i-plug"/></svg>设备连接</button>
+<button class="nav-item" id="nav-parameters"><svg><use href="#i-sliders"/></svg>光路参数</button>
+</nav>
+  <div class="sidebar-channels" aria-orientation="vertical" role="tablist" aria-label="光路通道">
+<button class="channel-tab active" id="channel-556" role="tab" aria-selected="true" data-channel="556"><i class="channel-dot green"></i><strong>556<span class="channel-suffix"> nm MOT</span></strong></button>
+<button class="channel-tab" id="channel-399" role="tab" aria-selected="false" data-channel="399"><i class="channel-dot blue"></i><strong>399<span class="channel-suffix"> nm MOT</span></strong></button>
+<button class="channel-tab reserved" id="channel-future" role="tab" aria-selected="false" disabled title="后续接入"><i class="channel-dot gray"></i><strong>光强温度计</strong></button>
+</div>
+
+ <div class="sidebar-bottom"><span class="small-dot"></span><span>本机控制台<small>双通道 · v1.1</small></span><span class="bottom-mark">MOT</span></div>
+</aside>
+<div class="shell">
+
+ <main>
+  <div class="mode-notice" id="mode-notice"><strong class="console-title">MOT <span>光功率</span></strong><span id="notice-text">556 nm · 功率与稳定度</span><div class="intro-actions"><span class="mode-pill hardware" id="mode-pill"><span class="small-dot"></span><span id="mode-text">设备未连接</span></span><button class="button" id="connect-button"><svg><use href="#i-plug"/></svg>连接设备</button></div></div>
+
+  <section class="view" id="view-overview" aria-label="功率总览">
+   <div class="dashboard-grid">
+    <div class="main-column">
+     <div class="primary-metrics">
+      <article class="metric target-metric"><div class="metric-label">FPGA 主光路功率 <span class="tiny-tag" id="fpga-power-tag">未连接</span></div><div class="metric-value instrument-dial"><span id="fpga-power-metric">-</span><span>mW</span></div><div class="metric-foot" id="fpga-power-foot">等待 FPGA 连接</div></article>
+      <article class="metric stability-primary"><div class="metric-label">FPGA 相对波动 RMS</div><div class="metric-value instrument-dial"><span id="fpga-rms">-</span><span>%</span></div><div class="metric-foot" id="fpga-rms-note">采样中</div></article>
+      <article class="metric stability-meter"><div class="metric-label">功率计相对波动 RMS</div><div class="metric-value instrument-dial"><span id="meter-rms">-</span><span>%</span></div><div class="metric-foot" id="meter-rms-note">未连接</div></article>
+     </div>
+     <div class="metrics auxiliary-metrics">
+      <article class="metric"><div class="metric-label">功率计 <span class="tiny-tag" id="meter-tag">未连接</span></div><div class="metric-value"><span id="power-metric">-</span><span>mW</span></div><div class="metric-foot" id="meter-foot">选接功率计</div></article>
+      <article class="metric"><div class="metric-label"><span id="upstream-label">等效入射功率</span> <span class="tiny-tag" id="upstream-tag">未校正</span></div><div class="metric-value"><span id="upstream-metric">-</span><span>mW</span></div><div class="metric-foot"><span id="upstream-note">需功率计与光路参数</span></div></article>
+     </div>
+
+     <article class="card trend-card"><div class="card-heading"><div><h2>光功率趋势 <span class="live-label" id="live-label"><span class="small-dot"></span>等待连接</span></h2><p id="chart-caption">RMS 越小越稳 · 切换目标后重新统计 · 仅统计慢速监测</p></div><div class="chart-actions"><div class="segmented" id="window-controls"><button data-window="30">30 秒</button><button class="active" data-window="60">1 分钟</button><button data-window="300">5 分钟</button></div><button class="icon-button" id="pause-chart" title="暂停曲线显示" aria-label="暂停曲线显示"><svg><use href="#i-pause"/></svg></button></div></div>
+      <div class="chart-legend"><span><i class="legend-line power-line"></i>功率计</span><span><i class="legend-line adc-line"></i>ADC 换算</span><span><i class="legend-line target-line"></i>目标值</span><span class="band-legend" id="tolerance-foot"><i></i>允许误差带 ±1%</span><span class="chart-unit">光功率 / mW</span></div>
+      <div class="trend-wrap"><svg id="trend-svg" class="trend-svg" role="img" aria-label="最近一分钟目标与功率曲线" viewBox="0 0 840 252"></svg><div class="chart-tooltip" id="chart-tooltip" hidden></div></div>
+      <div class="chart-stats"><div><span>功率计均值</span><strong id="stat-mean">—<small> mW</small></strong></div><div><span>功率计峰峰值</span><strong id="stat-pp">—<small> mW</small></strong></div><div><span>功率计有效点</span><strong id="stat-count">0<small> 点</small></strong></div></div>
+     </article>
+
+     <article class="card readback-card"><div class="card-heading compact"><h2>控制链路读数</h2><span class="subtle" id="readback-label">等待 FPGA 连接</span></div><div class="readback-grid"><div><span>ADC 实测码</span><strong id="adc-code">-</strong><small>PI 内部码</small></div><span class="flow-arrow">→</span><div><span>ADC 目标码</span><strong id="adc-target">-</strong><small>本路标定反向查询</small></div><span class="flow-arrow">→</span><div><span>DAC 当前码</span><strong id="dac-code">-</strong><small id="dac-detail">未连接</small></div><div class="adc-power"><span>ADC 换算功率</span><strong id="adc-power">-<small> mW</small></strong><small>依赖本路标定 · 需核对光路</small></div></div></article>
+
+    </div>
+
+    <div class="control-column">
+     <article class="card setpoint-card"><div class="card-heading compact"><h2>功率设定</h2><span class="tiny-tag">在线调节</span></div><form id="setpoint-form"><label for="target-input">目标光功率</label><div class="power-input-wrap"><button type="button" class="step-button" id="target-minus" aria-label="目标减少 0.1 mW">−</button><input id="target-input" type="number" min="0" max="45.4915" step="0.01" value="10.00" required aria-describedby="target-error"><span>mW</span><button type="button" class="step-button" id="target-plus" aria-label="目标增加 0.1 mW">+</button></div><div class="target-range"><div class="target-range-heading"><span id="range-heading">可调范围（估算）</span><button type="button" class="text-button accent" id="range-settings">光路参数 <svg><use href="#i-chevron"/></svg></button></div><div class="target-range-value"><strong id="range-values">-</strong><span>mW</span></div><small id="range-recommend">建议稳定区间 -</small><small id="range-target-label">等待功率计数据</small><small id="range-status" role="status"></small><button type="button" class="button range-recovery" id="use-range-target" hidden>填入参考值</button></div><p class="field-error" id="target-error" role="alert"></p><button type="submit" class="button primary full-width" id="apply-target">应用目标功率 <svg><use href="#i-arrow"/></svg></button><div class="preset-row"><button type="button" data-preset="8">8 mW</button><button type="button" class="selected" data-preset="10">10 mW</button><button type="button" data-preset="11">11 mW</button></div><div class="transmission-setting"><label for="transmission-input">下游透过率 T</label><div class="transmission-controls"><input id="transmission-input" type="text" inputmode="decimal" placeholder="未知" aria-describedby="transmission-help transmission-error"><span>%</span><button type="button" class="button" id="save-transmission">保存</button></div><small id="transmission-help">光纤入口 → MOT；现场测量后更新</small><small id="transmission-error" role="alert"></small></div><div class="field-line"><label for="target-mode">目标变化方式</label><select id="target-mode"><option value="step" selected>直接更新</option><option value="ramp">按速率渐变</option></select></div><div class="field-line"><label for="ramp-rate">功率变化速率</label><div><input id="ramp-rate" type="number" min="0.01" max="100" step="0.01" value="2.0" required><span>mW/s</span></div></div><div class="setpoint-preview"><span>对应 ADC 目标码</span><strong id="code-preview">-</strong></div><div class="calibration-inline"><span id="channel-calibration-status">556 nm · 30 段标定</span><label for="channel-calibration-file" class="text-button accent">导入本路标定</label><input id="channel-calibration-file" type="file" accept=".json" hidden></div><details class="range-explanation"><summary>估算依据</summary><small id="range-note">等待本路效率参数</small></details></form><p class="setpoint-hint" id="apply-hint">在线更新目标，无需重新生成 bitstream。</p></article>
+
+     <article class="card loop-card"><div class="card-heading compact"><h2>反馈控制</h2><span class="mini-status" id="loop-status">未连接</span></div><div class="toggle-row"><div><strong>PI 闭环</strong><small>修正剩余功率误差</small></div><button class="toggle on" id="pi-toggle" role="switch" aria-checked="true" aria-label="PI 闭环开关"><span></span></button></div><div class="loop-separator"></div><div class="detail-row"><span>控制器位置</span><strong>FPGA</strong></div><div class="detail-row"><span>功率计用途</span><strong>监测 / 慢速校准</strong></div><div class="detail-row"><span>当前双程效率</span><strong id="efficiency-detail">75.42% <small>参考值</small></strong></div><button class="button quiet full-width" id="stop-loop"><span class="square-stop"></span>停用 PI 闭环</button><p class="stop-hint">停用 PI 不等于关闭 RF 或关光。</p></article>
+
+     <article class="calibration-note"><div class="note-icon"><svg><use href="#i-sliders"/></svg></div><div><strong id="calibration-summary">30 段功率标定</strong><p id="calibration-summary-sub">已载入 2026-10-20 历史数据</p><small class="subtle">使用前需核对当前光路</small></div></article>
+    </div>
+   </div>
+   <div class="footer-device-strip"><span><i class="device-dot" id="fpga-dot"></i><b>FPGA</b><span id="fpga-strip">未连接</span></span><span><i class="device-dot" id="pm-dot"></i><b>光功率计</b><span id="pm-strip">未连接</span></span><span class="footer-right"><svg><use href="#i-clock"/></svg><span id="last-update">正在更新</span></span></div>
+  </section>
+
+  <footer class="page-footer"><span><span class="small-dot"></span> <span id="footer-channel">556 nm MOT</span> · 单束光功率稳定</span><span>Phase 01 <span class="footer-bullet">·</span> 设定 / 监测 / 标定</span></footer>
+ </main>
+</div>
+
+<dialog id="connect-dialog"><div class="dialog-heading"><div><span class="eyebrow">DEVICE CONNECTION</span><h2 id="connect-dialog-title">连接 556 nm 设备</h2></div><button class="icon-button close-dialog" aria-label="关闭"><svg><use href="#i-x"/></svg></button></div><p class="dialog-description">选择本路设备；功率计自动识别型号并设置本路波长。</p><div id="hardware-fields"><div class="service-state" id="service-state">正在检查本机服务…</div><div class="connection-form"><label>FPGA 串口<div class="input-with-button"><input id="serial-port" value="" list="serial-ports" placeholder="刷新后选择串口" aria-label="FPGA 串口" autocomplete="off"><datalist id="serial-ports"></datalist><button class="button" id="refresh-ports">刷新</button></div></label><button class="button primary" id="connect-fpga">连接 FPGA</button></div><p class="subtle small-text">UART 115200 · 8N1 · 支持 A623 / A624 测量固件及 5030 分段标定固件。</p><div class="connection-form"><label for="meter-serial">光功率计<div class="input-with-button"><select id="meter-serial" aria-describedby="meter-scan-state"><option value="">请扫描功率计</option></select><button type="button" class="button" id="refresh-meters">扫描</button></div></label><button class="button" id="connect-meter">连接功率计</button></div><p class="subtle small-text" id="meter-scan-state" role="status">接入 USB 后扫描功率计</p><p class="subtle small-text"><span id="meter-wavelength-note">支持 PM100D / PM100USB；连接后自动设置为 556 nm。</span></p><p id="connection-error" class="field-error" role="alert"></p></div><div class="dialog-footer"><span id="connection-feedback">功率计按本路波长测量，不自动应用目标。</span><button class="button close-dialog">完成</button></div></dialog>
+
+<dialog id="range-dialog"><div class="dialog-heading"><div><span class="eyebrow">OPTICAL PATH PARAMETERS</span><h2 id="range-dialog-title">556 nm · AOM 功率与范围估算</h2></div><button class="icon-button close-dialog" aria-label="关闭"><svg><use href="#i-x"/></svg></button></div><p class="dialog-description">功率取自连接的功率计。请填写光路参数。556 nm 效率与上下限自动由 DAC、已确认的 VCO 映射及实测效率曲线换算；399 nm 手动填写。未知透过率留空。</p><form id="range-form"><div class="form-grid"><label>当前双程效率 η / %<input name="efficiency" type="number" min="0.01" max="100" step="any" placeholder="未知则留空"></label><label>下游透过率 T / %<input name="transmission" type="number" min="0.01" max="100" step="any" placeholder="未知则留空"></label><label>最小双程效率 / %<input name="minimum" type="number" min="0.01" max="100" step="any" placeholder="未知则留空"></label><label>最大双程效率 / %<input name="maximum" type="number" min="0.01" max="100" step="any" placeholder="未知则留空"></label><label>每侧预留跨度 / %<input name="margin" type="number" min="0" max="49" step="any" required></label><label>误差带 / %<input name="tolerance" type="number" min="0.01" max="20" step="any" required></label></div><div class="info-box"><svg><use href="#i-info"/></svg><p>AOM 前功率 = 功率计读数 ÷ (η × T)。理论上下限 = 功率计读数 × 最小或最大效率 ÷ η。仅当功率计位于 AOM 出口、没有下游损耗时，T 才可填 100%。</p></div><p class="field-error" id="range-error" role="alert"></p><div class="dialog-footer"><span>无功率计数据时，估算结果显示“-”</span><button type="submit" class="button primary">保存参数</button></div></form></dialog>
+
+
+<div class="toast-stack" id="toast-stack" role="status" aria-live="polite"></div>
+</body>
+</html>

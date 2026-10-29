@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# xsim v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Oct 29 16:34:01 2026
+# Process ID: 53744
+# Current directory: D:/DSproject/workbench/tasks/pid-response-c07-20261029/build/verification
+# Command line: xsim.exe -mode tcl -source {xsim.dir/tb_response_revision_sim/xsim_script.tcl}
+# Log file: D:/DSproject/workbench/tasks/pid-response-c07-20261029/build/verification/xsim.log
+# Journal file: D:/DSproject/workbench/tasks/pid-response-c07-20261029/build/verification\xsim.jou
+# Running On: DESKTOP-QDCLV1M, OS: Windows, CPU Frequency: 3793 MHz, CPU Physical cores: 16, Host memory: 16348 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_response_revision_sim/xsim_script.tcl
+# xsim {tb_response_revision_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+REVISION_PASS response cases=82 bumpless_both_signs=80 direct_target_next_sample=1 current_I_first_sample=1 bounded_ramp=1
+$finish called at time : 226551 ns : File "D:/DSproject/workbench/tasks/pid-response-c07-20261029/tb/tb_response_revision.v" Line 69
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 16:34:03 2026...

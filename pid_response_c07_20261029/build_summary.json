@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "bit_sha256": "7ba6a378f5aba5f61e483e877604c604546219768a6d3948e024dc1e3fe02ee9",
+  "mcs_sha256": "deb2326dfb625b6f50790f4513cd3a365ffac0e7a65d27d75f4f049c3511570a",
+  "wns_ns": 0.011,
+  "whs_ns": 0.053,
+  "final_log": "final-timing.log",
+  "routed_design_reused_with_corrected_dac_constraints": true
+}

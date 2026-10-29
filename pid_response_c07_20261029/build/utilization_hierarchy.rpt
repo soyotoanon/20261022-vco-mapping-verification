@@ -1,0 +1,52 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Thu Oct 29 16:37:19 2026
+| Host         : DESKTOP-QDCLV1M running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file D:/DSproject/workbench/tasks/pid-response-c07-20261029/build/utilization_hierarchy.rpt
+| Design       : light_lock_top
+| Device       : xc7a35tfgg484-2
+| Speed File   : -2
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++--------------------+----------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|      Instance      |           Module           | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++--------------------+----------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| light_lock_top     |                      (top) |       4789 |       4789 |       0 |    0 | 2655 |      4 |      1 |         14 |
+|   (light_lock_top) |                      (top) |          1 |          1 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   u_core           |               adc_dac_core |        231 |        231 |       0 |    0 |  145 |      0 |      0 |          0 |
+|     u_adc          |                    adc_drv |        214 |        214 |       0 |    0 |   68 |      0 |      0 |          0 |
+|     u_dac          |                    dac_drv |         17 |         17 |       0 |    0 |   77 |      0 |      0 |          0 |
+|   u_dist           |                   step_gen |        164 |        164 |       0 |    0 |  118 |      0 |      0 |          2 |
+|     (u_dist)       |                   step_gen |         59 |         59 |       0 |    0 |   56 |      0 |      0 |          2 |
+|     u_pstep        |                 recip_pow2 |        105 |        105 |       0 |    0 |   62 |      0 |      0 |          0 |
+|   u_log            |                log_arbiter |         60 |         60 |       0 |    0 |   77 |      0 |      0 |          0 |
+|   u_mon            |                    monitor |         10 |         10 |       0 |    0 |   11 |      0 |      0 |          0 |
+|   u_performance    |          performance_probe |        748 |        748 |       0 |    0 |  649 |      4 |      1 |          1 |
+|   u_pi             |                    pi_ctrl |         58 |         58 |       0 |    0 |   63 |      0 |      0 |          2 |
+|   u_power_display  |    power_display_piecewise |        495 |        495 |       0 |    0 |  343 |      0 |      0 |          4 |
+|   u_proto          |                 uart_proto |        326 |        326 |       0 |    0 |  152 |      0 |      0 |          0 |
+|     (u_proto)      |                 uart_proto |        254 |        254 |       0 |    0 |  112 |      0 |      0 |          0 |
+|     u_rx           |                    uart_rx |         72 |         72 |       0 |    0 |   40 |      0 |      0 |          0 |
+|   u_regs           |                   reg_file |       2239 |       2239 |       0 |    0 |  606 |      0 |      0 |          0 |
+|   u_sig            |                dac_sig_gen |        175 |        175 |       0 |    0 |  124 |      0 |      0 |          3 |
+|     (u_sig)        |                dac_sig_gen |         97 |         97 |       0 |    0 |   66 |      0 |      0 |          3 |
+|     u_pstep        | recip_pow2__parameterized0 |         78 |         78 |       0 |    0 |   58 |      0 |      0 |          0 |
+|   u_stats          |                  adc_stats |        303 |        303 |       0 |    0 |  211 |      0 |      0 |          2 |
+|   u_sweep          |                  sweep_gen |         27 |         27 |       0 |    0 |   64 |      0 |      0 |          0 |
+|   u_tick           |                  ctrl_tick |         45 |         45 |       0 |    0 |   27 |      0 |      0 |          0 |
+|   u_utx            |                    uart_tx |         26 |         26 |       0 |    0 |   30 |      0 |      0 |          0 |
++--------------------+----------------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

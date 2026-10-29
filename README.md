@@ -1,3 +1,5 @@
+> **2026-10-29 最新代码：** [C07 / F22A 阶跃响应与平滑接管优化](pid_response_c07_20261029/GITHUB_RELEASE.md)，**已构建、已验证，按用户要求暂未烧录**。保留 Kp=9、Ki≈0.540008545、5 MHz；[F129 已部署基线](pid_fast_c07_20261029/GITHUB_RELEASE.md) 独立保留。配套 [控制台 1.3.0](https://github.com/soyotoanon/20261026-PID-Control-Console) 默认直接更新目标，支持显式渐变。
+
 > **2026-10-25 更新：** [PI 最终调参结果、A624 固件与完整测量程序](pid_gain_tuning/README.md)。Kimi 最终候选 C21：Kp=12、Ki=0.75、5 MHz；当次实测带宽13.51 kHz，闭环RMS 0.1230%（0.5 Hz–100 kHz）。高频放大及限制详见归档。
 
 # 20261022 VCO 映射关系验证

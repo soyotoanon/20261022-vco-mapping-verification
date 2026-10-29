@@ -1,0 +1,178 @@
+--- before/server.py
++++ after/server.py
+@@ -20,7 +20,7 @@
+ ROOT = Path(__file__).resolve().parent
+ sys.path.insert(0, str(ROOT / "vendor"))
+ APP = "mot556-console"
+-VERSION = "1.2.1"
++VERSION = "1.3.0"
+ 
+ 
+ def number(value, name):
+@@ -113,14 +113,16 @@
+         raise TimeoutError(f"FPGA 寄存器 0x{address:02X} 未返回有效应答")
+ 
+     def write_verified(self, address, value):
+-        if address not in (0x00, 0x18):
+-            raise ValueError("此界面只写目标寄存器和 PI 使能位")
++        if address not in (0x00, 0x18, 0x2c):
++            raise ValueError("此界面只写目标、目标变化方式和 PI 使能位")
+         if not isinstance(value, int) or not 0 <= value <= 65535:
+             raise ValueError("寄存器值越界")
+         self.serial.write(self.frame(1, address, value))
+         actual = self.read(address)
+         if actual != value:
+             raise RuntimeError(f"寄存器 0x{address:02X} 读回 {actual}，与写入 {value} 不一致")
++        if address == 0x2c:
++            self.info["hardware_slew"] = actual
+ 
+     def snapshot(self):
+         ctrl = self.read(0)
+@@ -200,10 +202,16 @@
+             finally:
+                 self.state[kind] = {"connected": False, "sampled_at": None, "power_mw": None, "error": ""}
+ 
+-    def target(self, power, rate, payload):
+-        power, rate = number(power, "目标功率"), number(rate, "斜坡速率")
+-        if power < 0 or not .01 <= rate <= 100:
+-            raise ValueError("目标必须非负，斜坡速率范围 0.01–100 mW/s")
++    def target(self, power, rate, payload, mode="step"):
++        power = number(power, "目标功率")
++        if mode not in ("step", "ramp"):
++            raise ValueError("目标变化方式必须为直接更新或按速率渐变")
++        if power < 0:
++            raise ValueError("目标必须非负")
++        if mode == "ramp":
++            rate = number(rate, "斜坡速率")
++            if not .01 <= rate <= 100:
++                raise ValueError("斜坡速率范围 0.01–100 mW/s")
+         if not isinstance(payload, dict) or payload.get("wavelength_nm") != self.wavelength:
+             raise ValueError(f"必须使用 {self.wavelength} nm 本路标定，不能复用其他通道标定")
+         cal = Calibration(payload)
+@@ -215,7 +223,23 @@
+             if ctrl & 0x71E or self.fpga.read(0x23) & 1 or (self.fpga.firmware in ("A623", "A624") and self.fpga.read(0x30) & 3):
+                 raise RuntimeError("检测到其他输出模式或扰动测量，请先停止原有测量，再设置光功率目标")
+             current_code = self.fpga.read(0x18)
+-            current = cal.to_power(current_code)
++            # Check ramp start before any write. A direct step does not need the
++            # previous target to lie within the newly selected calibration.
++            current = cal.to_power(current_code) if mode == "ramp" else None
++            self.ramp_job = None
++            self.state["fpga"]["ramp"] = None
++            # One explicit limiter: software for a requested slow ramp, none for
++            # a direct target. Do not stack the old one-code/sample FPGA ramp.
++            if self.fpga.read(0x2c) != 16383:
++                self.fpga.write_verified(0x2c, 16383)
++            self.fpga.info["hardware_slew"] = 16383
++            self.state["fpga"]["hardware_slew"] = 16383
++            self.state["fpga"]["target_mode"] = mode
++            if mode == "step":
++                if code != current_code:
++                    self.fpga.write_verified(0x18, code)
++                self.state["fpga"]["setpoint_code"] = code
++                return
+             if code == current_code:
+                 self.ramp_job = None
+                 self.state["fpga"]["ramp"] = None
+@@ -330,7 +354,7 @@
+         return self.headers.get("Host", "") in (f"127.0.0.1:{self.server.server_port}", f"localhost:{self.server.server_port}")
+ 
+     def respond(self, status, payload):
+-        raw = json.dumps({"app": APP, "version": VERSION, "instance_id": self.controller.instance, **payload}, ensure_ascii=False, allow_nan=False).encode("utf-8")
++        raw = json.dumps({"app": APP, "version": VERSION, "target_modes": ["step", "ramp"], "instance_id": self.controller.instance, **payload}, ensure_ascii=False, allow_nan=False).encode("utf-8")
+         self.send_response(status)
+         self.send_header("Content-Type", "application/json; charset=utf-8")
+         self.send_header("Content-Length", str(len(raw)))
+@@ -420,7 +444,7 @@
+             elif route in ("/api/disconnect/fpga", "/api/disconnect/meter"):
+                 self.controller.disconnect(route.rsplit("/", 1)[-1])
+             elif route == "/api/target":
+-                self.controller.target(data.get("power_mw"), data.get("rate_mw_s"), data.get("calibration"))
++                self.controller.target(data.get("power_mw"), data.get("rate_mw_s"), data.get("calibration"), data.get("mode", "step"))
+             elif route == "/api/pi":
+                 self.controller.set_pi(data.get("enabled"))
+             else:
+--- before/app.js
++++ after/app.js
+@@ -52,7 +52,10 @@
+     if (!/^https?:$/.test(location.protocol)) throw Error('请双击 start.cmd，通过本机网页连接设备');
+     // Verify channel routing before sending writes, including when an older
+     // single-channel server is still running after the local files are updated.
+-    if (body !== undefined) await api('/api/state', undefined, id);
++    if (body !== undefined) {
++      const service = await api('/api/state', undefined, id);
++      if (path === '/api/target' && !service.target_modes?.includes(body.mode)) throw Error('请重新启动控制台服务，以使用直接更新和渐变选项');
++    }
+     const response = await fetch(`${path}?channel=${encodeURIComponent(id)}`, { method: body === undefined ? 'GET' : 'POST', headers: body === undefined ? {} : { 'Content-Type': 'application/json', 'X-MOT-Console': '1' }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(12000), cache: 'no-store' });
+     let value; try { value = await response.json(); } catch { throw Error('本机服务未启动，请双击 start.cmd'); }
+     if (!response.ok) throw Error(value.error || '设备服务异常');
+@@ -68,6 +71,8 @@
+   }
+   function loadControls() {
+     const s = current(); $('target-input').value = s.draft; $('ramp-rate').value = s.rate;
++    $('target-mode').value = s.targetMode || 'step';
++    $('ramp-rate').disabled = $('target-mode').value !== 'ramp';
+     $('target-input').max = s.calibration ? s.calibration.points.at(-1).power_mw : 100000;
+     $('serial-port').value = s.port; renderMeterOptions();
+     $('transmission-input').value = C.finite(s.config.transmission) ? fmt(s.config.transmission) : '';
+@@ -81,6 +86,11 @@
+     channelId = id; $('target-error').textContent = ''; loadControls(); render();
+   }
+   all('[data-channel]').forEach(b => b.onclick = () => switchChannel(b.dataset.channel));
++  $('target-mode').onchange = () => {
++    current().targetMode = $('target-mode').value;
++    $('ramp-rate').disabled = current().targetMode !== 'ramp';
++    render();
++  };
+   function preview() {
+     const s = current(), value = $('target-input').value.trim();
+     const n = value === '' ? NaN : Number(value);
+@@ -102,14 +112,15 @@
+       const value = $('target-input').value, target = Number(value), rate = Number($('ramp-rate').value);
+       if (!value.trim() || !C.finite(target) || target < 0) throw Error('请输入非负目标功率');
+       if (s.calibration) C.toCode(s.calibration, target);
+-      if (!(rate >= .01 && rate <= 100)) throw Error('变化速率为 0.01–100 mW/s');
++      const mode = $('target-mode').value;
++      if (mode === 'ramp' && !(rate >= .01 && rate <= 100)) throw Error('变化速率为 0.01–100 mW/s');
+       s.busy = true; render();
+       if (s.snapshot?.fpga.connected) {
+         if (!s.calibration) throw Error(`请先导入 ${id} nm 本路标定，再应用目标`);
+-        const result = await api('/api/target', { power_mw: target, rate_mw_s: rate, calibration: s.calibration }, id);
+-        s.snapshot = result.state; s.applied = true; toast(`${id} nm 目标已接收，正在斜坡更新并读回`);
++        const result = await api('/api/target', { power_mw: target, mode, rate_mw_s: mode === 'ramp' ? rate : null, calibration: s.calibration }, id);
++        s.snapshot = result.state; s.applied = true; toast(mode === 'step' ? `${id} nm 目标已直接更新并读回` : `${id} nm 目标已接收，正在按速率渐变`);
+       } else { s.applied = false; toast(`${id} nm 目标已保存，尚未下发到设备`); }
+-      s.target = target; s.draft = value; s.rate = String(rate); s.chosen = true;
++      s.target = target; s.draft = value; if (Number.isFinite(rate)) s.rate = String(rate); s.targetMode = mode; s.chosen = true;
+     } catch (err) { $('target-error').textContent = err.message; toast(err.message, true); }
+     finally { s.busy = false; render(); }
+   };
+@@ -357,7 +368,7 @@
+     $('loop-status').textContent = r.fpgaLive ? (f.status & 63 ? statusText(f.status) : f.pi_enabled ? '反馈已使能' : '反馈已停用') : '未连接'; $('loop-status').classList.toggle('warn', r.fpgaLive && !!(f.status & 63));
+     $('efficiency-detail').innerHTML = C.finite(config.efficiency) ? fmt(config.efficiency) + '% <small>手填参考值</small>' : '<small>本路尚未填写</small>';
+     $('apply-target').innerHTML = (f?.connected ? '应用目标功率' : '保存目标设定') + ' ' + icon('arrow'); $('apply-target').disabled = busy || !!(f?.connected && !cal);
+-    $('apply-hint').textContent = !cal ? `应用 ${channelId} nm 目标前，需导入本路标定。` : f?.connected ? '在线斜坡更新，无需重新生成 bitstream。' : '连接本路 FPGA 后可在线应用目标光功率。';
++    $('apply-hint').textContent = !cal ? `应用 ${channelId} nm 目标前，需导入本路标定。` : f?.connected ? (s.targetMode === 'ramp' ? '按设定速率逐步更新目标。' : '一次更新目标，不附加变化速率限制。') : '连接本路 FPGA 后可在线应用目标光功率。';
+     $('channel-calibration-status').textContent = cal ? `${channelId} nm · ${cal.points.length - 1} 段标定` : `${channelId} nm · 待标定`;
+     $('channel-calibration-status').classList.toggle('channel-calibration-missing', !cal);
+     $('calibration-summary').textContent = cal ? `${channelId} nm · ${cal.points.length - 1} 段标定` : `${channelId} nm 本路标定待载入`;
+--- before/index.html
++++ after/index.html
+@@ -74,7 +74,7 @@
+     </div>
+ 
+     <div class="control-column">
+-     <article class="card setpoint-card"><div class="card-heading compact"><h2>功率设定</h2><span class="tiny-tag">在线调节</span></div><form id="setpoint-form"><label for="target-input">目标光功率</label><div class="power-input-wrap"><button type="button" class="step-button" id="target-minus" aria-label="目标减少 0.1 mW">−</button><input id="target-input" type="number" min="0" max="45.4915" step="0.01" value="10.00" required aria-describedby="target-error"><span>mW</span><button type="button" class="step-button" id="target-plus" aria-label="目标增加 0.1 mW">+</button></div><div class="target-range"><div class="target-range-heading"><span id="range-heading">可调范围（估算）</span><button type="button" class="text-button accent" id="range-settings">光路参数 <svg><use href="#i-chevron"/></svg></button></div><div class="target-range-value"><strong id="range-values">-</strong><span>mW</span></div><small id="range-recommend">建议稳定区间 -</small><small id="range-target-label">等待功率计数据</small><small id="range-status" role="status"></small><button type="button" class="button range-recovery" id="use-range-target" hidden>填入参考值</button></div><p class="field-error" id="target-error" role="alert"></p><button type="submit" class="button primary full-width" id="apply-target">应用目标功率 <svg><use href="#i-arrow"/></svg></button><div class="preset-row"><button type="button" data-preset="8">8 mW</button><button type="button" class="selected" data-preset="10">10 mW</button><button type="button" data-preset="11">11 mW</button></div><div class="transmission-setting"><label for="transmission-input">下游透过率 T</label><div class="transmission-controls"><input id="transmission-input" type="text" inputmode="decimal" placeholder="未知" aria-describedby="transmission-help transmission-error"><span>%</span><button type="button" class="button" id="save-transmission">保存</button></div><small id="transmission-help">光纤入口 → MOT；现场测量后更新</small><small id="transmission-error" role="alert"></small></div><div class="field-line"><label for="ramp-rate">功率变化速率</label><div><input id="ramp-rate" type="number" min="0.01" max="100" step="0.01" value="2.0" required><span>mW/s</span></div></div><div class="setpoint-preview"><span>对应 ADC 目标码</span><strong id="code-preview">-</strong></div><div class="calibration-inline"><span id="channel-calibration-status">556 nm · 30 段标定</span><label for="channel-calibration-file" class="text-button accent">导入本路标定</label><input id="channel-calibration-file" type="file" accept=".json" hidden></div><details class="range-explanation"><summary>估算依据</summary><small id="range-note">等待本路效率参数</small></details></form><p class="setpoint-hint" id="apply-hint">在线更新目标，无需重新生成 bitstream。</p></article>
++     <article class="card setpoint-card"><div class="card-heading compact"><h2>功率设定</h2><span class="tiny-tag">在线调节</span></div><form id="setpoint-form"><label for="target-input">目标光功率</label><div class="power-input-wrap"><button type="button" class="step-button" id="target-minus" aria-label="目标减少 0.1 mW">−</button><input id="target-input" type="number" min="0" max="45.4915" step="0.01" value="10.00" required aria-describedby="target-error"><span>mW</span><button type="button" class="step-button" id="target-plus" aria-label="目标增加 0.1 mW">+</button></div><div class="target-range"><div class="target-range-heading"><span id="range-heading">可调范围（估算）</span><button type="button" class="text-button accent" id="range-settings">光路参数 <svg><use href="#i-chevron"/></svg></button></div><div class="target-range-value"><strong id="range-values">-</strong><span>mW</span></div><small id="range-recommend">建议稳定区间 -</small><small id="range-target-label">等待功率计数据</small><small id="range-status" role="status"></small><button type="button" class="button range-recovery" id="use-range-target" hidden>填入参考值</button></div><p class="field-error" id="target-error" role="alert"></p><button type="submit" class="button primary full-width" id="apply-target">应用目标功率 <svg><use href="#i-arrow"/></svg></button><div class="preset-row"><button type="button" data-preset="8">8 mW</button><button type="button" class="selected" data-preset="10">10 mW</button><button type="button" data-preset="11">11 mW</button></div><div class="transmission-setting"><label for="transmission-input">下游透过率 T</label><div class="transmission-controls"><input id="transmission-input" type="text" inputmode="decimal" placeholder="未知" aria-describedby="transmission-help transmission-error"><span>%</span><button type="button" class="button" id="save-transmission">保存</button></div><small id="transmission-help">光纤入口 → MOT；现场测量后更新</small><small id="transmission-error" role="alert"></small></div><div class="field-line"><label for="target-mode">目标变化方式</label><select id="target-mode"><option value="step" selected>直接更新</option><option value="ramp">按速率渐变</option></select></div><div class="field-line"><label for="ramp-rate">功率变化速率</label><div><input id="ramp-rate" type="number" min="0.01" max="100" step="0.01" value="2.0" required><span>mW/s</span></div></div><div class="setpoint-preview"><span>对应 ADC 目标码</span><strong id="code-preview">-</strong></div><div class="calibration-inline"><span id="channel-calibration-status">556 nm · 30 段标定</span><label for="channel-calibration-file" class="text-button accent">导入本路标定</label><input id="channel-calibration-file" type="file" accept=".json" hidden></div><details class="range-explanation"><summary>估算依据</summary><small id="range-note">等待本路效率参数</small></details></form><p class="setpoint-hint" id="apply-hint">在线更新目标，无需重新生成 bitstream。</p></article>
+ 
+      <article class="card loop-card"><div class="card-heading compact"><h2>反馈控制</h2><span class="mini-status" id="loop-status">未连接</span></div><div class="toggle-row"><div><strong>PI 闭环</strong><small>修正剩余功率误差</small></div><button class="toggle on" id="pi-toggle" role="switch" aria-checked="true" aria-label="PI 闭环开关"><span></span></button></div><div class="loop-separator"></div><div class="detail-row"><span>控制器位置</span><strong>FPGA</strong></div><div class="detail-row"><span>功率计用途</span><strong>监测 / 慢速校准</strong></div><div class="detail-row"><span>当前双程效率</span><strong id="efficiency-detail">75.42% <small>参考值</small></strong></div><button class="button quiet full-width" id="stop-loop"><span class="square-stop"></span>停用 PI 闭环</button><p class="stop-hint">停用 PI 不等于关闭 RF 或关光。</p></article>
+ 
+--- before/styles.css
++++ after/styles.css
+@@ -307,3 +307,6 @@
+   .sidebar-channels .channel-tab.reserved{width:100%;height:30px;margin-top:2px}
+   .sidebar-bottom{padding-top:8px}
+ }
++
++#target-mode { max-width: 156px; padding: 7px 8px; border: 1px solid var(--border, #dce2eb); border-radius: 7px; background: white; color: inherit; font: inherit; }
++#ramp-rate:disabled { opacity: .45; }

@@ -1,0 +1,9 @@
+{
+  "adc_external_round_trip_budget_ns": 4.0,
+  "dac_external_skew_budget_ns": 2.0,
+  "external_board_delays_measured": false,
+  "dac1": {"setup_margin_ns": 7.798000000000002, "hold_margin_ns": 48.951, "wrt_clk_margin_ns": 8.729000000000001, "pulse_margin_ns": 7.246},
+  "dac2": {"setup_margin_ns": 7.963000000000001, "hold_margin_ns": 48.83, "wrt_clk_margin_ns": 8.693999999999999, "pulse_margin_ns": 7.193},
+  "adc_setup_slack_ns": 0.656, "adc_hold_slack_ns": 4.481,
+  "passed": true
+}

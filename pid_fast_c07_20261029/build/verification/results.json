@@ -1,0 +1,44 @@
+[
+  {
+    "test": "tb_fast_equivalence",
+    "result": "PASS",
+    "evidence": [
+      "REVISION_PASS fast_equivalence checks=151069 PI/DAC cycle-exact; status-only retimed"
+    ]
+  },
+  {
+    "test": "tb_pi_revision",
+    "result": "PASS",
+    "evidence": [
+      "REVISION_PASS tb_pi_revision checks=27531"
+    ]
+  },
+  {
+    "test": "tb_performance_probe",
+    "result": "PASS",
+    "evidence": [
+      "REVISION_PASS performance_probe"
+    ]
+  },
+  {
+    "test": "tb_sample_revision",
+    "result": "PASS",
+    "evidence": [
+      "REVISION_PASS tb_sample_revision checks=69"
+    ]
+  },
+  {
+    "test": "tb_dac_timing_revision",
+    "result": "PASS",
+    "evidence": [
+      "REVISION_PASS tb_dac_timing_revision checked_5MSPS=4001 writes=4016 updates=4016"
+    ]
+  },
+  {
+    "test": "tb_instant_display_revision",
+    "result": "PASS",
+    "evidence": [
+      "REVISION_PASS single sample, update hold, BCD, scan, decimal, invalidation, recovery"
+    ]
+  }
+]

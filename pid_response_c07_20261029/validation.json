@@ -1,0 +1,146 @@
+{
+  "build": {
+    "exit_code": 0,
+    "bit_sha256": "7ba6a378f5aba5f61e483e877604c604546219768a6d3948e024dc1e3fe02ee9",
+    "mcs_sha256": "deb2326dfb625b6f50790f4513cd3a365ffac0e7a65d27d75f4f049c3511570a",
+    "wns_ns": 0.011,
+    "whs_ns": 0.053,
+    "final_log": "final-timing.log",
+    "routed_design_reused_with_corrected_dac_constraints": true
+  },
+  "rtl_tests": [
+    {
+      "test": "tb_fast_equivalence",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS fast_equivalence checks=151069 PI/DAC cycle-exact; status-only retimed"
+      ]
+    },
+    {
+      "test": "tb_pi_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS tb_pi_revision checks=27531"
+      ]
+    },
+    {
+      "test": "tb_response_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS response cases=82 bumpless_both_signs=80 direct_target_next_sample=1 current_I_first_sample=1 bounded_ramp=1"
+      ]
+    },
+    {
+      "test": "tb_performance_probe",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS performance_probe"
+      ]
+    },
+    {
+      "test": "tb_sample_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS tb_sample_revision checks=70"
+      ]
+    },
+    {
+      "test": "tb_dac_timing_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS tb_dac_timing_revision checked_5MSPS=4001 writes=4016 updates=4016"
+      ]
+    },
+    {
+      "test": "tb_instant_display_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS single sample, update hold, BCD, scan, decimal, invalidation, recovery"
+      ]
+    }
+  ],
+  "converter_timing": {
+    "adc_external_round_trip_budget_ns": 4.0,
+    "dac_external_skew_budget_ns": 2.0,
+    "external_board_delays_measured": false,
+    "dac1": {
+      "setup_margin_ns": 7.798000000000002,
+      "hold_margin_ns": 48.951,
+      "wrt_clk_margin_ns": 8.729000000000001,
+      "pulse_margin_ns": 7.246
+    },
+    "dac2": {
+      "setup_margin_ns": 7.963000000000001,
+      "hold_margin_ns": 48.83,
+      "wrt_clk_margin_ns": 8.693999999999999,
+      "pulse_margin_ns": 7.193
+    },
+    "adc_setup_slack_ns": 0.656,
+    "adc_hold_slack_ns": 4.481,
+    "passed": true
+  },
+  "browser": {
+    "passed": true,
+    "checks": [
+      "Default direct target and disabled rate input",
+      "Browser submit reaches actual HTTP handler and UART step write",
+      "Explicit slow ramp schedules gradual updates",
+      "Old backend cannot silently turn a direct step into a ramp"
+    ],
+    "runtime_errors": [],
+    "physical_hardware_writes": 0,
+    "fixture_uart_writes": 2
+  },
+  "python_tests": {
+    "passed": 19
+  },
+  "deployment": {
+    "flash_written": false,
+    "user_decision": "暂不烧录，保留当前闭环",
+    "console_version": "1.3.0",
+    "console_deployment_record": "D:\\DSproject\\workbench\\tasks\\pid-response-c07-20261029\\console-deployment\\20261029-165452\\result.json",
+    "console_register_writes": 0,
+    "latest_readback": {
+      "app": "mot556-console",
+      "version": "1.3.0",
+      "target_modes": [
+        "step",
+        "ramp"
+      ],
+      "instance_id": "70e78577-a0ef-442c-9b1a-13e7d09fbc35",
+      "state": {
+        "wavelength_nm": 556,
+        "fpga": {
+          "connected": true,
+          "port": "COM9",
+          "firmware": "A624",
+          "adc_code": 9232,
+          "dac_code": 8731,
+          "setpoint_code": 8482,
+          "pi_enabled": false,
+          "ctrl": 8,
+          "status": 2,
+          "armed": false,
+          "sampled_at": 1793264507461.8022,
+          "error": "",
+          "ramp": null,
+          "kp_register": 35072,
+          "ki_register": 50463,
+          "out_min": 1400,
+          "out_max": 15000,
+          "hardware_slew": 1
+        },
+        "meter": {
+          "connected": false,
+          "sampled_at": null,
+          "power_mw": null,
+          "error": ""
+        }
+      }
+    },
+    "subsequent_runtime_change_observed": true,
+    "runtime_observation_record": "D:\\DSproject\\workbench\\tasks\\pid-response-c07-20261029\\runtime-observation.json",
+    "verified_at": "2026-10-29T17:01:47.643983+08:00"
+  },
+  "optical_bandwidth_remeasured": false
+}
