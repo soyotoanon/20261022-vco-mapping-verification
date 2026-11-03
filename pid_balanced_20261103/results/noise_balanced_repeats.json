@@ -1,0 +1,32 @@
+[
+  {
+    "name": "noise20_balanced_00_closed",
+    "rms_percent": 0.08571297898332093,
+    "snr_db": 61.339068211699356
+  },
+  {
+    "name": "noise20_balanced_01_closed",
+    "rms_percent": 0.04784129812844992,
+    "snr_db": 66.40394089378178
+  },
+  {
+    "name": "noise20_balanced_02_closed",
+    "rms_percent": 0.04738922679223885,
+    "snr_db": 66.48640754477269
+  },
+  {
+    "name": "noise20_balanced_00_held",
+    "rms_percent": 0.1396573627052211,
+    "snr_db": 57.098723269011046
+  },
+  {
+    "name": "noise20_balanced_01_held",
+    "rms_percent": 0.12966512634245572,
+    "snr_db": 57.743536249104565
+  },
+  {
+    "name": "noise20_balanced_02_held",
+    "rms_percent": 0.13350894656078427,
+    "snr_db": 57.489792616805474
+  }
+]

@@ -1,0 +1,1432 @@
+{
+  "raw_fs_hz": 5000000.0,
+  "decimation": 2048,
+  "fs_hz": 2441.40625,
+  "sequence": 11,
+  "capture_status": 2,
+  "trigger_valid": true,
+  "trigger_raw_tick": 1005083,
+  "final": {
+    "00": 1,
+    "01": 2,
+    "02": 3855,
+    "03": 8957,
+    "04": 8,
+    "05": 4978,
+    "06": 8960,
+    "07": 3680,
+    "08": 8683,
+    "09": 9015,
+    "0A": 0,
+    "0B": 0,
+    "0C": 0,
+    "0D": 0,
+    "0E": 0,
+    "0F": 0,
+    "10": 499,
+    "11": 4,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 8192,
+    "16": 8192,
+    "17": 1000,
+    "18": 8960,
+    "19": 8198,
+    "1A": 35584,
+    "1B": 56361,
+    "1C": 0,
+    "1D": 128,
+    "1E": 1400,
+    "1F": 15000,
+    "20": 1,
+    "21": 16,
+    "22": 12,
+    "23": 0,
+    "24": 3,
+    "25": 64,
+    "26": 4096,
+    "27": 64,
+    "28": 0,
+    "29": 434,
+    "2A": 36848,
+    "2B": 65510,
+    "2C": 16383,
+    "2D": 0,
+    "2E": 1,
+    "2F": 53782,
+    "30": 0,
+    "31": 0,
+    "32": 0,
+    "33": 0,
+    "34": 22043,
+    "35": 11,
+    "36": 2,
+    "37": 4095,
+    "38": 20529,
+    "39": 26008,
+    "3A": 32773,
+    "3B": 35839,
+    "3C": 8192,
+    "3D": 11,
+    "3E": 8192,
+    "3F": 42532
+  },
+  "telemetry": [
+    {
+      "host_time": 1793715884.610163,
+      "adc": 8960,
+      "dac": 4959,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715884612.199,
+        "power_mw": 4.804341590000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715884.6682186,
+      "adc": 8959,
+      "dac": 4977,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715884612.199,
+        "power_mw": 4.804341590000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715884.7294383,
+      "adc": 8956,
+      "dac": 5056,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715884612.199,
+        "power_mw": 4.804341590000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715884.7933514,
+      "adc": 8958,
+      "dac": 5022,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715884829.622,
+        "power_mw": 5.20079723,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715884.8555806,
+      "adc": 8964,
+      "dac": 5027,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715884829.622,
+        "power_mw": 5.20079723,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715884.9149556,
+      "adc": 8957,
+      "dac": 4993,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715884829.622,
+        "power_mw": 5.20079723,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715884.9562595,
+      "adc": 8962,
+      "dac": 5065,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715884829.622,
+        "power_mw": 5.20079723,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.0005417,
+      "adc": 8960,
+      "dac": 5160,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715884829.622,
+        "power_mw": 5.20079723,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.0528984,
+      "adc": 8956,
+      "dac": 4952,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885047.1338,
+        "power_mw": 5.201235410000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.0930047,
+      "adc": 8959,
+      "dac": 4999,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885047.1338,
+        "power_mw": 5.201235410000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.1430943,
+      "adc": 8965,
+      "dac": 5013,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885047.1338,
+        "power_mw": 5.201235410000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.1924543,
+      "adc": 8960,
+      "dac": 4915,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885047.1338,
+        "power_mw": 5.201235410000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.2253397,
+      "adc": 8960,
+      "dac": 4954,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885262.1694,
+        "power_mw": 5.20933978,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.2842252,
+      "adc": 8961,
+      "dac": 5014,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885262.1694,
+        "power_mw": 5.20933978,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.321462,
+      "adc": 8965,
+      "dac": 4929,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885262.1694,
+        "power_mw": 5.20933978,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.3770187,
+      "adc": 8961,
+      "dac": 5041,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885262.1694,
+        "power_mw": 5.20933978,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.422154,
+      "adc": 8957,
+      "dac": 5014,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885262.1694,
+        "power_mw": 5.20933978,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.469625,
+      "adc": 8960,
+      "dac": 4964,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885478.6162,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.515812,
+      "adc": 8955,
+      "dac": 4955,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885478.6162,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.5620608,
+      "adc": 8954,
+      "dac": 4995,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885478.6162,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.6093352,
+      "adc": 8962,
+      "dac": 4984,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885478.6162,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.6582751,
+      "adc": 8959,
+      "dac": 4984,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885683.958,
+        "power_mw": 5.201892460000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.7116818,
+      "adc": 8957,
+      "dac": 4925,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885683.958,
+        "power_mw": 5.201892460000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.7675827,
+      "adc": 8958,
+      "dac": 5041,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885683.958,
+        "power_mw": 5.201892460000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.8012629,
+      "adc": 8960,
+      "dac": 4901,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885683.958,
+        "power_mw": 5.201892460000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.8611205,
+      "adc": 8961,
+      "dac": 4983,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885683.958,
+        "power_mw": 5.201892460000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.910264,
+      "adc": 8963,
+      "dac": 5099,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885901.154,
+        "power_mw": 5.20276837,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715885.9668765,
+      "adc": 8967,
+      "dac": 4951,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885901.154,
+        "power_mw": 5.20276837,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.0146973,
+      "adc": 8962,
+      "dac": 4958,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885901.154,
+        "power_mw": 5.20276837,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.0589707,
+      "adc": 8960,
+      "dac": 4959,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715885901.154,
+        "power_mw": 5.20276837,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.1069236,
+      "adc": 8963,
+      "dac": 4934,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886115.7952,
+        "power_mw": 5.201235410000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.1499224,
+      "adc": 8968,
+      "dac": 4916,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886115.7952,
+        "power_mw": 5.201235410000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.2011502,
+      "adc": 8958,
+      "dac": 4870,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886115.7952,
+        "power_mw": 5.201235410000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.2500885,
+      "adc": 8964,
+      "dac": 4904,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886115.7952,
+        "power_mw": 5.201235410000001,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.3107538,
+      "adc": 8959,
+      "dac": 4915,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886319.4463,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.3560503,
+      "adc": 8958,
+      "dac": 4970,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886319.4463,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.4045498,
+      "adc": 8961,
+      "dac": 4946,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886319.4463,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.4381094,
+      "adc": 8955,
+      "dac": 4941,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886319.4463,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.4954705,
+      "adc": 8955,
+      "dac": 4982,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886319.4463,
+        "power_mw": 5.20320656,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.528237,
+      "adc": 8958,
+      "dac": 5050,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886523.7168,
+        "power_mw": 5.20342542,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.5763226,
+      "adc": 8960,
+      "dac": 4989,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886523.7168,
+        "power_mw": 5.20342542,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.6236897,
+      "adc": 8964,
+      "dac": 4997,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886523.7168,
+        "power_mw": 5.20342542,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.6679835,
+      "adc": 8957,
+      "dac": 4950,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886523.7168,
+        "power_mw": 5.20342542,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.7011912,
+      "adc": 8962,
+      "dac": 4952,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886523.7168,
+        "power_mw": 5.20342542,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.754701,
+      "adc": 8960,
+      "dac": 5008,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886741.6226,
+        "power_mw": 5.2023306499999995,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.809055,
+      "adc": 8960,
+      "dac": 4983,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886741.6226,
+        "power_mw": 5.2023306499999995,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.8428063,
+      "adc": 8961,
+      "dac": 4988,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886741.6226,
+        "power_mw": 5.2023306499999995,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.8804727,
+      "adc": 8960,
+      "dac": 4948,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886741.6226,
+        "power_mw": 5.2023306499999995,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.9346912,
+      "adc": 8962,
+      "dac": 4916,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886945.7207,
+        "power_mw": 5.20758703,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715886.9815533,
+      "adc": 8957,
+      "dac": 4975,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886945.7207,
+        "power_mw": 5.20758703,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.0272388,
+      "adc": 8961,
+      "dac": 5012,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886945.7207,
+        "power_mw": 5.20758703,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.0756295,
+      "adc": 8963,
+      "dac": 4936,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715886945.7207,
+        "power_mw": 5.20758703,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.1233616,
+      "adc": 8957,
+      "dac": 4954,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887148.6028,
+        "power_mw": 5.20473998,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.1718733,
+      "adc": 8955,
+      "dac": 4984,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887148.6028,
+        "power_mw": 5.20473998,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.2063699,
+      "adc": 8961,
+      "dac": 5112,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887148.6028,
+        "power_mw": 5.20473998,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.2425613,
+      "adc": 8961,
+      "dac": 4990,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887148.6028,
+        "power_mw": 5.20473998,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.2944336,
+      "adc": 8960,
+      "dac": 4985,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887148.6028,
+        "power_mw": 5.20473998,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.3255603,
+      "adc": 8956,
+      "dac": 4972,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887353.8577,
+        "power_mw": 5.20386361,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.3834386,
+      "adc": 8962,
+      "dac": 4919,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887353.8577,
+        "power_mw": 5.20386361,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.4366171,
+      "adc": 8959,
+      "dac": 5005,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887353.8577,
+        "power_mw": 5.20386361,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.4713645,
+      "adc": 8962,
+      "dac": 4955,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887353.8577,
+        "power_mw": 5.20386361,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.5146704,
+      "adc": 8960,
+      "dac": 4890,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887353.8577,
+        "power_mw": 5.20386361,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.5496256,
+      "adc": 8960,
+      "dac": 4909,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887557.6248,
+        "power_mw": 5.20211132,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.608345,
+      "adc": 8963,
+      "dac": 4941,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887557.6248,
+        "power_mw": 5.20211132,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.6431224,
+      "adc": 8968,
+      "dac": 4909,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887557.6248,
+        "power_mw": 5.20211132,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.699733,
+      "adc": 8959,
+      "dac": 4978,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887557.6248,
+        "power_mw": 5.20211132,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    },
+    {
+      "host_time": 1793715887.7351518,
+      "adc": 8963,
+      "dac": 4931,
+      "status": 2,
+      "meter": {
+        "connected": true,
+        "sampled_at": 1793715887771.914,
+        "power_mw": 5.20254951,
+        "identity": {
+          "model": "PM100USB",
+          "serial": "P2007293",
+          "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+          "wavelength_nm": 556.0,
+          "unit": "W",
+          "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+        },
+        "error": ""
+      }
+    }
+  ],
+  "timestamp_quantization_s": 2e-07,
+  "CIC_group_delay_raw_samples": 3073.5,
+  "name": "balanced_long_plus1mW_out",
+  "mode": "long",
+  "direction": "out",
+  "configuration": {
+    "name": "balanced",
+    "label": "P11 I0.720001",
+    "kp": 11,
+    "ki": 0.720001220703125
+  },
+  "requested_delta_mw": 1.0,
+  "end_target_code": 8960,
+  "start_target_code": 8840,
+  "expected_step_mw": 1.0024666452309736
+}

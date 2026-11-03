@@ -1,0 +1,15 @@
+{
+  "configuration": {
+    "name": "balanced",
+    "label": "P11 I0.720001",
+    "kp": 11,
+    "ki": 0.720001220703125
+  },
+  "injected_dac_peak": 512,
+  "frequency_hz": 0.10011717677116394,
+  "held_optical_peak_mw": 0.16187017808105686,
+  "closed_optical_peak_mw": 0.0012214795313700711,
+  "residual_ratio": 0.007546044279746282,
+  "gain_db": -42.44561301425878,
+  "note": "Two 20s power-meter records. Sine plus constant and linear-trend fit. A single tested slow disturbance, not the maximum correctable drift rate or range."
+}

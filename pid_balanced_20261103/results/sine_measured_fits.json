@@ -1,0 +1,2004 @@
+[
+  {
+    "frequency_hz": 1000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.5809302309854254,
+        "mean_adc": 8837.4982401722,
+        "residual_rms_adc": 0.7486820057279343,
+        "cic_magnitude": 0.9967706568946363,
+        "quarter_amplitudes_adc": [
+          2.5329667847191257,
+          2.571746563516739,
+          2.581635204277566,
+          2.631214187038209
+        ],
+        "amplitude_spread_fraction": 0.01357508223691222,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65542.406
+      },
+      {
+        "amplitude_peak_adc_codes": 0.1500382294063469,
+        "mean_adc": 8839.877236554305,
+        "residual_rms_adc": 0.13000430795131132,
+        "cic_magnitude": 0.9967706568946363,
+        "quarter_amplitudes_adc": [
+          0.1457620640336699,
+          0.14757890350073827,
+          0.15173749935276828,
+          0.1549387034812474
+        ],
+        "amplitude_spread_fraction": 0.02385802911715408,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65547.765,
+        "suppression_db": 24.750745022372072
+      },
+      {
+        "amplitude_peak_adc_codes": 0.12204171692409972,
+        "mean_adc": 8839.873753487042,
+        "residual_rms_adc": 0.11309609378145219,
+        "cic_magnitude": 0.9967706568946363,
+        "quarter_amplitudes_adc": [
+          0.11835109526242768,
+          0.12056848298565509,
+          0.12600994611517308,
+          0.12306434852922597
+        ],
+        "amplitude_spread_fraction": 0.02339193370541308,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65553.062,
+        "suppression_db": 26.583248006736987
+      },
+      {
+        "amplitude_peak_adc_codes": 0.1168426525007184,
+        "mean_adc": 8839.875754828647,
+        "residual_rms_adc": 0.10825908379926043,
+        "cic_magnitude": 0.9967706568946363,
+        "quarter_amplitudes_adc": [
+          0.11461389475710446,
+          0.12336071485351781,
+          0.11584932162180661,
+          0.11271968182983903
+        ],
+        "amplitude_spread_fraction": 0.03463258746734909,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65558.406,
+        "suppression_db": 27.00018602337817
+      },
+      {
+        "amplitude_peak_adc_codes": 0.15074562072312178,
+        "mean_adc": 8839.877851611345,
+        "residual_rms_adc": 0.12859244311786452,
+        "cic_magnitude": 0.9967706568946363,
+        "quarter_amplitudes_adc": [
+          0.14717461757379363,
+          0.15904900739966016,
+          0.14570269065923033,
+          0.15104032799701497
+        ],
+        "amplitude_spread_fraction": 0.03434527265348502,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65563.687,
+        "suppression_db": 24.825493150867498
+      },
+      {
+        "amplitude_peak_adc_codes": 2.639017579963206,
+        "mean_adc": 8839.433051951404,
+        "residual_rms_adc": 0.8550559554866662,
+        "cic_magnitude": 0.9967706568946363,
+        "quarter_amplitudes_adc": [
+          2.6362669836470918,
+          2.587907316454373,
+          2.5924085515758835,
+          2.739390700198789
+        ],
+        "amplitude_spread_fraction": 0.023101659956626434,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65569.031
+      }
+    ],
+    "held_drift_fraction": 0.022506361574757605
+  },
+  {
+    "frequency_hz": 3000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.5755342859067722,
+        "mean_adc": 8839.622652959899,
+        "residual_rms_adc": 0.8378483180677532,
+        "cic_magnitude": 0.9927480070051109,
+        "quarter_amplitudes_adc": [
+          2.548980038567731,
+          2.4717453690689344,
+          2.6520105986477,
+          2.6210859806332585
+        ],
+        "amplitude_spread_fraction": 0.02705018073831468,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65574.265
+      },
+      {
+        "amplitude_peak_adc_codes": 0.4482419392302623,
+        "mean_adc": 8839.87484529822,
+        "residual_rms_adc": 0.24966663878151538,
+        "cic_magnitude": 0.9927480070051109,
+        "quarter_amplitudes_adc": [
+          0.4541388285391625,
+          0.43320687697204646,
+          0.44457585026913604,
+          0.4605795900360902
+        ],
+        "amplitude_spread_fraction": 0.02304062892205345,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65579.406,
+        "suppression_db": 15.175650742126845
+      },
+      {
+        "amplitude_peak_adc_codes": 0.3357164220539996,
+        "mean_adc": 8839.875505492584,
+        "residual_rms_adc": 0.23575102585118815,
+        "cic_magnitude": 0.9927480070051109,
+        "quarter_amplitudes_adc": [
+          0.3399613283339513,
+          0.3307500758213376,
+          0.3377358319327866,
+          0.33442384004220566
+        ],
+        "amplitude_spread_fraction": 0.010364887067346446,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65584.453,
+        "suppression_db": 17.675197182244077
+      },
+      {
+        "amplitude_peak_adc_codes": 0.30456972136909094,
+        "mean_adc": 8839.877318236533,
+        "residual_rms_adc": 0.23967211376460001,
+        "cic_magnitude": 0.9927480070051109,
+        "quarter_amplitudes_adc": [
+          0.3185356044856499,
+          0.2872046977066864,
+          0.2991666250209561,
+          0.31367843918342814
+        ],
+        "amplitude_spread_fraction": 0.04049355508733966,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65589.593,
+        "suppression_db": 18.5094404404747
+      },
+      {
+        "amplitude_peak_adc_codes": 0.4405434339267096,
+        "mean_adc": 8839.87463413106,
+        "residual_rms_adc": 0.24807922814897582,
+        "cic_magnitude": 0.9927480070051109,
+        "quarter_amplitudes_adc": [
+          0.4494024601188622,
+          0.4340079116954794,
+          0.4403970394286936,
+          0.4382912332557045
+        ],
+        "amplitude_spread_fraction": 0.012755001709424339,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65594.718,
+        "suppression_db": 15.29194474037695
+      },
+      {
+        "amplitude_peak_adc_codes": 2.558617582524742,
+        "mean_adc": 8839.977339676887,
+        "residual_rms_adc": 0.7940285688598272,
+        "cic_magnitude": 0.9927480070051109,
+        "quarter_amplitudes_adc": [
+          2.5402156317627638,
+          2.611131130028397,
+          2.517701958505747,
+          2.555970085383643
+        ],
+        "amplitude_spread_fraction": 0.013487898819764218,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65599.906
+      }
+    ],
+    "held_drift_fraction": -0.0065682307063810175
+  },
+  {
+    "frequency_hz": 8000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.487928664145982,
+        "mean_adc": 8837.778538018134,
+        "residual_rms_adc": 0.8505233103381147,
+        "cic_magnitude": 0.9967830487716565,
+        "quarter_amplitudes_adc": [
+          2.4768851241111296,
+          2.4692792538270747,
+          2.4118934215847414,
+          2.5871744448311356
+        ],
+        "amplitude_spread_fraction": 0.025509247607656906,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65605.031
+      },
+      {
+        "amplitude_peak_adc_codes": 1.1694155338046528,
+        "mean_adc": 8839.876607123335,
+        "residual_rms_adc": 0.8350177509180119,
+        "cic_magnitude": 0.9967830487716565,
+        "quarter_amplitudes_adc": [
+          1.1485935033969206,
+          1.183745104281759,
+          1.1733564021629481,
+          1.1732611336050962
+        ],
+        "amplitude_spread_fraction": 0.011054197194397916,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65610.078,
+        "suppression_db": 6.553167254945019
+      },
+      {
+        "amplitude_peak_adc_codes": 0.8713272861950646,
+        "mean_adc": 8839.873735030125,
+        "residual_rms_adc": 0.9036030492401468,
+        "cic_magnitude": 0.9967830487716565,
+        "quarter_amplitudes_adc": [
+          0.8627715036704745,
+          0.8677434558791021,
+          0.895480092550429,
+          0.861301980982473
+        ],
+        "amplitude_spread_fraction": 0.015903116307949564,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65615.171,
+        "suppression_db": 9.10466360121563
+      },
+      {
+        "amplitude_peak_adc_codes": 0.8199404223856741,
+        "mean_adc": 8839.875762681519,
+        "residual_rms_adc": 0.9516553817700122,
+        "cic_magnitude": 0.9967830487716565,
+        "quarter_amplitudes_adc": [
+          0.8277929300979563,
+          0.8011002963076438,
+          0.8341548881776355,
+          0.8175171931692613
+        ],
+        "amplitude_spread_fraction": 0.015233639094857058,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65620.218,
+        "suppression_db": 9.628425781517185
+      },
+      {
+        "amplitude_peak_adc_codes": 1.139954906769306,
+        "mean_adc": 8839.876554526958,
+        "residual_rms_adc": 0.8115880766352055,
+        "cic_magnitude": 0.9967830487716565,
+        "quarter_amplitudes_adc": [
+          1.0840178887105643,
+          1.1627784244977066,
+          1.1400374658759973,
+          1.175423370184666
+        ],
+        "amplitude_spread_fraction": 0.03070658691955546,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65625.375,
+        "suppression_db": 6.76200606652271
+      },
+      {
+        "amplitude_peak_adc_codes": 2.4818389530112874,
+        "mean_adc": 8841.434342637245,
+        "residual_rms_adc": 0.9504832590399541,
+        "cic_magnitude": 0.9967830487716565,
+        "quarter_amplitudes_adc": [
+          2.5422574639180158,
+          2.3794224590016992,
+          2.4899169950608866,
+          2.542022560669274
+        ],
+        "amplitude_spread_fraction": 0.0266978063654143,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65630.5
+      }
+    ],
+    "held_drift_fraction": -0.002447703273190438
+  },
+  {
+    "frequency_hz": 10000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.485086169954801,
+        "mean_adc": 8838.203044651655,
+        "residual_rms_adc": 0.9358640907490542,
+        "cic_magnitude": 0.9949774532430702,
+        "quarter_amplitudes_adc": [
+          2.438814786628524,
+          2.4686094992087684,
+          2.529507447914619,
+          2.5252490840813517
+        ],
+        "amplitude_spread_fraction": 0.015393963845384898,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65635.64
+      },
+      {
+        "amplitude_peak_adc_codes": 1.4137415156368256,
+        "mean_adc": 8839.876326564088,
+        "residual_rms_adc": 0.8204171119814382,
+        "cic_magnitude": 0.9949774532430702,
+        "quarter_amplitudes_adc": [
+          1.439667786763453,
+          1.410046208874961,
+          1.3894960215643481,
+          1.4163859115859792
+        ],
+        "amplitude_spread_fraction": 0.012654714283061006,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65640.75,
+        "suppression_db": 4.914171110551883
+      },
+      {
+        "amplitude_peak_adc_codes": 1.0983351164180435,
+        "mean_adc": 8839.87614350139,
+        "residual_rms_adc": 0.9047837797266655,
+        "cic_magnitude": 0.9949774532430702,
+        "quarter_amplitudes_adc": [
+          1.1124531096677017,
+          1.0953423629870784,
+          1.0836064254324684,
+          1.1020266729114865
+        ],
+        "amplitude_spread_fraction": 0.0095362297370202,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65645.781,
+        "suppression_db": 7.121363933357228
+      },
+      {
+        "amplitude_peak_adc_codes": 1.042955220263533,
+        "mean_adc": 8839.875493650057,
+        "residual_rms_adc": 0.9846666786260863,
+        "cic_magnitude": 0.9949774532430702,
+        "quarter_amplitudes_adc": [
+          1.0469247820390575,
+          1.0488442147999761,
+          1.0336596238613522,
+          1.0440178131046285
+        ],
+        "amplitude_spread_fraction": 0.005615559284222233,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65650.875,
+        "suppression_db": 7.585394912547901
+      },
+      {
+        "amplitude_peak_adc_codes": 1.4320225615994115,
+        "mean_adc": 8839.876825841513,
+        "residual_rms_adc": 0.7860728593067238,
+        "cic_magnitude": 0.9949774532430702,
+        "quarter_amplitudes_adc": [
+          1.4581626497511084,
+          1.3758356675710368,
+          1.464569875090049,
+          1.43018016367701
+        ],
+        "amplitude_spread_fraction": 0.024445341295051576,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65655.953,
+        "suppression_db": 4.846287241305735
+      },
+      {
+        "amplitude_peak_adc_codes": 2.506074419189853,
+        "mean_adc": 8839.1969468443,
+        "residual_rms_adc": 1.0658730491787036,
+        "cic_magnitude": 0.9949774532430702,
+        "quarter_amplitudes_adc": [
+          2.580940753265355,
+          2.5193976824079605,
+          2.5230848516823396,
+          2.4067195989878587
+        ],
+        "amplitude_spread_fraction": 0.025170649593299444,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65661.046
+      }
+    ],
+    "held_drift_fraction": 0.008445682684489642
+  },
+  {
+    "frequency_hz": 12000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.4550758009078444,
+        "mean_adc": 8839.236355326944,
+        "residual_rms_adc": 0.9766231019926016,
+        "cic_magnitude": 0.9927744592892889,
+        "quarter_amplitudes_adc": [
+          2.4566872153834214,
+          2.472554141147648,
+          2.487942739038821,
+          2.4135459645546096
+        ],
+        "amplitude_spread_fraction": 0.01130142448967556,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65666.187
+      },
+      {
+        "amplitude_peak_adc_codes": 1.6279666667694406,
+        "mean_adc": 8839.876082541103,
+        "residual_rms_adc": 0.8104621173017028,
+        "cic_magnitude": 0.9927744592892889,
+        "quarter_amplitudes_adc": [
+          1.606937402660727,
+          1.5924522261955485,
+          1.6587580864104183,
+          1.6556545304103647
+        ],
+        "amplitude_spread_fraction": 0.017948859628311307,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65671.281,
+        "suppression_db": 3.572660831979391
+      },
+      {
+        "amplitude_peak_adc_codes": 1.314551574573076,
+        "mean_adc": 8839.873038818138,
+        "residual_rms_adc": 0.9432085873643186,
+        "cic_magnitude": 0.9927744592892889,
+        "quarter_amplitudes_adc": [
+          1.3440511933043953,
+          1.2892133489716107,
+          1.3214908122945979,
+          1.304341310627394
+        ],
+        "amplitude_spread_fraction": 0.015515122105799785,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65676.281,
+        "suppression_db": 5.434210399057539
+      },
+      {
+        "amplitude_peak_adc_codes": 1.211659182625647,
+        "mean_adc": 8839.8750416427,
+        "residual_rms_adc": 0.9443257092346273,
+        "cic_magnitude": 0.9927744592892889,
+        "quarter_amplitudes_adc": [
+          1.2533488824047085,
+          1.1881498873204848,
+          1.2054827911491053,
+          1.1992153096845877
+        ],
+        "amplitude_spread_fraction": 0.020567223412773745,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65681.359,
+        "suppression_db": 6.146408754144353
+      },
+      {
+        "amplitude_peak_adc_codes": 1.6110665091199832,
+        "mean_adc": 8839.87874795835,
+        "residual_rms_adc": 0.8022015094724274,
+        "cic_magnitude": 0.9927744592892889,
+        "quarter_amplitudes_adc": [
+          1.6522616899452078,
+          1.5978714040066349,
+          1.5559004001699765,
+          1.6399990142222138
+        ],
+        "amplitude_spread_fraction": 0.0235288250696197,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65686.437,
+        "suppression_db": 3.676002158202365
+      },
+      {
+        "amplitude_peak_adc_codes": 2.461086084693092,
+        "mean_adc": 8840.093971710125,
+        "residual_rms_adc": 0.9576582478967739,
+        "cic_magnitude": 0.9927744592892889,
+        "quarter_amplitudes_adc": [
+          2.4275006465602202,
+          2.4240410208314866,
+          2.502836178824866,
+          2.500095235271179
+        ],
+        "amplitude_spread_fraction": 0.015375594115849453,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65691.531
+      }
+    ],
+    "held_drift_fraction": 0.0024481051798992404
+  },
+  {
+    "frequency_hz": 14000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.4202299545363166,
+        "mean_adc": 8841.363575658268,
+        "residual_rms_adc": 0.9552110154498835,
+        "cic_magnitude": 0.9901763665105775,
+        "quarter_amplitudes_adc": [
+          2.4115344248445307,
+          2.356804481903,
+          2.45933316900496,
+          2.4791537010472604
+        ],
+        "amplitude_spread_fraction": 0.019472407098204046,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65696.593
+      },
+      {
+        "amplitude_peak_adc_codes": 1.8513093762236583,
+        "mean_adc": 8839.87622783197,
+        "residual_rms_adc": 0.830840075824208,
+        "cic_magnitude": 0.9901763665105775,
+        "quarter_amplitudes_adc": [
+          1.8710429192086653,
+          1.8713747743723845,
+          1.8618299971773162,
+          1.798407884691451
+        ],
+        "amplitude_spread_fraction": 0.016433151946654106,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65701.703,
+        "suppression_db": 2.305430382789794
+      },
+      {
+        "amplitude_peak_adc_codes": 1.5149677599267377,
+        "mean_adc": 8839.873652235874,
+        "residual_rms_adc": 0.9074811344992059,
+        "cic_magnitude": 0.9901763665105775,
+        "quarter_amplitudes_adc": [
+          1.5356080234689609,
+          1.475837162300304,
+          1.5426067306417814,
+          1.5047673090555511
+        ],
+        "amplitude_spread_fraction": 0.017544632199456168,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65706.734,
+        "suppression_db": 4.02510716778297
+      },
+      {
+        "amplitude_peak_adc_codes": 1.416910556754803,
+        "mean_adc": 8839.876666786222,
+        "residual_rms_adc": 0.9373140014709036,
+        "cic_magnitude": 0.9901763665105775,
+        "quarter_amplitudes_adc": [
+          1.401260206126892,
+          1.4199730347425763,
+          1.4047816331455012,
+          1.4437350434796563
+        ],
+        "amplitude_spread_fraction": 0.011804538998663208,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65711.75,
+        "suppression_db": 4.584501164829909
+      },
+      {
+        "amplitude_peak_adc_codes": 1.7730406140328026,
+        "mean_adc": 8839.87834042512,
+        "residual_rms_adc": 0.8106359877666722,
+        "cic_magnitude": 0.9901763665105775,
+        "quarter_amplitudes_adc": [
+          1.8164730441204386,
+          1.7357935953891843,
+          1.8221477396279093,
+          1.7172571970906816
+        ],
+        "amplitude_spread_fraction": 0.026451333992767143,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65716.75,
+        "suppression_db": 2.615166014684375
+      },
+      {
+        "amplitude_peak_adc_codes": 2.3898846672617755,
+        "mean_adc": 8839.71399079442,
+        "residual_rms_adc": 0.9996728910970886,
+        "cic_magnitude": 0.9901763665105775,
+        "quarter_amplitudes_adc": [
+          2.3296356448032007,
+          2.4572975560189976,
+          2.3174139004098637,
+          2.4636905973882723
+        ],
+        "amplitude_spread_fraction": 0.02870308503221486,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65721.781
+      }
+    ],
+    "held_drift_fraction": -0.012538183496846655
+  },
+  {
+    "frequency_hz": 16000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.355400118999794,
+        "mean_adc": 8840.454490483206,
+        "residual_rms_adc": 0.9800330363137792,
+        "cic_magnitude": 0.9968208274729675,
+        "quarter_amplitudes_adc": [
+          2.2590896894264665,
+          2.268981161834162,
+          2.378171893642161,
+          2.4885619679724105
+        ],
+        "amplitude_spread_fraction": 0.039721517764680095,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65726.906
+      },
+      {
+        "amplitude_peak_adc_codes": 2.0302302988577567,
+        "mean_adc": 8839.879558514693,
+        "residual_rms_adc": 1.0222760623673968,
+        "cic_magnitude": 0.9968208274729675,
+        "quarter_amplitudes_adc": [
+          1.9866718619971002,
+          2.134263570610807,
+          2.054734569762979,
+          1.9469515156687156
+        ],
+        "amplitude_spread_fraction": 0.03504319281779602,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65731.906,
+        "suppression_db": 1.2232002258627142
+      },
+      {
+        "amplitude_peak_adc_codes": 1.749189488481332,
+        "mean_adc": 8839.876700082337,
+        "residual_rms_adc": 1.094100223654577,
+        "cic_magnitude": 0.9968208274729675,
+        "quarter_amplitudes_adc": [
+          1.7477028873260316,
+          1.6769503051139234,
+          1.7629856973855142,
+          1.814626655869254
+        ],
+        "amplitude_spread_fraction": 0.028109433525586976,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65736.968,
+        "suppression_db": 2.44881490636166
+      },
+      {
+        "amplitude_peak_adc_codes": 1.5974011895685252,
+        "mean_adc": 8839.871294789076,
+        "residual_rms_adc": 1.2243022753663027,
+        "cic_magnitude": 0.9968208274729675,
+        "quarter_amplitudes_adc": [
+          1.6245803003645358,
+          1.6238006869210606,
+          1.655501598067683,
+          1.4905504896482187
+        ],
+        "amplitude_spread_fraction": 0.039837067500554574,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65742.078,
+        "suppression_db": 3.167514525805968
+      },
+      {
+        "amplitude_peak_adc_codes": 2.0399332985628598,
+        "mean_adc": 8839.871499329853,
+        "residual_rms_adc": 1.0245231033208781,
+        "cic_magnitude": 0.9968208274729675,
+        "quarter_amplitudes_adc": [
+          2.0978411556547183,
+          2.1121236201435667,
+          1.9394780089585513,
+          2.0067689604523853
+        ],
+        "amplitude_spread_fraction": 0.0344632194814955,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65747.109,
+        "suppression_db": 0.9742445135866568
+      },
+      {
+        "amplitude_peak_adc_codes": 2.263462902050407,
+        "mean_adc": 8838.54780730856,
+        "residual_rms_adc": 1.1633126638894093,
+        "cic_magnitude": 0.9968208274729675,
+        "quarter_amplitudes_adc": [
+          1.9853744312000081,
+          2.32323100639003,
+          2.331424991327936,
+          2.4475524386434846
+        ],
+        "amplitude_spread_fraction": 0.0759608741850179,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65752.234
+      }
+    ],
+    "held_drift_fraction": -0.039032526239502596
+  },
+  {
+    "frequency_hz": 20000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.2084005386482666,
+        "mean_adc": 8839.105684160506,
+        "residual_rms_adc": 1.124034954382892,
+        "cic_magnitude": 0.9950363761606779,
+        "quarter_amplitudes_adc": [
+          2.2654431055271105,
+          2.0512915891090993,
+          2.2325469784916305,
+          2.3570527438841076
+        ],
+        "amplitude_spread_fraction": 0.049857777601444005,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65757.359
+      },
+      {
+        "amplitude_peak_adc_codes": 2.2993320312599157,
+        "mean_adc": 8839.878215914508,
+        "residual_rms_adc": 0.9673138985082782,
+        "cic_magnitude": 0.9950363761606779,
+        "quarter_amplitudes_adc": [
+          2.377763549557127,
+          2.3876710850088716,
+          1.9881870327916904,
+          2.457381301574654
+        ],
+        "amplitude_spread_fraction": 0.07998561970918204,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65762.453,
+        "suppression_db": -0.27478648960246826
+      },
+      {
+        "amplitude_peak_adc_codes": 2.0550008293536064,
+        "mean_adc": 8839.874618298454,
+        "residual_rms_adc": 1.1277501473419873,
+        "cic_magnitude": 0.9950363761606779,
+        "quarter_amplitudes_adc": [
+          2.1252646935565016,
+          2.007583771094251,
+          1.9765123341332318,
+          2.110915968418779
+        ],
+        "amplitude_spread_fraction": 0.031226325907655325,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65767.578,
+        "suppression_db": 0.7764984553101948
+      },
+      {
+        "amplitude_peak_adc_codes": 2.0121522417787445,
+        "mean_adc": 8839.876571324825,
+        "residual_rms_adc": 1.1795939854169508,
+        "cic_magnitude": 0.9950363761606779,
+        "quarter_amplitudes_adc": [
+          2.01557052217633,
+          2.0487439387654347,
+          1.9942253921918998,
+          1.9999503826459288
+        ],
+        "amplitude_spread_fraction": 0.010519328860267647,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65772.687,
+        "suppression_db": 1.0341298234189351
+      },
+      {
+        "amplitude_peak_adc_codes": 2.3512839428598893,
+        "mean_adc": 8839.874240805186,
+        "residual_rms_adc": 1.0590420392588116,
+        "cic_magnitude": 0.9950363761606779,
+        "quarter_amplitudes_adc": [
+          2.3380202559996808,
+          2.251119438644603,
+          2.4027498939643768,
+          2.419411387697985
+        ],
+        "amplitude_spread_fraction": 0.02810401258588167,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65777.765,
+        "suppression_db": -0.24522927353191898
+      },
+      {
+        "amplitude_peak_adc_codes": 2.305096132623478,
+        "mean_adc": 8839.956895936883,
+        "residual_rms_adc": 1.1721429233284208,
+        "cic_magnitude": 0.9950363761606779,
+        "quarter_amplitudes_adc": [
+          2.3293795769999117,
+          2.163057237085421,
+          2.5164716390313413,
+          2.165304743552208
+        ],
+        "amplitude_spread_fraction": 0.06335323065701601,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65782.843
+      }
+    ],
+    "held_drift_fraction": 0.0437853515623563
+  },
+  {
+    "frequency_hz": 30000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.292316921386695,
+        "mean_adc": 8839.845144498602,
+        "residual_rms_adc": 1.0933807174631116,
+        "cic_magnitude": 0.9888617348866251,
+        "quarter_amplitudes_adc": [
+          2.3058327425756895,
+          2.3805484804549892,
+          2.3550137208270834,
+          2.1390210637682125
+        ],
+        "amplitude_spread_fraction": 0.04097002898966201,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65787.953
+      },
+      {
+        "amplitude_peak_adc_codes": 2.9688150947016894,
+        "mean_adc": 8839.878219670454,
+        "residual_rms_adc": 1.044593375203042,
+        "cic_magnitude": 0.9888617348866251,
+        "quarter_amplitudes_adc": [
+          3.005131696294171,
+          2.986550600268525,
+          2.9551194700419,
+          2.9308987357610286
+        ],
+        "amplitude_spread_fraction": 0.009609885422173444,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65793.031,
+        "suppression_db": -2.1640453205976744
+      },
+      {
+        "amplitude_peak_adc_codes": 3.082690637208627,
+        "mean_adc": 8839.873051533685,
+        "residual_rms_adc": 1.2157434536246947,
+        "cic_magnitude": 0.9888617348866251,
+        "quarter_amplitudes_adc": [
+          3.1626857831130915,
+          3.0384668533614336,
+          3.00440047585908,
+          3.1252974569292093
+        ],
+        "amplitude_spread_fraction": 0.020707428293681718,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65798.046,
+        "suppression_db": -2.4106306254139613
+      },
+      {
+        "amplitude_peak_adc_codes": 3.039667467337561,
+        "mean_adc": 8839.87853072764,
+        "residual_rms_adc": 1.163025718266283,
+        "cic_magnitude": 0.9888617348866251,
+        "quarter_amplitudes_adc": [
+          3.0219430214779734,
+          3.1066452732951286,
+          2.9607403387152886,
+          3.070057850920679
+        ],
+        "amplitude_spread_fraction": 0.01798286952891025,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65803.125,
+        "suppression_db": -2.2079278725392144
+      },
+      {
+        "amplitude_peak_adc_codes": 3.146762621688945,
+        "mean_adc": 8839.879139486255,
+        "residual_rms_adc": 1.022205509651682,
+        "cic_magnitude": 0.9888617348866251,
+        "quarter_amplitudes_adc": [
+          3.084151209517986,
+          3.185080796643166,
+          3.1405469747238453,
+          3.1846423716683177
+        ],
+        "amplitude_spread_fraction": 0.013141541092808276,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65808.234,
+        "suppression_db": -2.4283324709373826
+      },
+      {
+        "amplitude_peak_adc_codes": 2.4013365367014807,
+        "mean_adc": 8840.82726229398,
+        "residual_rms_adc": 0.9654672307409122,
+        "cic_magnitude": 0.9888617348866251,
+        "quarter_amplitudes_adc": [
+          2.328650617770754,
+          2.3987810360942325,
+          2.473809559507101,
+          2.4104890698379347
+        ],
+        "amplitude_spread_fraction": 0.021438903764820633,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65813.375
+      }
+    ],
+    "held_drift_fraction": 0.04755870111050631
+  },
+  {
+    "frequency_hz": 40000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.407071230492357,
+        "mean_adc": 8838.694486797878,
+        "residual_rms_adc": 1.266825853160223,
+        "cic_magnitude": 0.9952721050469077,
+        "quarter_amplitudes_adc": [
+          2.2897008001366723,
+          2.4218010373514955,
+          2.40846358822146,
+          2.5609602492608357
+        ],
+        "amplitude_spread_fraction": 0.03973002394849869,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65818.5
+      },
+      {
+        "amplitude_peak_adc_codes": 3.6148019930210418,
+        "mean_adc": 8839.884397724787,
+        "residual_rms_adc": 1.2025629414563956,
+        "cic_magnitude": 0.9952721050469077,
+        "quarter_amplitudes_adc": [
+          3.5773901356231885,
+          3.533842200810709,
+          3.582747477787435,
+          3.776090217700139
+        ],
+        "amplitude_spread_fraction": 0.02584535357178878,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65823.625,
+        "suppression_db": -3.5598762117587324
+      },
+      {
+        "amplitude_peak_adc_codes": 4.13906841338859,
+        "mean_adc": 8839.883739065044,
+        "residual_rms_adc": 1.3305977316939728,
+        "cic_magnitude": 0.9952721050469077,
+        "quarter_amplitudes_adc": [
+          4.357004778391424,
+          4.0168575856512305,
+          4.112922125637682,
+          4.081730326332265
+        ],
+        "amplitude_spread_fraction": 0.03109695214321549,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65828.625,
+        "suppression_db": -4.763607815513106
+      },
+      {
+        "amplitude_peak_adc_codes": 4.399511856926781,
+        "mean_adc": 8839.875384034032,
+        "residual_rms_adc": 1.3505549107811619,
+        "cic_magnitude": 0.9952721050469077,
+        "quarter_amplitudes_adc": [
+          4.176312358375403,
+          4.3148557113219645,
+          4.303368385488991,
+          4.8074944588442525
+        ],
+        "amplitude_spread_fraction": 0.054807655087850696,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65833.703,
+        "suppression_db": -5.321530861749703
+      },
+      {
+        "amplitude_peak_adc_codes": 3.760340181421093,
+        "mean_adc": 8839.885765151917,
+        "residual_rms_adc": 1.2597026835073863,
+        "cic_magnitude": 0.9952721050469077,
+        "quarter_amplitudes_adc": [
+          4.048580349252095,
+          3.6285450711547966,
+          3.474274027615244,
+          3.8858482047198883
+        ],
+        "amplitude_spread_fraction": 0.05918774161479145,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65838.734,
+        "suppression_db": -3.9856994839116395
+      },
+      {
+        "amplitude_peak_adc_codes": 2.368881612352732,
+        "mean_adc": 8838.992876181981,
+        "residual_rms_adc": 1.2949035555766564,
+        "cic_magnitude": 0.9952721050469077,
+        "quarter_amplitudes_adc": [
+          2.430557592792877,
+          2.295814910292542,
+          2.3504989466821558,
+          2.383683663826524
+        ],
+        "amplitude_spread_fraction": 0.020760330472060957,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65843.796
+      }
+    ],
+    "held_drift_fraction": -0.015865595357480666
+  },
+  {
+    "frequency_hz": 50000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.2849246799384217,
+        "mean_adc": 8840.424857675145,
+        "residual_rms_adc": 1.0928608582268684,
+        "cic_magnitude": 0.9926210120326611,
+        "quarter_amplitudes_adc": [
+          2.2425256944229046,
+          2.4091258699807723,
+          2.2059214449878746,
+          2.319635927960117
+        ],
+        "amplitude_spread_fraction": 0.033984855110203355,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65848.921
+      },
+      {
+        "amplitude_peak_adc_codes": 3.894712180457309,
+        "mean_adc": 8839.858702997579,
+        "residual_rms_adc": 1.228223646706719,
+        "cic_magnitude": 0.9926210120326611,
+        "quarter_amplitudes_adc": [
+          3.820019683101788,
+          3.861164653844444,
+          4.042467835614279,
+          3.866736189458054
+        ],
+        "amplitude_spread_fraction": 0.021953280047599374,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65854.031,
+        "suppression_db": -4.620033061505077
+      },
+      {
+        "amplitude_peak_adc_codes": 4.844411591427745,
+        "mean_adc": 8839.879923860733,
+        "residual_rms_adc": 1.2526465991526112,
+        "cic_magnitude": 0.9926210120326611,
+        "quarter_amplitudes_adc": [
+          5.0202424815455275,
+          4.9760616526964805,
+          4.675484527582559,
+          4.719119616972014
+        ],
+        "amplitude_spread_fraction": 0.03135875157069712,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65859.109,
+        "suppression_db": -6.503401711534456
+      },
+      {
+        "amplitude_peak_adc_codes": 5.354108522230956,
+        "mean_adc": 8839.882321743109,
+        "residual_rms_adc": 1.3705875805521779,
+        "cic_magnitude": 0.9926210120326611,
+        "quarter_amplitudes_adc": [
+          5.35662340639339,
+          5.054899114127606,
+          5.71102552013809,
+          5.310226861577767
+        ],
+        "amplitude_spread_fraction": 0.043647218787205844,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65864.187,
+        "suppression_db": -7.360396149256267
+      },
+      {
+        "amplitude_peak_adc_codes": 3.893061550883996,
+        "mean_adc": 8839.88177270471,
+        "residual_rms_adc": 1.2144172428053126,
+        "cic_magnitude": 0.9926210120326611,
+        "quarter_amplitudes_adc": [
+          3.9298866745648544,
+          3.903139667743596,
+          3.8493994184920846,
+          3.890196246151547
+        ],
+        "amplitude_spread_fraction": 0.007458059751328845,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65869.296,
+        "suppression_db": -4.580493585866138
+      },
+      {
+        "amplitude_peak_adc_codes": 2.3007171942038527,
+        "mean_adc": 8839.93610924579,
+        "residual_rms_adc": 1.350054194090411,
+        "cic_magnitude": 0.9926210120326611,
+        "quarter_amplitudes_adc": [
+          2.3139766298456634,
+          2.167586958701581,
+          2.4618531735653377,
+          2.2676365200759574
+        ],
+        "amplitude_spread_fraction": 0.046030556458026776,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65874.39
+      }
+    ],
+    "held_drift_fraction": 0.006911612625172703
+  },
+  {
+    "frequency_hz": 60000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.2882318743683085,
+        "mean_adc": 8838.398277579645,
+        "residual_rms_adc": 1.313766495085108,
+        "cic_magnitude": 0.9893889289929884,
+        "quarter_amplitudes_adc": [
+          2.4405218273056124,
+          2.3310151212655814,
+          2.2340158062578417,
+          2.130690600975455
+        ],
+        "amplitude_spread_fraction": 0.05025922280638639,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65879.453
+      },
+      {
+        "amplitude_peak_adc_codes": 3.7147513822531226,
+        "mean_adc": 8839.9009924413,
+        "residual_rms_adc": 1.2909985224556788,
+        "cic_magnitude": 0.9893889289929884,
+        "quarter_amplitudes_adc": [
+          3.4659559936906086,
+          3.747413389029664,
+          3.9916999482350795,
+          3.658290878942864
+        ],
+        "amplitude_spread_fraction": 0.05085719075764957,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65884.562,
+        "suppression_db": -4.211795308933215
+      },
+      {
+        "amplitude_peak_adc_codes": 4.543011486874278,
+        "mean_adc": 8839.880846613903,
+        "residual_rms_adc": 1.33811794367227,
+        "cic_magnitude": 0.9893889289929884,
+        "quarter_amplitudes_adc": [
+          4.385505500752483,
+          4.531143483161761,
+          4.855693503761314,
+          4.406118429003364
+        ],
+        "amplitude_spread_fraction": 0.04137823688491064,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65889.656,
+        "suppression_db": -5.963269592250472
+      },
+      {
+        "amplitude_peak_adc_codes": 4.883825477700804,
+        "mean_adc": 8839.888545353388,
+        "residual_rms_adc": 1.3778949947079426,
+        "cic_magnitude": 0.9893889289929884,
+        "quarter_amplitudes_adc": [
+          4.937770028568687,
+          4.911566423035585,
+          4.667806679252276,
+          5.020432486669062
+        ],
+        "amplitude_spread_fraction": 0.02689032642618818,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65894.703,
+        "suppression_db": -6.594759961925684
+      },
+      {
+        "amplitude_peak_adc_codes": 3.8227523102969276,
+        "mean_adc": 8839.887350077406,
+        "residual_rms_adc": 1.2432660909984798,
+        "cic_magnitude": 0.9893889289929884,
+        "quarter_amplitudes_adc": [
+          4.020370782978291,
+          3.7769425036116195,
+          3.669915996823093,
+          3.8260254058050758
+        ],
+        "amplitude_spread_fraction": 0.03321828614574604,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65899.781,
+        "suppression_db": -4.470265373258982
+      },
+      {
+        "amplitude_peak_adc_codes": 2.2840367272228774,
+        "mean_adc": 8837.140596760786,
+        "residual_rms_adc": 1.1329260791395788,
+        "cic_magnitude": 0.9893889289929884,
+        "quarter_amplitudes_adc": [
+          2.1620858608217888,
+          2.373408134321578,
+          2.2115856780098286,
+          2.403876189035922
+        ],
+        "amplitude_spread_fraction": 0.04501152390007361,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65904.875
+      }
+    ],
+    "held_drift_fraction": -0.0018333575335712782
+  },
+  {
+    "frequency_hz": 80000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 2.186057048335943,
+        "mean_adc": 8841.347323146232,
+        "residual_rms_adc": 1.5736174291769447,
+        "cic_magnitude": 0.9962156536099577,
+        "quarter_amplitudes_adc": [
+          2.218174169877168,
+          2.296277909857724,
+          2.1133701596916348,
+          2.1057953185832576
+        ],
+        "amplitude_spread_fraction": 0.0361191659209689,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65909.953
+      },
+      {
+        "amplitude_peak_adc_codes": 2.87317945137915,
+        "mean_adc": 8839.93835881213,
+        "residual_rms_adc": 1.6311434937731915,
+        "cic_magnitude": 0.9962156536099577,
+        "quarter_amplitudes_adc": [
+          2.90929249902824,
+          3.1315976530008385,
+          2.6499484543494325,
+          2.8011307229412896
+        ],
+        "amplitude_spread_fraction": 0.06106284660526645,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65915.046,
+        "suppression_db": -2.373702092876974
+      },
+      {
+        "amplitude_peak_adc_codes": 2.8201227160251827,
+        "mean_adc": 8839.944255958935,
+        "residual_rms_adc": 1.8198135779903144,
+        "cic_magnitude": 0.9962156536099577,
+        "quarter_amplitudes_adc": [
+          2.7133131157597323,
+          2.9629792924443676,
+          2.862389926579382,
+          2.768133405869695
+        ],
+        "amplitude_spread_fraction": 0.033623148048130665,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65920.062,
+        "suppression_db": -2.211488974798994
+      },
+      {
+        "amplitude_peak_adc_codes": 2.852389552110658,
+        "mean_adc": 8839.917606260768,
+        "residual_rms_adc": 1.702911570770894,
+        "cic_magnitude": 0.9962156536099577,
+        "quarter_amplitudes_adc": [
+          2.7932231541369186,
+          2.75233453600354,
+          2.903689923533125,
+          2.988151635198645
+        ],
+        "amplitude_spread_fraction": 0.03242363557579791,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65925.171,
+        "suppression_db": -2.3099814719278724
+      },
+      {
+        "amplitude_peak_adc_codes": 2.7054782865707576,
+        "mean_adc": 8839.939260468733,
+        "residual_rms_adc": 1.6642883194202078,
+        "cic_magnitude": 0.9962156536099577,
+        "quarter_amplitudes_adc": [
+          2.617196570117709,
+          2.810580517083359,
+          2.695480906691335,
+          2.7152859203409445
+        ],
+        "amplitude_spread_fraction": 0.025413231188735223,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65930.156,
+        "suppression_db": -1.8503695574446546
+      },
+      {
+        "amplitude_peak_adc_codes": 2.1864612206367924,
+        "mean_adc": 8841.568909513,
+        "residual_rms_adc": 1.526928077944993,
+        "cic_magnitude": 0.9962156536099577,
+        "quarter_amplitudes_adc": [
+          2.387904496075302,
+          2.211793659862161,
+          2.1129374396574354,
+          2.0421238435164013
+        ],
+        "amplitude_spread_fraction": 0.05932605514052781,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65935.265
+      }
+    ],
+    "held_drift_fraction": 0.0001848864379623283
+  },
+  {
+    "frequency_hz": 100000,
+    "amplitude_dac_peak": 64,
+    "captures": [
+      {
+        "amplitude_peak_adc_codes": 1.8863967554376104,
+        "mean_adc": 8843.479607747266,
+        "residual_rms_adc": 1.5755618802854485,
+        "cic_magnitude": 0.9940918589923965,
+        "quarter_amplitudes_adc": [
+          1.781719664665644,
+          1.9511731577677645,
+          1.852529692874282,
+          2.0047275341024884
+        ],
+        "amplitude_spread_fraction": 0.04549159851945962,
+        "name": "held_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65940.343
+      },
+      {
+        "amplitude_peak_adc_codes": 1.9804771146013598,
+        "mean_adc": 8839.927085158892,
+        "residual_rms_adc": 1.6027498751005262,
+        "cic_magnitude": 0.9940918589923965,
+        "quarter_amplitudes_adc": [
+          1.8354712101512463,
+          2.205657184212021,
+          1.994645073930787,
+          1.888694444397379
+        ],
+        "amplitude_spread_fraction": 0.07154327963887054,
+        "name": "baseline_before",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65945.406,
+        "suppression_db": -0.44652190491004246
+      },
+      {
+        "amplitude_peak_adc_codes": 1.875637435430183,
+        "mean_adc": 8839.940614465746,
+        "residual_rms_adc": 1.7433375468502135,
+        "cic_magnitude": 0.9940918589923965,
+        "quarter_amplitudes_adc": [
+          1.6916029666779266,
+          1.9398812263586855,
+          1.9510493316649935,
+          1.9179609178954091
+        ],
+        "amplitude_spread_fraction": 0.056861394337426555,
+        "name": "balanced",
+        "config": {
+          "name": "balanced",
+          "label": "P11 I0.720001",
+          "kp": 11,
+          "ki": 0.720001220703125
+        },
+        "held": false,
+        "time_monotonic": 65950.531,
+        "suppression_db": 0.0017528618522598739
+      },
+      {
+        "amplitude_peak_adc_codes": 1.8274660580121793,
+        "mean_adc": 8839.851998737737,
+        "residual_rms_adc": 1.8777134874823673,
+        "cic_magnitude": 0.9940918589923965,
+        "quarter_amplitudes_adc": [
+          1.926111918691325,
+          1.940914529128526,
+          1.4952993295189883,
+          1.9624146821221597
+        ],
+        "amplitude_spread_fraction": 0.10613500318744011,
+        "name": "fast",
+        "config": {
+          "name": "fast",
+          "label": "P12 I0.779999",
+          "kp": 12,
+          "ki": 0.779998779296875
+        },
+        "held": false,
+        "time_monotonic": 65955.515,
+        "suppression_db": 0.20420006865208246
+      },
+      {
+        "amplitude_peak_adc_codes": 1.937013402656744,
+        "mean_adc": 8839.94745203451,
+        "residual_rms_adc": 1.6312454502198275,
+        "cic_magnitude": 0.9940918589923965,
+        "quarter_amplitudes_adc": [
+          1.9798901913357696,
+          1.854659057664151,
+          2.011140859569587,
+          1.9076270088247675
+        ],
+        "amplitude_spread_fraction": 0.03156347696211485,
+        "name": "baseline_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": false,
+        "time_monotonic": 65960.578,
+        "suppression_db": -0.32544902196188386
+      },
+      {
+        "amplitude_peak_adc_codes": 1.8605895234091165,
+        "mean_adc": 8837.226719079326,
+        "residual_rms_adc": 1.586374481524566,
+        "cic_magnitude": 0.9940918589923965,
+        "quarter_amplitudes_adc": [
+          1.9392964519623943,
+          1.904297679150138,
+          2.0075863818603614,
+          1.6333046013942305
+        ],
+        "amplitude_spread_fraction": 0.07601819185731416,
+        "name": "held_after",
+        "config": {
+          "name": "baseline",
+          "label": "C07",
+          "kp": 9,
+          "ki": 0.540008544921875
+        },
+        "held": true,
+        "time_monotonic": 65965.671
+      }
+    ],
+    "held_drift_fraction": -0.013680702086718233
+  }
+]

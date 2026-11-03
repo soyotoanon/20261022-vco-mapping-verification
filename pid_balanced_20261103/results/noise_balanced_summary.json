@@ -1,0 +1,34 @@
+{
+  "configuration": {
+    "name": "balanced",
+    "label": "P11 I0.720001",
+    "kp": 11,
+    "ki": 0.720001220703125
+  },
+  "band_hz": [
+    100,
+    100000
+  ],
+  "dc_total_v": 3.583799741784167,
+  "closed_relative_rms": 0.0006293182392816502,
+  "held_relative_rms": 0.0013434019348771864,
+  "closed_snr_db": 64.02259362169785,
+  "held_snr_db": 57.43588061060986,
+  "snr_definition": "20log10(total illuminated DC / band-limited voltage RMS); background not subtracted",
+  "all_smoothed_crossings_hz": [
+    1534.9833215372355,
+    3870.75875362845,
+    4786.001200194905,
+    5838.595895170759,
+    7190.504311465714,
+    8114.424586727787,
+    10484.944588245724
+  ],
+  "sustained_crossings_hz": [
+    10484.944588245724
+  ],
+  "maximum_native_noise_gain_db": 13.912361576774511,
+  "noise_peak_hz": 50700.0,
+  "frequency_spacing_hz": 50,
+  "hann_enbw_hz": 75
+}

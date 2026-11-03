@@ -1,0 +1,12 @@
+{"time": "2026-11-03T22:14:11.976891+08:00", "action": "write_attempt", "register": "35", "value": 12}
+{"time": "2026-11-03T22:14:11.981092+08:00", "action": "readback", "register": "35", "value": 12}
+{"time": "2026-11-03T22:14:41.009167+08:00", "action": "write_attempt", "register": "34", "value": 1}
+{"time": "2026-11-03T22:15:04.466352+08:00", "action": "write_attempt", "register": "30", "value": 0}
+{"time": "2026-11-03T22:15:04.470821+08:00", "action": "readback", "register": "30", "value": 0}
+{"time": "2026-11-03T22:15:04.470821+08:00", "action": "write_attempt", "register": "34", "value": 2}
+{"time": "2026-11-03T22:15:04.490425+08:00", "action": "write_attempt", "register": "35", "value": 0}
+{"time": "2026-11-03T22:15:04.494435+08:00", "action": "readback", "register": "35", "value": 0}
+{"time": "2026-11-03T22:15:04.498447+08:00", "action": "write_attempt", "register": "37", "value": 0}
+{"time": "2026-11-03T22:15:04.502457+08:00", "action": "readback", "register": "37", "value": 0}
+{"time": "2026-11-03T22:15:04.503459+08:00", "action": "write_attempt", "register": "30", "value": 0}
+{"time": "2026-11-03T22:15:04.507470+08:00", "action": "readback", "register": "30", "value": 0}
