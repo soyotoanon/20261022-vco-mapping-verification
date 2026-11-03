@@ -1,0 +1,23 @@
+P11 / I0.72000122，1.5%峰峰值新判据重新实测
+Rolling window spanning >=1ms: (maximum-minimum)/abs(measured final mean)<=0.015. Settling is the first post-step window start for which every subsequent complete window also passes until record end. No condition on target agreement. t90 is first arrival at 90% of measured before-to-final change. No extra smoothing. Final mean is last1ms (fast) or last0.2s (long). Historical ADC-power calibration is used only for conversion, not as a target requirement.
+
+幅度/mW | 方向 | 模式 | t90/us | 回稳/us | 末窗口峰峰/% | 记录标志
+0.2 | out | fast | 10.9 | 10.1 | 1.3623 | 2
+0.2 | return | fast | 11.7 | 未满足 | 1.7521 | 2
+0.5 | out | fast | 10.9 | 未满足 | 1.8784 | 2
+0.5 | return | fast | 11.1 | 未满足 | 1.5676 | 2
+1 | out | fast | 10.9 | 262.1 | 1.1653 | 2
+1 | return | fast | 10.7 | 1508.3 | 1.4293 | 10
+2 | out | fast | 10.7 | 未满足 | 2.3558 | 2
+2 | return | fast | 10.5 | 未满足 | 1.7521 | 10
+0.2 | out | long | 378.5 | 378.5 | 0.0442 | 2
+0.2 | return | long | 555.5 | 145.9 | 0.0461 | 2
+0.5 | out | long | 663.1 | 253.5 | 0.0400 | 2
+0.5 | return | long | 643.1 | 643.1 | 0.0461 | 2
+1 | out | long | 301.5 | 301.5 | 0.0364 | 2
+1 | return | long | 381.3 | 381.3 | 0.0461 | 10
+2 | out | long | 315.1 | 724.7 | 0.0310 | 2
+2 | return | long | 666.9 | 666.9 | 0.0461 | 10
+
+最终均值不要求等于设定功率。高速0.8us/点，长记录409.6us/点；长记录经较强CIC平均，不能拿其低峰峰值替代高速结果。
+回稳从满足窗口的起点计，须看到完整窗口才可判定；确认延迟至少1ms。
