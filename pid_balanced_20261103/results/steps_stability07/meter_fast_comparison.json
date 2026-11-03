@@ -1,0 +1,73 @@
+{
+  "meter_closed": {
+    "samples": 385,
+    "span_s": 29.889999999999418,
+    "median_read_interval_s": 0.07800000000861473,
+    "mean_mw": 4.266824685168831,
+    "pp_mw": 0.007228459999999437,
+    "pp_percent": 0.1694107570232504,
+    "rms_percent": 0.0344658054155052
+  },
+  "fast_tail": [
+    {
+      "name": "balanced_fast_plus0.2mW_out",
+      "mean_mw": 4.87966956980168,
+      "pp_mw": 0.06647349167256156,
+      "pp_percent": 1.3622539543238616,
+      "rms_percent": 0.2344061689857297,
+      "sample_interval_us": 0.8000000000000195,
+      "min_mw": 4.844094657387077,
+      "min_time_ms": 1.6421000000000001,
+      "max_mw": 4.910568149059639,
+      "max_time_ms": 1.7133,
+      "adc_min": 8858.75,
+      "adc_max": 8866.5,
+      "samples": 1251
+    },
+    {
+      "name": "balanced_fast_plus0.5mW_out",
+      "mean_mw": 5.178919552270239,
+      "pp_mw": 0.09728195432899245,
+      "pp_percent": 1.8784218087795508,
+      "rms_percent": 0.24477581307975027,
+      "sample_interval_us": 0.8000000000000195,
+      "min_mw": 5.132039832319261,
+      "min_time_ms": 1.6093,
+      "max_mw": 5.229321786648254,
+      "max_time_ms": 1.5989000000000002,
+      "adc_min": 8893.25,
+      "adc_max": 8905.0,
+      "samples": 1251
+    },
+    {
+      "name": "balanced_fast_plus1mW_out",
+      "mean_mw": 5.68369471148688,
+      "pp_mw": 0.06623452209633562,
+      "pp_percent": 1.16534271206499,
+      "rms_percent": 0.18710167458842494,
+      "sample_interval_us": 0.8000000000000195,
+      "min_mw": 5.649497036196883,
+      "min_time_ms": 2.3829,
+      "max_mw": 5.715731558293219,
+      "max_time_ms": 1.6972999999999998,
+      "adc_min": 8955.75,
+      "adc_max": 8963.75,
+      "samples": 1251
+    },
+    {
+      "name": "balanced_fast_plus2mW_out",
+      "mean_mw": 6.677330015230796,
+      "pp_mw": 0.15730698997879689,
+      "pp_percent": 2.355836683524466,
+      "rms_percent": 0.2539431761014151,
+      "sample_interval_us": 0.8000000000000195,
+      "min_mw": 6.585059660807624,
+      "min_time_ms": 1.7411,
+      "max_mw": 6.742366650786421,
+      "max_time_ms": 1.7483,
+      "adc_min": 9068.75,
+      "adc_max": 9087.75,
+      "samples": 1251
+    }
+  ]
+}
