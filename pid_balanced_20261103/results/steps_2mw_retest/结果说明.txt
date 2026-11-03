@@ -1,0 +1,6 @@
+2mW本次重测；P11/I0.72000122；2%窗口峰峰判据
+Rolling >=1ms (max-min)/abs(actual final mean)<=2%, all subsequent complete windows pass until record end. Final mean is last1ms for fast or last0.2s for long; t90 is90% of measured change; no target agreement requirement or extra smoothing.
+fast out: t90=12.9 μs, window_start=13.7 μs, tail_pp=0.8990%, max_window_after100us=1.5809%, flags=2, post=0.005866s
+fast return: t90=12.1 μs, window_start=20.1 μs, tail_pp=1.5676%, max_window_after100us=1.7521%, flags=2, post=0.005866s
+long out: t90=555.1 μs, window_start=555.1 μs, tail_pp=0.0310%, max_window_after100us=7.8117%, flags=2, post=3.154885s
+long return: t90=284.3 μs, window_start=693.9 μs, tail_pp=0.0461%, max_window_after100us=4.1958%, flags=2, post=3.155433s
