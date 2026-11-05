@@ -92,7 +92,7 @@ module reg_file (
     output wire [15:0] dist_period,
     output wire [15:0] log_every,
     output wire [15:0] stream_en,
-    output wire [15:0] sp_slew, feedback_ch, loop_arm,
+    output wire [15:0] feedback_ch, loop_arm,
     output wire [15:0] baud_div
 );
 
@@ -111,7 +111,7 @@ module reg_file (
             case (a)
                 6'h00:   default_value = 16'd1; // Autonomous PI on boot, user-confirmed 2026-10-23
                 6'h2E:   default_value = 16'd1; // armed on boot
-                6'h2C:   default_value = 16'd1; // max setpoint codes per valid ADC sample
+                6'h2C:   default_value = 16'd1; // legacy slew register, retained for host readback
                 6'h01:   default_value = 16'h0000;  // STATUS（只读，占位）
                 6'h02:   default_value = 16'h0F0F;  // DAC_CODE（固定码模式的自检码）★第三轮补：手册一直写 0x0F0F，RTL 却漏了这个分支 ⇒ 实际复位 0
                 6'h10:   default_value = 16'd499;   // CTRL_HALF  ⇒ 2*(499+1)*20ns = 20us ⇒ 50 kHz
@@ -231,7 +231,6 @@ module reg_file (
     end
 
     // ---- 配置输出 -----------------------------------------------------------
-    assign sp_slew = mem[6'h2C];
     assign feedback_ch = mem[6'h2D];
     assign loop_arm = mem[6'h2E];
     assign ctrl          = mem[6'h00];

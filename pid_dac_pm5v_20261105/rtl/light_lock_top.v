@@ -49,7 +49,7 @@ module light_lock_top #(
     wire [15:0] setpoint_r, bias_r, kp_shift_r, ki_shift_r;
     wire [15:0] i_clamp_lo, i_clamp_hi, out_min_r, out_max_r, dir_pol_r;
     wire [15:0] light_th_r, stats_log2_r;
-    wire [15:0] sp_slew_r, feedback_ch_r, loop_arm_r;
+    wire [15:0] feedback_ch_r, loop_arm_r;
     wire [15:0] dist_en_r, dist_mode_r, dist_amp_r, dist_period_r;
     wire [15:0] log_every_r, stream_en_r, baud_div_r;
 
@@ -182,17 +182,11 @@ module light_lock_top #(
 
     wire perf_hold, perf_clip;
     reg [13:0] sp_active;
-    wire [13:0] sp_step = sp_slew_r[13:0] == 0 ? 14'd1 : sp_slew_r[13:0];
-    wire [13:0] sp_gap = sp_final > sp_active ? sp_final-sp_active : sp_active-sp_final;
     always @(posedge sys_clk or negedge sys_rst_n) begin
         if (!sys_rst_n) sp_active <= 14'h2000;
         else if (adc_sample_valid) begin
             if (!pi_enable || ctrl[4]) sp_active <= adc_sample;
-            else if (!frozen && !perf_hold) begin
-                if (sp_gap <= sp_step) sp_active <= sp_final;
-                else if (sp_final > sp_active) sp_active <= sp_active + sp_step;
-                else sp_active <= sp_active - sp_step;
-            end
+            else if (!frozen && !perf_hold) sp_active <= sp_final;
         end
     end
     reg pi_enable_d;
@@ -424,7 +418,7 @@ module light_lock_top #(
         .dist_period   (dist_period_r),
         .log_every     (log_every_r),
         .stream_en     (stream_en_r),
-        .sp_slew (sp_slew_r), .feedback_ch (feedback_ch_r), .loop_arm (loop_arm_r),
+        .feedback_ch (feedback_ch_r), .loop_arm (loop_arm_r),
         .baud_div      (baud_div_r)
     );
 

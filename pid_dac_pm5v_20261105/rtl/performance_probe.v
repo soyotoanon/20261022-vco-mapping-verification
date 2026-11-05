@@ -139,7 +139,7 @@ module performance_probe #(
         6'h31:rdata={2'd0,amplitude};
         6'h32:rdata=phase_inc[15:0];
         6'h33:rdata=phase_inc[31:16];
-        6'h34:rdata=16'hF510; // nominal +/-5 V DAC output guard; capture writes unchanged
+        6'h34:rdata=16'hF511; // direct setpoint updates and nominal +/-5 V DAC output guard
         6'h35:rdata={12'd0,decim_log};
         6'h36:rdata={12'd0,fault_seen,clip_seen,done,busy};
         6'h37:rdata=rd_index;

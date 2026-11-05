@@ -20,7 +20,7 @@
   "gain_source": "D:\\codex\\2026-10-23\\wo\\work\\vco_remote\\pid_workpoint350_20261027\\c07_baseline\\最终板上回读.json",
   "target_source": "2026-10-29 C07_configuration.json: last configured target, still runtime writable",
   "abi": "A624",
-  "optimization_id": "F510",
+  "optimization_id": "F511",
   "dac_revision": "D216",
   "display_revision": "5031"
 }

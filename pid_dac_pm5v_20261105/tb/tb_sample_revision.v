@@ -9,8 +9,7 @@ integer BIT_NS=8680;
 integer pass_cnt=0,fail_cnt=0,n,c1,c2,previous_valid=0;
 integer ch1=9000,ch2=10000;
 reg [15:0] got;
-integer last_sp,last_i,step_count=0;
-reg check_slew=0;
+integer last_sp,last_i;
 light_lock_top #(.LOSS_LOG2(4)) dut(.sys_clk(sys_clk),.sys_rst_n(sys_rst_n),
  .adc_d(adc_d),.adc_otr(adc_otr),.adc_clk(adc_clk),
  .da1_data(da1_data),.da2_data(da2_data),.uart_rx(uart_rx),.uart_tx(uart_tx));
@@ -27,12 +26,6 @@ endtask
 always @(posedge sys_clk) if(sys_rst_n) begin
  if(dut.adc_sample_valid && previous_valid)$fatal(1,"sample_valid wider than one clock");
  previous_valid=dut.adc_sample_valid;
- if(check_slew && dut.adc_sample_valid)begin
-   last_sp=dut.sp_active;last_i=dut.pi_integ;
-   #1;
-   if(integer'(dut.sp_active)-last_sp>3 || last_sp-integer'(dut.sp_active)>3)$fatal(1,"slew exceeded 3 codes/sample");
-   step_count=step_count+1;
- end
 end
     reg [7:0] rxbuf [0:63];
     integer   rx_wr = 0;
@@ -101,6 +94,19 @@ end
         end
     endtask
 
+    task write_target_and_check(input [15:0] target);
+        fork
+            write_reg(6'h18, target);
+            begin
+                wait (dut.setpoint_r == target);
+                @(posedge sys_clk);
+                while (!dut.adc_sample_valid) @(posedge sys_clk);
+                #1;
+                check("full target on first valid ADC sample", dut.sp_active, target);
+            end
+        join
+    endtask
+
     // ---- 真帧读寄存器：发读帧、收 8 字节应答、校验帧格式并取回 16 位值 --------
     task read_reg(input [5:0] a, input [255:0] nm, output [15:0] v);
         reg [7:0] b0, b1, b2, b3, b4, b5, b6, b7;
@@ -156,15 +162,15 @@ initial begin
  write_reg(6'h1B,16'h7fff);read_reg(6'h1B,"legacy I clamp",got);check("legacy I clamp",got,63);
  write_reg(6'h1A,8);write_reg(6'h1B,12);
  write_reg(6'h18,16'hffff);read_reg(6'h18,"setpoint clamp",got);check("setpoint clamp",got,16383);
- write_reg(6'h18,12000);write_reg(6'h2C,3);write_reg(6'h21,0);
+ write_reg(6'h18,9000);write_reg(6'h2C,3);write_reg(6'h21,0);
+ read_reg(6'h2C,"legacy slew readback",got);check("legacy slew readback",got,3);
  write_reg(0,1);check("unarmed cannot enable",dut.pi_enable,0);
  write_reg(6'h2E,1);check("wrong arm key",dut.loop_arm_r,0);
  write_reg(6'h2E,16'hA501);read_reg(6'h2E,"armed",got);check("arm readback",got,1);
- // Rebind then check the complete target ramp at ADC rate.
+ // Check full upward and downward steps after a legacy slew-register write.
  write_reg(0,16'h11);write_reg(0,1);
- check_slew=1; repeat(12000)@(negedge sys_clk);check_slew=0;
- check("slew reached target",dut.sp_active,12000);
- if(step_count<1000)$fatal(1,"slew was not exercised");
+ write_target_and_check(12000);
+ write_target_and_check(7000);
  // Changing the legacy slow tick never changes PI input strobes.
  write_reg(6'h10,16'hffff);c1=0;
  repeat(1000)begin @(negedge sys_clk);if(dut.u_pi.tick)c1=c1+1;end
