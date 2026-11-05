@@ -1,0 +1,8 @@
+// Generated from calibration/calibration_20261020.json; 2026-10-20.
+`ifndef POWER_CALIBRATION_20261020_VH
+`define POWER_CALIBRATION_20261020_VH
+`define POWER_ZERO_Q16 32'sd529748116
+`define POWER_GAIN_Q20 (-32'sd87556076)
+`define POWER_CODE_MIN 16'd2591
+`define POWER_CODE_MAX 16'd8082
+`endif
