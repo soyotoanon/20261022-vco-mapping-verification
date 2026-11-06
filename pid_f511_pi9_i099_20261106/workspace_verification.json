@@ -1,0 +1,11 @@
+{
+  "baseline_commit": "dbd82b81c37a0ecfdc101d2257ec997aab8e0bce",
+  "baseline_file_count": 46,
+  "baseline_intact": true,
+  "baseline_mismatches": [],
+  "candidate_modified_or_missing_baseline_files": [
+    "rtl/reg_file.v",
+    "scripts/verify.py"
+  ],
+  "hardware_io_performed_by_this_check": false
+}

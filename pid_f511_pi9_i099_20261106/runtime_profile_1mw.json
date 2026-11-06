@@ -1,0 +1,30 @@
+{
+  "kp": 9.0,
+  "ki": 0.989990234375,
+  "target_adc": 8414,
+  "nominal_power_mw": 1.0,
+  "kp_register": 35072,
+  "ki_register": 65208,
+  "dac_limits": [
+    545,
+    13000
+  ],
+  "sampling_hz": 5000000,
+  "ki_definition": "discrete per valid sample, unsigned Q15",
+  "scope": "This operating point only; remeasure after optical path or actuator changes",
+  "qualified_frequency_grid_hz": [
+    1000.0,
+    250000.0
+  ],
+  "estimated_minus_3db_bandwidth_hz": 13812.069423847122,
+  "maximum_measured_amplification_db": 6.297905882368932,
+  "qualification_source": "results/20261106_164350_885116_pi_scan",
+  "independent_optical_rin_verified": false,
+  "flash_written": false,
+  "github_upload_requires_user_acceptance": false,
+  "user_accepted_for_publication": true,
+  "user_acceptance_date": "2026-11-06",
+  "application": "Runtime UART profile; does not change firmware reset defaults or write flash",
+  "latest_reference_repeat": "results/20261106_173526_222012_pi_scan",
+  "latest_report": "ROUND2_RESULT.txt"
+}

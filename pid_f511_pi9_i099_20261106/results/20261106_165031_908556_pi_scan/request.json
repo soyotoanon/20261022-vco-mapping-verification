@@ -1,0 +1,18 @@
+{
+  "scales": [
+    1.0
+  ],
+  "gains": "9:0.99",
+  "frequencies": [
+    300000.0,
+    400000.0,
+    500000.0,
+    750000.0,
+    1000000.0
+  ],
+  "amplitude_dac": 512,
+  "points": 8192,
+  "measurement": "In-loop actuator-injected rejection",
+  "out_of_loop_noise_verified": false,
+  "target_unchanged": true
+}

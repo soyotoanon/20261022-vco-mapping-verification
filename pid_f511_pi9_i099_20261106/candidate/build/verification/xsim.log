@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# xsim v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Nov  6 16:37:38 2026
+# Process ID: 54648
+# Current directory: D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/build/verification
+# Command line: xsim.exe -mode tcl -source {xsim.dir/tb_reg_file_equivalence_sim/xsim_script.tcl}
+# Log file: D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/build/verification/xsim.log
+# Journal file: D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/build/verification\xsim.jou
+# Running On: DESKTOP-QDCLV1M, OS: Windows, CPU Frequency: 3793 MHz, CPU Physical cores: 16, Host memory: 16348 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_reg_file_equivalence_sim/xsim_script.tcl
+# xsim {tb_reg_file_equivalence_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+REVISION_PASS reg_file equivalence checks=20713
+$finish called at time : 413104 ns : File "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_reg_file_equivalence.v" Line 138
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Nov  6 16:37:39 2026...

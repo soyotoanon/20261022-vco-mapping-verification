@@ -1,0 +1,260 @@
+{
+  "status": "First operating point qualified; full 0–15 mW range not qualified",
+  "nominal_power_mw": 1.0,
+  "qualification": {
+    "source": "D:\\DSproject\\workbench\\codex-data\\workspaces\\Codex\\2026-11-06\\x-z\\outputs\\pid_f511_optimization\\results\\20261106_164350_885116_pi_scan",
+    "kp": 9.0,
+    "ki": 0.989990234375,
+    "minus_3db_upward_crossings": [
+      {
+        "estimated_hz": 13812.069423847122,
+        "bracket_hz": [
+          13000.0,
+          14000.0
+        ]
+      }
+    ],
+    "maximum_measured_amplification_db": 6.297905882368932,
+    "peak_frequency_hz": 37500.0,
+    "measured_frequency_range_hz": [
+      1000.0,
+      250000.0
+    ],
+    "measured_points": 30,
+    "all_held_tones_resolved": true,
+    "peak_below_7db_on_measured_grid": true,
+    "measurement": "20 log10(closed fitted tone amplitude / held fitted tone amplitude); in-loop ADC, actuator injection",
+    "bandwidth_method": "First upward -3 dB crossing, interpolated in log frequency between adjacent measured points",
+    "limitations": "Finite measured frequency grid, one operating point, not independent out-of-loop optical RIN"
+  },
+  "sustained_lock": {
+    "samples": 270,
+    "mean_mw": 0.9892883628518516,
+    "std_mw": 0.0013578883609352255,
+    "peak_to_peak_mw": 0.007447205000000179,
+    "dac_min": 9603,
+    "dac_max": 10184,
+    "elapsed_meter_seconds": 59.72881591796875,
+    "rms_percent_of_actual_mean": 0.13725910583045772
+  },
+  "shutdown": {
+    "samples": 13,
+    "mean_mw": 0.00036101714869230775,
+    "std_mw": 1.3270452063033081e-05,
+    "peak_to_peak_mw": 4.9259057e-05,
+    "dac_min": 545,
+    "dac_max": 545,
+    "elapsed_meter_seconds": 2.86293359375
+  },
+  "recovery": {
+    "samples": 22,
+    "mean_mw": 0.9917760194545455,
+    "std_mw": 0.005007389264050689,
+    "peak_to_peak_mw": 0.025846183000000078,
+    "dac_min": 9572,
+    "dac_max": 10010,
+    "elapsed_meter_seconds": 4.928297119140625,
+    "rms_percent_of_actual_mean": 0.5048911413289303
+  },
+  "target_checks": [
+    {
+      "requested_mw": 0.6,
+      "samples": 19,
+      "mean_mw": 0.5999266041052632,
+      "std_mw": 0.0009721808245830456,
+      "peak_to_peak_mw": 0.0034052640000000745,
+      "dac_min": 8022,
+      "dac_max": 8101,
+      "elapsed_meter_seconds": 3.85865380859375,
+      "rms_percent_of_actual_mean": 0.16204996043357106
+    },
+    {
+      "requested_mw": 0.3,
+      "samples": 19,
+      "mean_mw": 0.3011403007894737,
+      "std_mw": 0.0009026135758135303,
+      "peak_to_peak_mw": 0.003754539999999973,
+      "dac_min": 6437,
+      "dac_max": 6607,
+      "elapsed_meter_seconds": 3.88687646484375,
+      "rms_percent_of_actual_mean": 0.2997319101585626
+    },
+    {
+      "requested_mw": 0.6,
+      "samples": 19,
+      "mean_mw": 0.5989052710526316,
+      "std_mw": 0.0009542362738763628,
+      "peak_to_peak_mw": 0.0038637080000000212,
+      "dac_min": 7973,
+      "dac_max": 8130,
+      "elapsed_meter_seconds": 3.889254638671875,
+      "rms_percent_of_actual_mean": 0.15933008440536914
+    },
+    {
+      "requested_mw": 1.0,
+      "samples": 20,
+      "mean_mw": 0.9883460996499999,
+      "std_mw": 0.0008536010036773175,
+      "peak_to_peak_mw": 0.0030666129999997738,
+      "dac_min": 9603,
+      "dac_max": 9923,
+      "elapsed_meter_seconds": 4.0767294921875,
+      "rms_percent_of_actual_mean": 0.08636660821341843
+    }
+  ],
+  "applied": {
+    "kp": 9.0,
+    "ki": 0.989990234375,
+    "target_adc": 8414,
+    "mean_power_mw": 0.9909448180714284,
+    "final_status": 2,
+    "retained_in_ram": true,
+    "flash_written": false,
+    "profile_source": "D:\\DSproject\\workbench\\codex-data\\workspaces\\Codex\\2026-11-06\\x-z\\outputs\\pid_f511_optimization\\runtime_profile_1mw.json"
+  },
+  "extended_frequency_checks": [
+    {
+      "frequency_hz": 300000.0,
+      "db": 0.6107840619177424,
+      "resolved": true
+    },
+    {
+      "frequency_hz": 400000.0,
+      "db": -0.2890659418819335,
+      "resolved": true
+    },
+    {
+      "frequency_hz": 500000.0,
+      "db": -1.0511337303723443,
+      "resolved": true
+    },
+    {
+      "frequency_hz": 750000.0,
+      "db": 3.6741545581869985,
+      "resolved": false
+    },
+    {
+      "frequency_hz": 1000000.0,
+      "db": 0.6282067878340248,
+      "resolved": true
+    }
+  ],
+  "resources_original": {
+    "luts": 4461,
+    "flip_flops": 2652,
+    "dsp": 14,
+    "bram36": 4,
+    "bram18": 1
+  },
+  "resources_candidate": {
+    "luts": 4374,
+    "flip_flops": 2587,
+    "dsp": 14,
+    "bram36": 4,
+    "bram18": 1
+  },
+  "resource_savings": {
+    "luts": 87,
+    "luts_percent_of_original": 1.9502353732347006,
+    "flip_flops": 65,
+    "flip_flops_percent_of_original": 2.450980392156863
+  },
+  "build": {
+    "exit_code": 0,
+    "bit_sha256": "7de88b9d4c14b21f543121ba436ed0a6efa04b66e22f19478a140f27ac4746c9",
+    "mcs_sha256": "12defbe1052b9e0971441b8c697dc99fb15cdb89e95e723775184dc724587acc",
+    "wns_ns": 0.904,
+    "whs_ns": 0.058
+  },
+  "rtl_tests": [
+    {
+      "test": "tb_fast_equivalence",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS fast_equivalence checks=151069 PI/DAC cycle-exact; status-only retimed"
+      ]
+    },
+    {
+      "test": "tb_pi_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS tb_pi_revision checks=27531"
+      ]
+    },
+    {
+      "test": "tb_performance_probe",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS performance_probe"
+      ]
+    },
+    {
+      "test": "tb_sample_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS tb_sample_revision checks=75"
+      ]
+    },
+    {
+      "test": "tb_dac_timing_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS tb_dac_timing_revision checked_5MSPS=4001 writes=4016 updates=4016"
+      ]
+    },
+    {
+      "test": "tb_instant_display_revision",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS single sample, update hold, BCD, scan, decimal, invalidation, recovery"
+      ]
+    },
+    {
+      "test": "tb_dac_guard",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS tb_dac_guard 16384_codes both_channels register_limits_and_runtime_target"
+      ]
+    },
+    {
+      "test": "tb_dac_routes",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS tb_dac_routes PI signal fixed sweep and dual passthrough"
+      ]
+    },
+    {
+      "test": "tb_reg_file_equivalence",
+      "result": "PASS",
+      "evidence": [
+        "REVISION_PASS reg_file equivalence checks=20713"
+      ]
+    }
+  ],
+  "baseline_source": {
+    "baseline_commit": "dbd82b81c37a0ecfdc101d2257ec997aab8e0bce",
+    "baseline_file_count": 46,
+    "baseline_intact": true,
+    "baseline_mismatches": [],
+    "candidate_modified_or_missing_baseline_files": [
+      "rtl/reg_file.v",
+      "scripts/verify.py"
+    ],
+    "hardware_io_performed_by_this_check": false
+  },
+  "sources": {
+    "scan": "results/20261106_164350_885116_pi_scan",
+    "validation": "results/20261106_165335_460843_profile_validation",
+    "application": "results/20261106_165647_077907_profile_application",
+    "extended": "results/20261106_165031_908556_pi_scan"
+  },
+  "flash_written": false,
+  "github_uploaded": false,
+  "user_accepted_optimization": false,
+  "independent_optical_rin_verified": false,
+  "hardware_status": {
+    "final_status": 2,
+    "historical_otr_latched": true,
+    "note": "OTR history bit already set in first post-program snapshot before control writes. Baseline adc_drv clears only on reset; software clear affects monitor but sticky ADC state reasserts it. Recorded waveform captures did not flag live OTR. Event cause not established."
+  }
+}

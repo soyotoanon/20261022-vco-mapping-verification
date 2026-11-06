@@ -1,0 +1,18 @@
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe tb_dac_guard -s tb_dac_guard_sim 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'live_display_bcd' remains unconnected for this instance [D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_dac_guard.v:13]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.reg_file
+Compiling module work.dac_drv
+Compiling module work.tb_dac_guard
+Built simulation snapshot tb_dac_guard_sim

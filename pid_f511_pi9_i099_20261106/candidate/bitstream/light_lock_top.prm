@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x000F8BB7    Nov  6 16:41:11 2026    D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/bitstream/light_lock_top.bit

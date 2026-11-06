@@ -1,0 +1,4 @@
+{"time": "2026-11-06T16:56:47.287394+08:00", "action": "write_attempt", "register": "1B", "value": 65208}
+{"time": "2026-11-06T16:56:47.292248+08:00", "action": "readback", "register": "1B", "value": 65208}
+{"time": "2026-11-06T16:56:47.292248+08:00", "action": "write_attempt", "register": "1A", "value": 35072}
+{"time": "2026-11-06T16:56:47.296370+08:00", "action": "readback", "register": "1A", "value": 35072}

@@ -1,0 +1,156 @@
+[
+  {
+    "index": 0,
+    "kp": 9.0,
+    "ki": 0.989990234375,
+    "points": [
+      {
+        "requested_hz": 14000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.416327659592882,
+            "mean_adc": 8414.242537694789,
+            "residual_rms_adc": 1.795691362235976,
+            "cic_magnitude": 0.9901763665105775
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 2.3607783997144987,
+            "mean_adc": 8413.873660334355,
+            "residual_rms_adc": 0.8175898686177729,
+            "cic_magnitude": 0.9901763665105775
+          }
+        },
+        "closed_over_held_db": -3.2100858855770573,
+        "plant_adc_codes_per_dac_code": 0.02669005984056939,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 15000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.3617783843111972,
+            "mean_adc": 8413.443982423523,
+            "residual_rms_adc": 1.848340901893185,
+            "cic_magnitude": 0.9887299861103663
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 2.5378334760024166,
+            "mean_adc": 8413.8739636247,
+            "residual_rms_adc": 0.8049215994259166,
+            "cic_magnitude": 0.9887299861103663
+          }
+        },
+        "closed_over_held_db": -2.442119172996903,
+        "plant_adc_codes_per_dac_code": 0.02626389362743123,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 35000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.259837261077149,
+            "mean_adc": 8412.715803993657,
+            "residual_rms_adc": 2.073810965260492,
+            "cic_magnitude": 0.9963784994314782
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 6.274960350619192,
+            "mean_adc": 8413.881277466486,
+            "residual_rms_adc": 1.3382323990826572,
+            "cic_magnitude": 0.9963784994314782
+          }
+        },
+        "closed_over_held_db": 5.688301328332834,
+        "plant_adc_codes_per_dac_code": 0.025467478602165226,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 40000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.3009286522327934,
+            "mean_adc": 8413.863837548828,
+            "residual_rms_adc": 2.1219620951040095,
+            "cic_magnitude": 0.9952721050469077
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 6.636022711533448,
+            "mean_adc": 8413.884085118225,
+            "residual_rms_adc": 1.4096648934295426,
+            "cic_magnitude": 0.9952721050469077
+          }
+        },
+        "closed_over_held_db": 6.065434526339967,
+        "plant_adc_codes_per_dac_code": 0.0257885050955687,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 45000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.482095006086567,
+            "mean_adc": 8417.21325727949,
+            "residual_rms_adc": 2.0576349401332057,
+            "cic_magnitude": 0.9940194519274206
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 6.868521020458441,
+            "mean_adc": 8413.885409000406,
+            "residual_rms_adc": 1.414694171207564,
+            "cic_magnitude": 0.9940194519274206
+          }
+        },
+        "closed_over_held_db": 5.900452307866443,
+        "plant_adc_codes_per_dac_code": 0.027203867235051304,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 50000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.438496669038758,
+            "mean_adc": 8417.340706448296,
+            "residual_rms_adc": 2.228313329334069,
+            "cic_magnitude": 0.9926210120326611
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 6.33069069839809,
+            "mean_adc": 8413.88524689181,
+            "residual_rms_adc": 1.4695540384472703,
+            "cic_magnitude": 0.9926210120326611
+          }
+        },
+        "closed_over_held_db": 5.301649750788572,
+        "plant_adc_codes_per_dac_code": 0.026863255226865296,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 60000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.517040678027081,
+            "mean_adc": 8418.762399550898,
+            "residual_rms_adc": 2.0439034551781257,
+            "cic_magnitude": 0.9893889289929884
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 5.260879580868348,
+            "mean_adc": 8413.881673607428,
+            "residual_rms_adc": 1.2719921155390186,
+            "cic_magnitude": 0.9893889289929884
+          }
+        },
+        "closed_over_held_db": 3.497619394412588,
+        "plant_adc_codes_per_dac_code": 0.02747688029708657,
+        "held_tone_resolved": true
+      }
+    ]
+  }
+]

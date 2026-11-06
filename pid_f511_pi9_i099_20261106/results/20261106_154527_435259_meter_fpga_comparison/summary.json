@@ -1,0 +1,18 @@
+{
+  "samples": 16,
+  "meter_mean_mw": 0.3088211234375,
+  "fpga_display_mean_mw": 0.30295,
+  "relative_mean_difference_percent": -1.9011404958793978,
+  "meter_range_mw": [
+    0.30398607499999997,
+    0.313983619
+  ],
+  "display_range_mw": [
+    0.2619,
+    0.3421
+  ],
+  "target_adc": 8476,
+  "target_mw_historical_calibration": 1.5363073171283608,
+  "dac_code": 15000,
+  "fpga_control_writes": 0
+}

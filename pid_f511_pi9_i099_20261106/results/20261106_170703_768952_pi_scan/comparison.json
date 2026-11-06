@@ -1,0 +1,92 @@
+[
+  {
+    "index": 0,
+    "kp": 9.0,
+    "ki": 0.989990234375,
+    "db_at_15khz": -2.1516253567421906,
+    "maximum_tested_db": 5.971960479122929,
+    "maximum_tested_frequency_hz": 45000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 1,
+    "kp": 6.0,
+    "ki": 0.989990234375,
+    "db_at_15khz": -2.1190004146158303,
+    "maximum_tested_db": 6.745359523346366,
+    "maximum_tested_frequency_hz": 45000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 2,
+    "kp": 3.0,
+    "ki": 0.989990234375,
+    "db_at_15khz": -1.7453802687508366,
+    "maximum_tested_db": 8.121335193684056,
+    "maximum_tested_frequency_hz": 35000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 3,
+    "kp": 0.0,
+    "ki": 0.989990234375,
+    "db_at_15khz": -1.794766471228465,
+    "maximum_tested_db": 8.363126352381894,
+    "maximum_tested_frequency_hz": 35000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 4,
+    "kp": 3.0,
+    "ki": 0.75,
+    "db_at_15khz": -0.32852506541287996,
+    "maximum_tested_db": 5.747961154835824,
+    "maximum_tested_frequency_hz": 35000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 5,
+    "kp": 6.0,
+    "ki": 0.75,
+    "db_at_15khz": -0.5393094361546262,
+    "maximum_tested_db": 4.093742405908139,
+    "maximum_tested_frequency_hz": 45000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 6,
+    "kp": 12.0,
+    "ki": 0.75,
+    "db_at_15khz": -1.668510550633352,
+    "maximum_tested_db": 5.608749482270838,
+    "maximum_tested_frequency_hz": 60000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 7,
+    "kp": 15.0,
+    "ki": 0.600006103515625,
+    "db_at_15khz": -1.6765730365002636,
+    "maximum_tested_db": 5.228697238548385,
+    "maximum_tested_frequency_hz": 60000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 8,
+    "kp": 18.0,
+    "ki": 0.399993896484375,
+    "db_at_15khz": -2.0402577336478918,
+    "maximum_tested_db": 4.413021863028056,
+    "maximum_tested_frequency_hz": 60000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 9,
+    "kp": 9.0,
+    "ki": 0.989990234375,
+    "db_at_15khz": -2.5430841889522937,
+    "maximum_tested_db": 6.968926857481465,
+    "maximum_tested_frequency_hz": 35000.0,
+    "all_held_resolved": true
+  }
+]

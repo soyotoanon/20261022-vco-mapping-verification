@@ -1,0 +1,403 @@
+{
+  "user_priority": "Preserve strong low-frequency suppression and prioritize overall noise reduction",
+  "unique_broad_candidates": 15,
+  "broad_trials_including_reference_repeat": 16,
+  "gains": [
+    [
+      0.0,
+      0.989990234375
+    ],
+    [
+      3.0,
+      0.75
+    ],
+    [
+      3.0,
+      0.989990234375
+    ],
+    [
+      6.0,
+      0.75
+    ],
+    [
+      6.0,
+      0.989990234375
+    ],
+    [
+      9.0,
+      0.989990234375
+    ],
+    [
+      10.0,
+      0.999969482421875
+    ],
+    [
+      11.0,
+      0.999969482421875
+    ],
+    [
+      12.0,
+      0.75
+    ],
+    [
+      12.0,
+      0.999969482421875
+    ],
+    [
+      15.0,
+      0.600006103515625
+    ],
+    [
+      18.0,
+      0.399993896484375
+    ],
+    [
+      20.0,
+      0.04998779296875
+    ],
+    [
+      20.0,
+      0.25
+    ],
+    [
+      22.0,
+      0.149993896484375
+    ]
+  ],
+  "frequency_pairs_in_broad_scan": 118,
+  "candidate_dense": {
+    "source": "D:\\DSproject\\workbench\\codex-data\\workspaces\\Codex\\2026-11-06\\x-z\\outputs\\pid_f511_optimization\\results\\20261106_172843_428812_pi_scan",
+    "kp": 11.0,
+    "ki": 0.999969482421875,
+    "minus_3db_upward_crossings": [
+      {
+        "estimated_hz": 14399.37849627865,
+        "bracket_hz": [
+          14000.0,
+          15000.0
+        ]
+      }
+    ],
+    "maximum_measured_amplification_db": 6.761051250800478,
+    "peak_frequency_hz": 45000.0,
+    "measured_frequency_range_hz": [
+      1000.0,
+      250000.0
+    ],
+    "measured_points": 30,
+    "all_held_tones_resolved": true,
+    "peak_below_7db_on_measured_grid": true,
+    "measurement": "20 log10(closed fitted tone amplitude / held fitted tone amplitude); in-loop ADC, actuator injection",
+    "bandwidth_method": "First upward -3 dB crossing, interpolated in log frequency between adjacent measured points",
+    "limitations": "Finite measured frequency grid, one operating point, not independent out-of-loop optical RIN"
+  },
+  "noise_repeated": {
+    "P=9, I=0.99000": {
+      "10_1000_hz_rms_percent": {
+        "values": [
+          0.043481468539832084,
+          0.04726263138443495
+        ],
+        "mean": 0.045372049962133516,
+        "minimum": 0.043481468539832084,
+        "maximum": 0.04726263138443495
+      },
+      "1000_10000_hz_rms_percent": {
+        "values": [
+          0.10161802889481601,
+          0.09513483920337572
+        ],
+        "mean": 0.09837643404909586,
+        "minimum": 0.09513483920337572,
+        "maximum": 0.10161802889481601
+      },
+      "10000_60000_hz_rms_percent": {
+        "values": [
+          0.6095038900552239,
+          0.6775190293624794
+        ],
+        "mean": 0.6435114597088516,
+        "minimum": 0.6095038900552239,
+        "maximum": 0.6775190293624794
+      },
+      "1000_60000_hz_rms_percent": {
+        "values": [
+          0.6179168356574516,
+          0.6841656764107129
+        ],
+        "mean": 0.6510412560340822,
+        "minimum": 0.6179168356574516,
+        "maximum": 0.6841656764107129
+      },
+      "60000_120000_hz_rms_percent": {
+        "values": [
+          0.43757849613409266,
+          0.42528318374630664
+        ],
+        "mean": 0.43143083994019965,
+        "minimum": 0.42528318374630664,
+        "maximum": 0.43757849613409266
+      },
+      "10000_120000_hz_rms_percent": {
+        "values": [
+          0.7503132227752782,
+          0.7999361359044053
+        ],
+        "mean": 0.7751246793398417,
+        "minimum": 0.7503132227752782,
+        "maximum": 0.7999361359044053
+      },
+      "1000_120000_hz_rms_percent": {
+        "values": [
+          0.7571632294742608,
+          0.8055733729188939
+        ],
+        "mean": 0.7813683011965773,
+        "minimum": 0.7571632294742608,
+        "maximum": 0.8055733729188939
+      }
+    },
+    "P=11, I=0.99997": {
+      "10_1000_hz_rms_percent": {
+        "values": [
+          0.04284172254029181,
+          0.041838393330349374
+        ],
+        "mean": 0.04234005793532059,
+        "minimum": 0.041838393330349374,
+        "maximum": 0.04284172254029181
+      },
+      "1000_10000_hz_rms_percent": {
+        "values": [
+          0.09097532794462301,
+          0.10065256408792625
+        ],
+        "mean": 0.09581394601627463,
+        "minimum": 0.09097532794462301,
+        "maximum": 0.10065256408792625
+      },
+      "10000_60000_hz_rms_percent": {
+        "values": [
+          0.6326448362561047,
+          0.6103612885542847
+        ],
+        "mean": 0.6215030624051947,
+        "minimum": 0.6103612885542847,
+        "maximum": 0.6326448362561047
+      },
+      "1000_60000_hz_rms_percent": {
+        "values": [
+          0.6391525632712001,
+          0.618604753637669
+        ],
+        "mean": 0.6288786584544346,
+        "minimum": 0.618604753637669,
+        "maximum": 0.6391525632712001
+      },
+      "60000_120000_hz_rms_percent": {
+        "values": [
+          0.4784910168142213,
+          0.4565777326043745
+        ],
+        "mean": 0.46753437470929793,
+        "minimum": 0.4565777326043745,
+        "maximum": 0.4784910168142213
+      },
+      "10000_120000_hz_rms_percent": {
+        "values": [
+          0.7932169577192745,
+          0.7622362681451196
+        ],
+        "mean": 0.777726612932197,
+        "minimum": 0.7622362681451196,
+        "maximum": 0.7932169577192745
+      },
+      "1000_120000_hz_rms_percent": {
+        "values": [
+          0.7984169664455113,
+          0.7688530855327778
+        ],
+        "mean": 0.7836350259891445,
+        "minimum": 0.7688530855327778,
+        "maximum": 0.7984169664455113
+      }
+    },
+    "interpretation": "Two repetitions per profile; overlap/variation does not establish significant improvement. ADC-derived in-loop noise, not independent optical RIN."
+  },
+  "baseline_repeat": {
+    "index": 0,
+    "kp": 9.0,
+    "ki": 0.989990234375,
+    "points": [
+      {
+        "requested_hz": 14000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.416327659592882,
+            "mean_adc": 8414.242537694789,
+            "residual_rms_adc": 1.795691362235976,
+            "cic_magnitude": 0.9901763665105775
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 2.3607783997144987,
+            "mean_adc": 8413.873660334355,
+            "residual_rms_adc": 0.8175898686177729,
+            "cic_magnitude": 0.9901763665105775
+          }
+        },
+        "closed_over_held_db": -3.2100858855770573,
+        "plant_adc_codes_per_dac_code": 0.02669005984056939,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 15000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.3617783843111972,
+            "mean_adc": 8413.443982423523,
+            "residual_rms_adc": 1.848340901893185,
+            "cic_magnitude": 0.9887299861103663
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 2.5378334760024166,
+            "mean_adc": 8413.8739636247,
+            "residual_rms_adc": 0.8049215994259166,
+            "cic_magnitude": 0.9887299861103663
+          }
+        },
+        "closed_over_held_db": -2.442119172996903,
+        "plant_adc_codes_per_dac_code": 0.02626389362743123,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 35000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.259837261077149,
+            "mean_adc": 8412.715803993657,
+            "residual_rms_adc": 2.073810965260492,
+            "cic_magnitude": 0.9963784994314782
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 6.274960350619192,
+            "mean_adc": 8413.881277466486,
+            "residual_rms_adc": 1.3382323990826572,
+            "cic_magnitude": 0.9963784994314782
+          }
+        },
+        "closed_over_held_db": 5.688301328332834,
+        "plant_adc_codes_per_dac_code": 0.025467478602165226,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 40000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.3009286522327934,
+            "mean_adc": 8413.863837548828,
+            "residual_rms_adc": 2.1219620951040095,
+            "cic_magnitude": 0.9952721050469077
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 6.636022711533448,
+            "mean_adc": 8413.884085118225,
+            "residual_rms_adc": 1.4096648934295426,
+            "cic_magnitude": 0.9952721050469077
+          }
+        },
+        "closed_over_held_db": 6.065434526339967,
+        "plant_adc_codes_per_dac_code": 0.0257885050955687,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 45000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.482095006086567,
+            "mean_adc": 8417.21325727949,
+            "residual_rms_adc": 2.0576349401332057,
+            "cic_magnitude": 0.9940194519274206
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 6.868521020458441,
+            "mean_adc": 8413.885409000406,
+            "residual_rms_adc": 1.414694171207564,
+            "cic_magnitude": 0.9940194519274206
+          }
+        },
+        "closed_over_held_db": 5.900452307866443,
+        "plant_adc_codes_per_dac_code": 0.027203867235051304,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 50000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.438496669038758,
+            "mean_adc": 8417.340706448296,
+            "residual_rms_adc": 2.228313329334069,
+            "cic_magnitude": 0.9926210120326611
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 6.33069069839809,
+            "mean_adc": 8413.88524689181,
+            "residual_rms_adc": 1.4695540384472703,
+            "cic_magnitude": 0.9926210120326611
+          }
+        },
+        "closed_over_held_db": 5.301649750788572,
+        "plant_adc_codes_per_dac_code": 0.026863255226865296,
+        "held_tone_resolved": true
+      },
+      {
+        "requested_hz": 60000.0,
+        "amplitude_dac_peak": 128,
+        "states": {
+          "held": {
+            "amplitude_peak_adc_codes": 3.517040678027081,
+            "mean_adc": 8418.762399550898,
+            "residual_rms_adc": 2.0439034551781257,
+            "cic_magnitude": 0.9893889289929884
+          },
+          "closed": {
+            "amplitude_peak_adc_codes": 5.260879580868348,
+            "mean_adc": 8413.881673607428,
+            "residual_rms_adc": 1.2719921155390186,
+            "cic_magnitude": 0.9893889289929884
+          }
+        },
+        "closed_over_held_db": 3.497619394412588,
+        "plant_adc_codes_per_dac_code": 0.02747688029708657,
+        "held_tone_resolved": true
+      }
+    ]
+  },
+  "final": {
+    "power_mw": 0.988510437,
+    "kp": 9.0,
+    "ki": 0.989990234375,
+    "status": 2,
+    "adc": 8408,
+    "dac": 9638,
+    "dac_limits": [
+      545,
+      13000
+    ],
+    "firmware": "0xf511",
+    "source": "D:\\DSproject\\workbench\\codex-data\\workspaces\\Codex\\2026-11-06\\x-z\\outputs\\pid_f511_optimization\\results\\20261106_173847_040345_round2_preflight"
+  },
+  "baseline_repeat_bandwidth_hz": 14266.742102204957,
+  "baseline_repeat_maximum_tested_db": 6.065434526339967,
+  "decision": "Retain P=9, I=0.989990234375. No reliable overall-noise improvement established; broad search is not a proof of global optimum.",
+  "firmware_changed_this_round": false,
+  "flash_written": false,
+  "github_uploaded": false,
+  "host_change": "Clamp rounded Q15 Ki payload to32767 so gains just below1 cannot wrap to zero; five offline tests pass.",
+  "measurement": "Actuator-injected in-loop rejection and ADC-derived noise. Independent optical RIN not verified."
+}

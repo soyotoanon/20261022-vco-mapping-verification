@@ -1,0 +1,27 @@
+{
+  "time": "2026-11-06T17:13:38.599310+08:00",
+  "fs_hz": 1250000.0,
+  "raw_fs_hz": 5000000,
+  "decimation": 4,
+  "hardware_samples": 8192,
+  "returned_samples": 2048,
+  "flags": 2,
+  "registers_during_capture": {
+    "00": 1,
+    "01": 2,
+    "03": 8421,
+    "05": 9858,
+    "18": 8414,
+    "1E": 545,
+    "1F": 13000,
+    "2E": 1,
+    "30": 3
+  },
+  "host_event": null,
+  "encoding": "unsigned ADC codes multiplied by four; third-order CIC",
+  "frequency_hz": 34999.99991618097,
+  "kp": 18.0,
+  "ki": 0.399993896484375,
+  "state": "held",
+  "amplitude_dac_peak": 128
+}

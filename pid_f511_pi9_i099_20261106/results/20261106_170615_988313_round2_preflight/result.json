@@ -1,0 +1,14 @@
+{
+  "power_mw": 0.9904816979999999,
+  "kp": 9.0,
+  "ki": 0.989990234375,
+  "status": 2,
+  "adc": 8415,
+  "dac": 10026,
+  "dac_limits": [
+    545,
+    13000
+  ],
+  "firmware": "0xf511",
+  "source": "D:\\DSproject\\workbench\\codex-data\\workspaces\\Codex\\2026-11-06\\x-z\\outputs\\pid_f511_optimization\\results\\20261106_170615_988313_round2_preflight"
+}

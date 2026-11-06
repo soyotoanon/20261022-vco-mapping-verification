@@ -1,0 +1,166 @@
+{
+  "wavelength_nm": 556,
+  "rows": [
+    {
+      "time_monotonic": 52099.312,
+      "meter_mw": 0.306125265,
+      "adc_code": 8334,
+      "display_bcd_low": 13345,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003421"
+    },
+    {
+      "time_monotonic": 52099.484,
+      "meter_mw": 0.308002549,
+      "adc_code": 8335,
+      "display_bcd_low": 10373,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "002885"
+    },
+    {
+      "time_monotonic": 52099.656,
+      "meter_mw": 0.30398607499999997,
+      "adc_code": 8342,
+      "display_bcd_low": 12386,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003062"
+    },
+    {
+      "time_monotonic": 52099.812,
+      "meter_mw": 0.306343543,
+      "adc_code": 8334,
+      "display_bcd_low": 9753,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "002619"
+    },
+    {
+      "time_monotonic": 52099.984,
+      "meter_mw": 0.31110222299999996,
+      "adc_code": 8338,
+      "display_bcd_low": 10373,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "002885"
+    },
+    {
+      "time_monotonic": 52100.156,
+      "meter_mw": 0.30876655399999997,
+      "adc_code": 8340,
+      "display_bcd_low": 10134,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "002796"
+    },
+    {
+      "time_monotonic": 52100.328,
+      "meter_mw": 0.309967116,
+      "adc_code": 8336,
+      "display_bcd_low": 12386,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003062"
+    },
+    {
+      "time_monotonic": 52100.5,
+      "meter_mw": 0.313983619,
+      "adc_code": 8338,
+      "display_bcd_low": 12857,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003239"
+    },
+    {
+      "time_monotonic": 52100.656,
+      "meter_mw": 0.31038184500000005,
+      "adc_code": 8338,
+      "display_bcd_low": 13104,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003330"
+    },
+    {
+      "time_monotonic": 52100.828,
+      "meter_mw": 0.31036004700000003,
+      "adc_code": 8338,
+      "display_bcd_low": 10134,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "002796"
+    },
+    {
+      "time_monotonic": 52101.0,
+      "meter_mw": 0.310971227,
+      "adc_code": 8341,
+      "display_bcd_low": 9992,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "002708"
+    },
+    {
+      "time_monotonic": 52101.171,
+      "meter_mw": 0.309661555,
+      "adc_code": 8336,
+      "display_bcd_low": 13104,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003330"
+    },
+    {
+      "time_monotonic": 52101.343,
+      "meter_mw": 0.308439136,
+      "adc_code": 8340,
+      "display_bcd_low": 13104,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003330"
+    },
+    {
+      "time_monotonic": 52101.5,
+      "meter_mw": 0.30732588499999997,
+      "adc_code": 8335,
+      "display_bcd_low": 12857,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003239"
+    },
+    {
+      "time_monotonic": 52101.671,
+      "meter_mw": 0.306321745,
+      "adc_code": 8336,
+      "display_bcd_low": 9992,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "002708"
+    },
+    {
+      "time_monotonic": 52101.843,
+      "meter_mw": 0.309399591,
+      "adc_code": 8337,
+      "display_bcd_low": 12386,
+      "display_bcd_high_valid": 32768,
+      "dac_code": 15000,
+      "target_adc": 8476,
+      "display_bcd_digits": "003062"
+    }
+  ],
+  "fpga_control_writes": 0
+}

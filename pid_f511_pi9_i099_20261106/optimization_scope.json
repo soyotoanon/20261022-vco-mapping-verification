@@ -1,0 +1,68 @@
+{
+  "power_range_mw_estimate": [
+    0,
+    15
+  ],
+  "power_reference": "Previously calibrated main optical path; verify calibration before hardware sweeps.",
+  "zero_power_test": "Shutdown leakage and recovery; not fractional-noise optimization at zero.",
+  "required_functions": [
+    "Runtime target-power updates with F511 direct setpoint semantics",
+    "Main-path power display",
+    "Runtime PI gain updates",
+    "New DAC and diffraction-efficiency range",
+    "Shutdown and recovery",
+    "Existing acquisition and host communication"
+  ],
+  "artiq_analog_setpoint": "Reserve interface only; no full implementation requested.",
+  "development_policy": "Modify candidate only. Preserve baseline and all original projects.",
+  "evaluation": [
+    "Compare multiple nonzero operating powers within the measured reachable range",
+    "Measure in-loop rejection and ADC noise, plus PM100USB slow power; independent out-of-loop RIN deferred by user.",
+    "Record injected-disturbance suppression, amplification peak, step response, shutdown and recovery",
+    "Compare actual synthesis resources, timing and control latency after source changes"
+  ],
+  "publish_policy": "User explicitly accepted P=9 / I=0.989990234375 and authorized GitHub upload on 2026-11-06.",
+  "user_accepted_optimization": true,
+  "hardware_connected_at_setup": false,
+  "hardware_parameters_modified": true,
+  "firmware_programmed": true,
+  "optimization_status": "Accepted current operating-point profile; broader power-range and independent RIN qualification remain incomplete",
+  "hardware_connected_at_latest_check": true,
+  "measurement_setup": "FPGA in-loop acquisition plus PM100USB P2007293 at 556 nm; user chose to defer independent PD/scope",
+  "high_frequency_out_of_loop_rin_verified": false,
+  "firmware_on_board_at_initial_connection": "F129",
+  "candidate_firmware_build": "F511",
+  "live_display": {
+    "script": "D:\\DSproject\\workbench\\tasks\\pid-step-response-20261028\\host\\meter_display.py",
+    "fullscreen": true,
+    "meter_owner": "mot556-console 127.0.0.1:8766 channel=556",
+    "meter_serial": "P2007293",
+    "meter_read_strategy": "Read current values through console API while display is in use; do not open a competing direct meter session.",
+    "verification": "results/meter_display_verification.json",
+    "persistent_exec_session": 13760
+  },
+  "flash_written": false,
+  "firmware_on_board_at_latest_check": "F511 register-optimized independent candidate",
+  "measured_available_power_max_mw": 1.436914,
+  "acceptance_target": {
+    "suppression_minus_3db_bandwidth_hz_approx": 15000,
+    "maximum_high_frequency_amplification_db": 7,
+    "selected_by_user": "2026-11-06"
+  },
+  "runtime_monotonic_branch_dac_limits": [
+    545,
+    13000
+  ],
+  "current_profile": "runtime_profile_1mw.json",
+  "latest_summary": "results/round2_summary.json",
+  "validated_target_switches_mw": [
+    0.3,
+    0.6,
+    1.0
+  ],
+  "qualified_bandwidth_operating_point_mw": 1.0,
+  "latest_report": "ROUND2_RESULT.txt",
+  "user_noise_priority": "Preserve strong low-frequency suppression and prioritize overall noise reduction",
+  "user_acceptance_date": "2026-11-06",
+  "user_acceptance_quote": "原参数 P=9、I≈0.99，就用这个吧，传到github上面去"
+}

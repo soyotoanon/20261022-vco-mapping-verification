@@ -1,0 +1,10 @@
+{
+  "kp": 9.0,
+  "ki": 0.989990234375,
+  "target_adc": 8414,
+  "mean_power_mw": 0.9909448180714284,
+  "final_status": 2,
+  "retained_in_ram": true,
+  "flash_written": false,
+  "profile_source": "D:\\DSproject\\workbench\\codex-data\\workspaces\\Codex\\2026-11-06\\x-z\\outputs\\pid_f511_optimization\\runtime_profile_1mw.json"
+}

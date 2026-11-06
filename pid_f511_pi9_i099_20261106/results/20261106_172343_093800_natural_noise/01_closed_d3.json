@@ -1,0 +1,37 @@
+{
+  "trial": 1,
+  "kp": 11.0,
+  "ki": 0.999969482421875,
+  "state": "closed",
+  "decimation_log2": 3,
+  "mean_mw_historical_calibration": 0.9984883770358568,
+  "bands": {
+    "1000_10000_hz_rms_percent": 0.09097532794462301,
+    "10000_60000_hz_rms_percent": 0.6326448362561047,
+    "1000_60000_hz_rms_percent": 0.6391525632712001,
+    "60000_120000_hz_rms_percent": 0.4784910168142213,
+    "10000_120000_hz_rms_percent": 0.7932169577192745,
+    "1000_120000_hz_rms_percent": 0.7984169664455113
+  },
+  "measurement": "in_loop_ADC_not_out_of_loop_RIN",
+  "time": "2026-11-06T17:25:38.212523+08:00",
+  "fs_hz": 625000.0,
+  "raw_fs_hz": 5000000,
+  "decimation": 8,
+  "hardware_samples": 8192,
+  "returned_samples": 8192,
+  "flags": 2,
+  "registers_during_capture": {
+    "00": 1,
+    "01": 2,
+    "03": 8416,
+    "05": 9785,
+    "18": 8414,
+    "1E": 545,
+    "1F": 13000,
+    "2E": 1,
+    "30": 0
+  },
+  "host_event": null,
+  "encoding": "unsigned ADC codes multiplied by four; third-order CIC"
+}

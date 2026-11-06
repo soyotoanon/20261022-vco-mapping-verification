@@ -1,0 +1,14 @@
+{
+  "connected": true,
+  "sampled_at": 1793954612663.549,
+  "power_mw": 1.0448026000000001,
+  "identity": {
+    "model": "PM100USB",
+    "serial": "P2007293",
+    "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+    "wavelength_nm": 556.0,
+    "unit": "W",
+    "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+  },
+  "error": ""
+}

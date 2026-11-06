@@ -1,0 +1,56 @@
+[
+  {
+    "index": 0,
+    "kp": 20.0,
+    "ki": 0.04998779296875,
+    "db_at_15khz": -3.1111591042394497,
+    "maximum_tested_db": 4.899937050479622,
+    "maximum_tested_frequency_hz": 80000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 1,
+    "kp": 22.0,
+    "ki": 0.149993896484375,
+    "db_at_15khz": -2.4892565607020742,
+    "maximum_tested_db": 7.040768125876843,
+    "maximum_tested_frequency_hz": 80000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 2,
+    "kp": 20.0,
+    "ki": 0.25,
+    "db_at_15khz": -2.544791705972773,
+    "maximum_tested_db": 6.492659331313424,
+    "maximum_tested_frequency_hz": 80000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 3,
+    "kp": 10.0,
+    "ki": 0.999969482421875,
+    "db_at_15khz": -2.510595645673938,
+    "maximum_tested_db": 8.163685026999106,
+    "maximum_tested_frequency_hz": 40000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 4,
+    "kp": 11.0,
+    "ki": 0.999969482421875,
+    "db_at_15khz": -3.0445313359934953,
+    "maximum_tested_db": 5.883961983082354,
+    "maximum_tested_frequency_hz": 50000.0,
+    "all_held_resolved": true
+  },
+  {
+    "index": 5,
+    "kp": 12.0,
+    "ki": 0.999969482421875,
+    "db_at_15khz": -2.7690095844292344,
+    "maximum_tested_db": 5.557048311479793,
+    "maximum_tested_frequency_hz": 50000.0,
+    "all_held_resolved": true
+  }
+]

@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Nov  6 16:03:42 2026
+# Process ID: 44584
+# Current directory: D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/results/20261106_160340_432296_f511_ram_deployment
+# Command line: vivado.exe -mode batch -notrace -source D:\DSproject\workbench\codex-data\workspaces\Codex\2026-11-06\x-z\outputs\pid_f511_optimization\host\program_candidate_ram.tcl -log D:\DSproject\workbench\codex-data\workspaces\Codex\2026-11-06\x-z\outputs\pid_f511_optimization\results\20261106_160340_432296_f511_ram_deployment\vivado.log -journal D:\DSproject\workbench\codex-data\workspaces\Codex\2026-11-06\x-z\outputs\pid_f511_optimization\results\20261106_160340_432296_f511_ram_deployment\vivado.jou
+# Log file: D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/results/20261106_160340_432296_f511_ram_deployment/vivado.log
+# Journal file: D:\DSproject\workbench\codex-data\workspaces\Codex\2026-11-06\x-z\outputs\pid_f511_optimization\results\20261106_160340_432296_f511_ram_deployment\vivado.jou
+# Running On: DESKTOP-QDCLV1M, OS: Windows, CPU Frequency: 3793 MHz, CPU Physical cores: 16, Host memory: 16348 MB
+#-----------------------------------------------------------
+CRITICAL WARNING: [Common 17-741] No write access right to the local Tcl store at 'C'. XilinxTclStore is reverted to the installation area. If you want to use local Tcl Store, please change the access right and relaunch Vivado.
+source {D:\DSproject\workbench\codex-data\workspaces\Codex\2026-11-06\x-z\outputs\pid_f511_optimization\host\program_candidate_ram.tcl} -notrace
+open_hw_manager: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 472.668 ; gain = 182.828
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+
+****** Xilinx hw_server v2023.2
+  **** Build date : Oct 13 2023 at 21:31:40
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+
+
+******** Xilinx cs_server v2023.2.0
+  ****** Build date   : Oct 10 2023-12:01:56
+    **** Build number : 2023.2.1696910516
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 477.645 ; gain = 4.977
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210512180081
+INFO: [Labtools 27-3164] End of startup status: HIGH
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+RAM_DONE=1
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210512180081
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  6 16:03:59 2026...

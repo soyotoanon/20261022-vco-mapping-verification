@@ -1,0 +1,37 @@
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe tb_sample_revision -s tb_sample_revision_sim 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'adc_oeb_n' remains unconnected for this instance [D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_sample_revision.v:13]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4328] File: D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_sample_revision.v Line: 101 : Sensitivity on input argument "target" of task "write_target_and_check" may never get triggered.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ctrl_tick
+Compiling module work.adc_drv(HALF_W=16)
+Compiling module work.dac_drv
+Compiling module work.adc_dac_core(HALF_W=16)
+Compiling module work.power_display_piecewise
+Compiling module work.recip_pow2(K=24,QW=25)
+Compiling module work.step_gen
+Compiling module work.performance_probe
+Compiling module work.pi_ctrl
+Compiling module work.monitor(LOSS_LOG2=4)
+Compiling module work.adc_stats
+Compiling module work.recip_pow2(K=20,QW=21)
+Compiling module work.dac_sig_gen
+Compiling module work.sweep_gen
+Compiling module work.uart_rx
+Compiling module work.uart_proto
+Compiling module work.log_arbiter
+Compiling module work.uart_tx
+Compiling module work.reg_file
+Compiling module work.light_lock_top(LOSS_LOG2=4)
+Compiling module work.tb_sample_revision
+Built simulation snapshot tb_sample_revision_sim

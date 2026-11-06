@@ -1,0 +1,8 @@
+{
+  "ram_programmed": true,
+  "flash_written": false,
+  "firmware": "F511",
+  "fixed_dac": 9688,
+  "bit_sha256": "7de88b9d4c14b21f543121ba436ed0a6efa04b66e22f19478a140f27ac4746c9",
+  "power_mw": 0.992891146
+}

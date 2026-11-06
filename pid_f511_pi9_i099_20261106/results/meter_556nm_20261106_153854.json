@@ -1,0 +1,31 @@
+{
+  "identity": {
+    "model": "PM100USB",
+    "serial": "P2007293",
+    "resource": "USB0::0x1313::0x8072::P2007293::INSTR",
+    "wavelength_nm": 556.0,
+    "unit": "W",
+    "driver": "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\TLPMX_64.dll"
+  },
+  "readings_mw": [
+    0.08313528819999999,
+    0.08324917870000001,
+    0.083317078,
+    0.0832075602,
+    0.0829819619,
+    0.08273884299999999,
+    0.0831418583,
+    0.0833696467,
+    0.08321632050000001,
+    0.08314842850000001,
+    0.08294472350000001,
+    0.0828833945
+  ],
+  "configuration_changes": {
+    "wavelength_nm": [
+      635,
+      556
+    ]
+  },
+  "fpga_control_writes": 0
+}

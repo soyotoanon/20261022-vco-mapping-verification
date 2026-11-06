@@ -1,0 +1,26 @@
+{
+  "source": "D:\\DSproject\\workbench\\codex-data\\workspaces\\Codex\\2026-11-06\\x-z\\outputs\\pid_f511_optimization\\results\\20261106_172843_428812_pi_scan",
+  "kp": 11.0,
+  "ki": 0.999969482421875,
+  "minus_3db_upward_crossings": [
+    {
+      "estimated_hz": 14399.37849627865,
+      "bracket_hz": [
+        14000.0,
+        15000.0
+      ]
+    }
+  ],
+  "maximum_measured_amplification_db": 6.761051250800478,
+  "peak_frequency_hz": 45000.0,
+  "measured_frequency_range_hz": [
+    1000.0,
+    250000.0
+  ],
+  "measured_points": 30,
+  "all_held_tones_resolved": true,
+  "peak_below_7db_on_measured_grid": true,
+  "measurement": "20 log10(closed fitted tone amplitude / held fitted tone amplitude); in-loop ADC, actuator injection",
+  "bandwidth_method": "First upward -3 dB crossing, interpolated in log frequency between adjacent measured points",
+  "limitations": "Finite measured frequency grid, one operating point, not independent out-of-loop optical RIN"
+}

@@ -1,0 +1,10 @@
+{"time": "2026-11-06T16:04:00.353138+08:00", "action": "write_attempt", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:04:00.357165+08:00", "action": "readback", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:04:00.357165+08:00", "action": "write_attempt", "register": "00", "value": 8}
+{"time": "2026-11-06T16:04:00.361420+08:00", "action": "readback", "register": "00", "value": 8}
+{"time": "2026-11-06T16:04:00.361420+08:00", "action": "write_attempt", "register": "2E", "value": 0}
+{"time": "2026-11-06T16:04:00.365345+08:00", "action": "readback", "register": "2E", "value": 0}
+{"time": "2026-11-06T16:04:00.366054+08:00", "action": "write_attempt", "register": "00", "value": 536}
+{"time": "2026-11-06T16:04:00.369291+08:00", "action": "readback", "register": "00", "value": 536}
+{"time": "2026-11-06T16:04:00.370290+08:00", "action": "write_attempt", "register": "00", "value": 8}
+{"time": "2026-11-06T16:04:00.374172+08:00", "action": "readback", "register": "00", "value": 8}

@@ -1,0 +1,68 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/adc_dac_core.v" into library work
+INFO: [VRFC 10-311] analyzing module adc_dac_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/adc_drv.v" into library work
+INFO: [VRFC 10-311] analyzing module adc_drv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/adc_stats.v" into library work
+INFO: [VRFC 10-311] analyzing module adc_stats
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/add_sat.v" into library work
+INFO: [VRFC 10-311] analyzing module add_sat
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/ctrl_tick.v" into library work
+INFO: [VRFC 10-311] analyzing module ctrl_tick
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/dac_drv.v" into library work
+INFO: [VRFC 10-311] analyzing module dac_drv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/dac_sig_gen.v" into library work
+INFO: [VRFC 10-311] analyzing module dac_sig_gen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/dbg_marker.v" into library work
+INFO: [VRFC 10-311] analyzing module dbg_marker
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/light_lock_top.v" into library work
+INFO: [VRFC 10-311] analyzing module light_lock_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/log_arbiter.v" into library work
+INFO: [VRFC 10-311] analyzing module log_arbiter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/monitor.v" into library work
+INFO: [VRFC 10-311] analyzing module monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/performance_probe.v" into library work
+INFO: [VRFC 10-311] analyzing module performance_probe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/pi_ctrl.v" into library work
+INFO: [VRFC 10-311] analyzing module pi_ctrl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/power_display.v" into library work
+INFO: [VRFC 10-311] analyzing module power_display
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/power_display_piecewise.v" into library work
+INFO: [VRFC 10-311] analyzing module power_display_piecewise
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/recip_pow2.v" into library work
+INFO: [VRFC 10-311] analyzing module recip_pow2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/reg_file.v" into library work
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/step_gen.v" into library work
+INFO: [VRFC 10-311] analyzing module step_gen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/sweep_gen.v" into library work
+INFO: [VRFC 10-311] analyzing module sweep_gen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/uart_proto.v" into library work
+INFO: [VRFC 10-311] analyzing module uart_proto
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/uart_rx.v" into library work
+INFO: [VRFC 10-311] analyzing module uart_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/rtl/uart_tx.v" into library work
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/reference/performance_probe.v" into library work
+INFO: [VRFC 10-311] analyzing module performance_probe_reference
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/reference/pi_ctrl.v" into library work
+INFO: [VRFC 10-311] analyzing module pi_ctrl_reference
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/reference/reg_file_reference.v" into library work
+INFO: [VRFC 10-311] analyzing module reg_file_reference
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_fast_equivalence.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_fast_equivalence
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_pi_revision.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_pi_revision
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_performance_probe.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_performance_probe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_sample_revision.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_sample_revision
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_dac_timing_revision.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_dac_timing_revision
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_instant_display_revision.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_instant_display_revision
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_dac_guard.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_dac_guard
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_dac_routes.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_dac_routes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_reg_file_equivalence.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_reg_file_equivalence

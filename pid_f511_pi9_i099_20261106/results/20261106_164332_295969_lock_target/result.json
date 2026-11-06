@@ -1,0 +1,13 @@
+{
+  "target_adc": 8414,
+  "target_mw_historical": 1.0,
+  "kp": 2.0,
+  "ki": 0.1199951171875,
+  "meter_mean_mw": 0.99119136584,
+  "dac_range": [
+    9686,
+    9966
+  ],
+  "monotonic_branch_out_min": 545,
+  "monotonic_branch_out_max": 13000
+}

@@ -1,0 +1,16 @@
+{
+  "windows": [
+    {
+      "handle": 4787792,
+      "title": "光功率实时大屏 | PM100USB | 556 nm",
+      "visible": true
+    }
+  ],
+  "live": true,
+  "power_mw": 0.315315148,
+  "display": "0.3153",
+  "fullscreen": true,
+  "read_only": true,
+  "state_age_s": 0.28487586975097656,
+  "updates_advancing": true
+}

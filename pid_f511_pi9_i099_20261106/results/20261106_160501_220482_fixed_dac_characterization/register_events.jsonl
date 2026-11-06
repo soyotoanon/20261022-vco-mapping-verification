@@ -1,0 +1,14 @@
+{"time": "2026-11-06T16:05:01.429199+08:00", "action": "write_attempt", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:05:01.434656+08:00", "action": "readback", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:05:02.264119+08:00", "action": "write_attempt", "register": "02", "value": 14872}
+{"time": "2026-11-06T16:05:02.268246+08:00", "action": "readback", "register": "02", "value": 14872}
+{"time": "2026-11-06T16:05:03.103242+08:00", "action": "write_attempt", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:05:03.107499+08:00", "action": "readback", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:05:03.926603+08:00", "action": "write_attempt", "register": "02", "value": 14500}
+{"time": "2026-11-06T16:05:03.930774+08:00", "action": "readback", "register": "02", "value": 14500}
+{"time": "2026-11-06T16:05:04.763003+08:00", "action": "write_attempt", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:05:04.767013+08:00", "action": "readback", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:05:05.637560+08:00", "action": "write_attempt", "register": "02", "value": 14000}
+{"time": "2026-11-06T16:05:05.642756+08:00", "action": "readback", "register": "02", "value": 14000}
+{"time": "2026-11-06T16:05:06.462985+08:00", "action": "write_attempt", "register": "02", "value": 15000}
+{"time": "2026-11-06T16:05:06.467502+08:00", "action": "readback", "register": "02", "value": 15000}

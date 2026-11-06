@@ -1,0 +1,18 @@
+ECHO is off.
+ECHO is off.
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_dac_guard_sim/xsim_script.tcl
+# xsim {tb_dac_guard_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+REVISION_PASS tb_dac_guard 16384_codes both_channels register_limits_and_runtime_target
+$finish called at time : 1692680 ns : File "D:/DSproject/workbench/codex-data/workspaces/Codex/2026-11-06/x-z/outputs/pid_f511_optimization/candidate/tb/tb_dac_guard.v" Line 56
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Nov  6 16:37:26 2026...
